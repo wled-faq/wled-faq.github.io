@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html itemscope itemtype="https://schema.org/FAQPage">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,246 +40,246 @@
         <div class="col-lg-8">
             <div class="tab-content" id="faq-tab-content">
                 <div class="tab-pane show active" id="tab1" role="tabpanel" aria-labelledby="tab1"><div class="accordion" id="accordion-tab-1">
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-1-heading-1">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-1-content-1" aria-expanded="false" aria-controls="accordion-tab-1-content-1"><a href="#tab1faq1">Was sind die häufigsten Fehler bei der Inbetriebnahme?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-1-content-1" aria-expanded="false" aria-controls="accordion-tab-1-content-1"><a href="#tab1faq1"><div itemprop="name">Was sind die häufigsten Fehler bei der Inbetriebnahme von WLED?</div></a></button>
 </h5>
 </div>
 <div class="collapse show" id="accordion-tab-1-content-1" aria-labelledby="accordion-tab-1-heading-1" data-bs-parent="#accordion-tab-1">
-<div class="accordion-body"><p>Die häufigsten Fehler sind:<br>1. LED Streifen ist von hinten an angeschlossen: adressierbare LED Streifen haben eine Richtung, die durch kleine Pfeile auf dem Streifen gekennzeichnet ist. Der Anschluss der Datenleitung muss unbedingt von der Seite erfolgen, wo der Pfeil beginnt.<br>2. Falsches GPIO eingestellt: Prüfen Sie in WLED Einstellungen, ob als Datenausgang die richtige GPIO Nummer eingestellt ist. Die fertigen Controller haben korrekte Einstellungen meistens entweder auf dem Gehäuse oder auf der Platine aufgedruckt.<br>3. LED Streifen mit vielen LEDs angeschlossen und eingestellt, aber der Stromlimiter steht noch auf dem Default Wert (850 mA). Das wirkt oft so aus, dass LEDs bei Änderung der Farbe kurz blinken und sofort ausgehen oder sehr schwach leuchten. Prüfen und korrigieren Sie ggf. die Einstellungen in WLED.<br>4. Falsches LED Typ ist eingestellt. In WLED Einstellungen muss der richtige LED Typ und die richtige Farbenreihenfolge (RGB, BGR, etc.) eingestellt werden. Prüfen Sie, ob diese Einstellungen korrekt sind. LED Typ muss man wissen, die Farbenreihenfolge kann man notfalls einfach ausprobieren, welche die richtige ist. Speziell muss beim WS2814 LED Streifen aufgepasst werden, dieser muss in Einstellungen als SK6812 gewählt werden. <br>5. Verkabelung ist nicht in Ordnung. Die Verkabelung muss gründlich ausgeführt werden. Wackelkontakte, kalte Lötstellen etc. müssen vermieden werden. Sie müssen außerdem aus Sicherheitsgründen auf die richtige Dimensionierung der Kabel aufpassen. </p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Die häufigsten Fehler sind:<br>1. LED Streifen ist von hinten an angeschlossen: adressierbare LED Streifen haben eine Richtung, die durch kleine Pfeile auf dem Streifen gekennzeichnet ist. Der Anschluss der Datenleitung muss unbedingt von der Seite erfolgen, wo der Pfeil beginnt.<br>2. Falsches GPIO eingestellt: Prüfen Sie in WLED Einstellungen, ob als Datenausgang die richtige GPIO Nummer eingestellt ist. Die fertigen Controller haben korrekte Einstellungen meistens entweder auf dem Gehäuse oder auf der Platine aufgedruckt.<br>3. LED Streifen mit vielen LEDs angeschlossen und eingestellt, aber der Stromlimiter steht noch auf dem Default Wert (850 mA). Das wirkt oft so aus, dass LEDs bei Änderung der Farbe kurz blinken und sofort ausgehen oder sehr schwach leuchten. Prüfen und korrigieren Sie ggf. die Einstellungen in WLED.<br>4. Falsches LED Typ ist eingestellt. In WLED Einstellungen muss der richtige LED Typ und die richtige Farbenreihenfolge (RGB, BGR, etc.) eingestellt werden. Prüfen Sie, ob diese Einstellungen korrekt sind. LED Typ muss man wissen, die Farbenreihenfolge kann man notfalls einfach ausprobieren, welche die richtige ist. Speziell muss beim WS2814 LED Streifen aufgepasst werden, dieser muss in Einstellungen als SK6812 gewählt werden. <br>5. Verkabelung ist nicht in Ordnung. Die Verkabelung muss gründlich ausgeführt werden. Wackelkontakte, kalte Lötstellen etc. müssen vermieden werden. Sie müssen außerdem aus Sicherheitsgründen auf die richtige Dimensionierung der Kabel aufpassen. </p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-1-heading-2">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-1-content-2" aria-expanded="false" aria-controls="accordion-tab-1-content-2"><a href="#tab1faq2">Welches Password hat WLED-AP?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-1-content-2" aria-expanded="false" aria-controls="accordion-tab-1-content-2"><a href="#tab1faq2"><div itemprop="name">Welches Password hat WLED-AP?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-1-content-2" aria-labelledby="accordion-tab-1-heading-2" data-bs-parent="#accordion-tab-1">
-<div class="accordion-body"><p>Wenn WLED Software auf ihrem Controller zum ersten Mal installiert ist und Sie nicht bereits bei der Installation mit dem WEB-basierten Installer Ihre WiFi daten eingegeben haben, dann erzeugt bei einem Neustart der WLED Controller einen Access Point (WLAN) mit dem Namen WLED-AP. Das Passwort für dieses WLAN ist wled1234.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Wenn WLED Software auf ihrem Controller zum ersten Mal installiert ist und Sie nicht bereits bei der Installation mit dem WEB-basierten Installer Ihre WiFi daten eingegeben haben, dann erzeugt bei einem Neustart der WLED Controller einen Access Point (WLAN) mit dem Namen WLED-AP. Das Passwort für dieses WLAN ist wled1234.</p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-1-heading-3">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-1-content-3" aria-expanded="false" aria-controls="accordion-tab-1-content-3"><a href="#tab1faq3">Ich habe Password für mein WLAN falsch eingestellt, was tun?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-1-content-3" aria-expanded="false" aria-controls="accordion-tab-1-content-3"><a href="#tab1faq3"><div itemprop="name">Ich habe Password für mein WLAN in WLED falsch eingestellt, was tun?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-1-content-3" aria-labelledby="accordion-tab-1-heading-3" data-bs-parent="#accordion-tab-1">
-<div class="accordion-body"><p>Im initialen Zustand mit default Einstellungen versucht WLED SW mit dem eingegebenen WLAN sich zu verbinden. Klappt es nicht, wird wieder WLED-AP erzeugt. Also warten Sie einfach, bis WLED-AP wieder erscheint. Dieses verhalten kann jedoch in WLED Einstellungen geändert werden. WLED-AP kann also z.B. ganz verhindert werden. Wenn Sie das bereits so eingestellt haben, dann hilft nur ein „Hardreset“ oder Neuflaschen mit WLED SW.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Im initialen Zustand mit default Einstellungen versucht WLED SW mit dem eingegebenen WLAN sich zu verbinden. Klappt es nicht, wird wieder WLED-AP erzeugt. Also warten Sie einfach, bis WLED-AP wieder erscheint. Dieses verhalten kann jedoch in WLED Einstellungen geändert werden. WLED-AP kann also z.B. ganz verhindert werden. Wenn Sie das bereits so eingestellt haben, dann hilft nur ein „Hardreset“ oder Neuflaschen mit WLED SW.</p></div>
 </div>
 </div>
 </div>
 </div></div>
 <div class="tab-pane" id="tab2" role="tabpanel" aria-labelledby="tab2"><div class="accordion" id="accordion-tab-2">
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-2-heading-1">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-1" aria-expanded="false" aria-controls="accordion-tab-2-content-1"><a href="#tab2faq1">Welche Mikrocontroller Typen werden unterstützt?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-1" aria-expanded="false" aria-controls="accordion-tab-2-content-1"><a href="#tab2faq1"><div itemprop="name">Welche Mikrocontroller Typen werden von WLED SW unterstützt?</div></a></button>
 </h5>
 </div>
 <div class="collapse show" id="accordion-tab-2-content-1" aria-labelledby="accordion-tab-2-heading-1" data-bs-parent="#accordion-tab-2">
-<div class="accordion-body"><p>Aktuell (Stand Sommer 2023) werden vollständig nur die Mikrocontroller der Firma Espressif, Typen ESP8266 und ESP32 (mit Dual Core) unterstützt. Einige der neueren Typen wie ESP32-C3, ESP32-S2 und ESP32-S3 werden experimentell unterstützt, es ist aber noch kein produktiver Einsatz empfohlen, weil noch viele Bugs vermutet werden. Außerdem ist die Installation bei diesen neueren Typen nicht so einfach: es existieren mehrere Hardwarevariationen/Boards, für die man die SW speziell kompilieren muss. Zu erwähnen ist noch, dass am Markt immer noch einige ESP32-C3 Boards (sog. Mini Ver 1.0.0) verkauft werden, wo WLAN nicht richtig funktioniert.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Aktuell (Stand Sommer 2023) werden vollständig nur die Mikrocontroller der Firma Espressif, Typen ESP8266 und ESP32 (mit Dual Core) unterstützt. Einige der neueren Typen wie ESP32-C3, ESP32-S2 und ESP32-S3 werden experimentell unterstützt, es ist aber noch kein produktiver Einsatz empfohlen, weil noch viele Bugs vermutet werden. Außerdem ist die Installation bei diesen neueren Typen nicht so einfach: es existieren mehrere Hardwarevariationen/Boards, für die man die SW speziell kompilieren muss. Zu erwähnen ist noch, dass am Markt immer noch einige ESP32-C3 Boards (sog. Mini Ver 1.0.0) verkauft werden, wo WLAN nicht richtig funktioniert.</p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-2-heading-2">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-2" aria-expanded="false" aria-controls="accordion-tab-2-content-2"><a href="#tab2faq2">Wird ein LevelShifter wirklich benötigt?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-2" aria-expanded="false" aria-controls="accordion-tab-2-content-2"><a href="#tab2faq2"><div itemprop="name">Wird ein LevelShifter beim WLED Controller wirklich benötigt?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-2-content-2" aria-labelledby="accordion-tab-2-heading-2" data-bs-parent="#accordion-tab-2">
-<div class="accordion-body"><p>Viele 5V LED Streifen lassen sich auch ohne LevelShifter betreiben, insbesondere wenn die Leitung zwischen dem Controller und dem LED Streifen sehr kurz ist. Manchmal kann dabei aber zu Flickering kommen, z.B dass die LEDS mal kurz in weiß blinken. Auch größere Störungen sind möglich. Bei 12V oder 24V LED Streifen kommt man meistens ohne LevelShifter nicht klar. Ein LevelShifter wird aber auch bei 5V LED Streifen ausdrücklich empfohlen, insbesondere bei einem produktiven Einsatz, um einen störungsfreien Betrieb zu gewährleisten: ein LevelShifter passt den Signalpegel des Mikrocontrollers (3.3V) an den Signalpegel des LED Streifens (5V bei allen adressierbaren LED Typen).<br>Professionelle WLED Controller haben einen LevelShifter immer integriert.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Viele 5V LED Streifen lassen sich auch ohne LevelShifter betreiben, insbesondere wenn die Leitung zwischen dem Controller und dem LED Streifen sehr kurz ist. Manchmal kann dabei aber zu Flickering kommen, z.B dass die LEDS mal kurz in weiß blinken. Auch größere Störungen sind möglich. Bei 12V oder 24V LED Streifen kommt man meistens ohne LevelShifter nicht klar. Ein LevelShifter wird aber auch bei 5V LED Streifen ausdrücklich empfohlen, insbesondere bei einem produktiven Einsatz, um einen störungsfreien Betrieb zu gewährleisten: ein LevelShifter passt den Signalpegel des Mikrocontrollers (3.3V) an den Signalpegel des LED Streifens (5V bei allen adressierbaren LED Typen).<br>Professionelle WLED Controller haben einen LevelShifter immer integriert.</p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-2-heading-3">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-3" aria-expanded="false" aria-controls="accordion-tab-2-content-3"><a href="#tab2faq3">Welche LevelShifter werden empfohlen?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-3" aria-expanded="false" aria-controls="accordion-tab-2-content-3"><a href="#tab2faq3"><div itemprop="name">Welche LevelShifter werden empfohlen?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-2-content-3" aria-labelledby="accordion-tab-2-heading-3" data-bs-parent="#accordion-tab-2">
-<div class="accordion-body"><p>Die Ansteuerung der adressierbaren LED Streifen Läuft mit Steuersignalen, welche eine Grundfrequenz im Bereich 800 kHz bis ins einstelligen MHz Bereich haben (je nach Typ). Entsprechend muss ein LevelShifter schnell genug sein, ob diese Signale sauber weiter geben zu können. Empfohlen werden daher schnelle Typen wie SN74AHCT125, SN74AHCT32 oder SN74LVC2T45. Typen wie SN74HCT (also ohne „A“) sind etwas langsamen und für LED Typen wie WS2812B i.O., für einige andere LED Typen können aber zu langsam sein. In jedem Fall nicht empfohlen sind mit Transistoren aufgebaute fertige bidirektionale I2C LevelShifter. Notfalls können diese verwendet werden, man sollte aber dann den Pull-Up Widerstand am Ausgang (meistens 10 kOhm) durch einen kleineren ersetzen (<=1 kOhm).</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Die Ansteuerung der adressierbaren LED Streifen Läuft mit Steuersignalen, welche eine Grundfrequenz im Bereich 800 kHz bis ins einstelligen MHz Bereich haben (je nach Typ). Entsprechend muss ein LevelShifter schnell genug sein, ob diese Signale sauber weiter geben zu können. Empfohlen werden daher schnelle Typen wie SN74AHCT125, SN74AHCT32 oder SN74LVC2T45. Typen wie SN74HCT (also ohne „A“) sind etwas langsamen und für LED Typen wie WS2812B i.O., für einige andere LED Typen können aber zu langsam sein. In jedem Fall nicht empfohlen sind mit Transistoren aufgebaute fertige bidirektionale I2C LevelShifter. Notfalls können diese verwendet werden, man sollte aber dann den Pull-Up Widerstand am Ausgang (meistens 10 kOhm) durch einen kleineren ersetzen (<=1 kOhm).</p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-2-heading-4">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-4" aria-expanded="false" aria-controls="accordion-tab-2-content-4"><a href="#tab2faq4">Muss in der Datenleitung zwischen dem Controller und LED Streifen ein Widerstand eingebaut werden, welcher?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-4" aria-expanded="false" aria-controls="accordion-tab-2-content-4"><a href="#tab2faq4"><div itemprop="name">Muss in der Datenleitung zwischen dem WLED Controller und LED Streifen ein Widerstand eingebaut werden, welcher?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-2-content-4" aria-labelledby="accordion-tab-2-heading-4" data-bs-parent="#accordion-tab-2">
-<div class="accordion-body"><p>In meisten Fällen wird ein Widerstand im Bereich 33 kOhm bis 68 kOhm empfohlen. Die alte Empfehlung war 470 kOhm, der Wert in dieser Größenordnung ist aber aus heutiger Sicht nicht i.O. Ein Betrieb ohne einen Widerstand ist grundsätzlich auch möglich, sollte aber bei einem produktiven Einsatz vermieden werden. </p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>In meisten Fällen wird ein Widerstand im Bereich 33 kOhm bis 68 kOhm empfohlen. Die alte Empfehlung war 470 kOhm, der Wert in dieser Größenordnung ist aber aus heutiger Sicht nicht i.O. Ein Betrieb ohne einen Widerstand ist grundsätzlich auch möglich, sollte aber bei einem produktiven Einsatz vermieden werden. </p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-2-heading-5">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-5" aria-expanded="false" aria-controls="accordion-tab-2-content-5"><a href="#tab2faq5">Wird ein fertiger WLED Controller empfohlen, oder kann man sich ein aus einzelnen Komponenten zusammen bauen?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-5" aria-expanded="false" aria-controls="accordion-tab-2-content-5"><a href="#tab2faq5"><div itemprop="name">Wird ein fertiger WLED Controller empfohlen, oder kann man sich ein aus einzelnen Komponenten zusammen bauen?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-2-content-5" aria-labelledby="accordion-tab-2-heading-5" data-bs-parent="#accordion-tab-2">
-<div class="accordion-body"><p>Die Antwort hängt davon ab, was man damit machen möchte. Für experimentieren/rumprobieren reicht auch einfach ein ESP8266 oder ESP32 Mikrocontroller Board ohne weitere Komponenten. Möchte man eine saubere Installation machen, die länger ohne Störungen funktionieren soll, kommt man um ein fertiges Teil eigentlich nicht drum herum. Qualitative <a href="https://shop.myhome-control.de" target=”_blank” rel="noopener">fertige WLED Controller</a> integrieren nicht nur alle notwendigen Komponenten, sie sind auch aufgrund industrieller Fertigung/Bestückung deutlich zuverlässiger als jedes mit Hand gelötetes Aufbau. Die schlechteste Idee ist das Ganze mit Jumper Wire oder ähnliches aufzubauen: es sind nicht nur Wackelkontakte vorprogrammiert, sondern man erzeugt damit unter Umständen auch ein hohes Sicherheitsrisiko.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Die Antwort hängt davon ab, was man damit machen möchte. Für experimentieren/rumprobieren reicht auch einfach ein ESP8266 oder ESP32 Mikrocontroller Board ohne weitere Komponenten. Möchte man eine saubere Installation machen, die länger ohne Störungen funktionieren soll, kommt man um ein fertiges Teil eigentlich nicht drum herum. Qualitative <a href="https://shop.myhome-control.de" target=”_blank” rel="noopener">fertige WLED Controller</a> integrieren nicht nur alle notwendigen Komponenten, sie sind auch aufgrund industrieller Fertigung/Bestückung deutlich zuverlässiger als jedes mit Hand gelötetes Aufbau. Die schlechteste Idee ist das Ganze mit Jumper Wire oder ähnliches aufzubauen: es sind nicht nur Wackelkontakte vorprogrammiert, sondern man erzeugt damit unter Umständen auch ein hohes Sicherheitsrisiko.</p></div>
 </div>
 </div>
 </div>
 </div></div>
 <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="tab3"><div class="accordion" id="accordion-tab-3">
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-3-heading-1">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-1" aria-expanded="false" aria-controls="accordion-tab-3-content-1"><a href="#tab3faq1">Welche LED Streifentypen werden unterstützt?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-1" aria-expanded="false" aria-controls="accordion-tab-3-content-1"><a href="#tab3faq1"><div itemprop="name">Welche LED Streifentypen werden von WLED SW unterstützt?</div></a></button>
 </h5>
 </div>
 <div class="collapse show" id="accordion-tab-3-content-1" aria-labelledby="accordion-tab-3-heading-1" data-bs-parent="#accordion-tab-3">
-<div class="accordion-body"><p>Am meisten macht WLED mit sogenannten digitalen, adressierbaren LED Streifen Sinn, wo man einzelne LEDs separat ansteuern kann. Damit lassen sich viele Effekte einzustellen. Die Unterstützten Typen sind: WS2801, WS2811, WS2812B, WS2813, WS2814, WS1815, SK6812, APA102, LPD8806, SK9822, TM1814, GS8208. Es kommen auch immer wieder neue Typen auf den Markt, die einen kompatiblen Ansteuerungsprotokoll haben.<br>WLED SW unterstützt aber auch die sogenannten Analogen LED Streifen, wo alle LEDs nur gleich eingesteuert werden können. Diese Typen brauchen pro Farbe einen eigenen GPIO. Es gibt einfarbige CCT, RGB, RGBW and RGBCCT Streifen. Zudem braucht man nicht nur ein Mikrocontroller, sondern in jedem Fall einige zusätzlichen Komponenten wie MOSFETs.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Am meisten macht WLED mit sogenannten digitalen, adressierbaren LED Streifen Sinn, wo man einzelne LEDs separat ansteuern kann. Damit lassen sich viele Effekte einzustellen. Die Unterstützten Typen sind: WS2801, WS2811, WS2812B, WS2813, WS2814, WS1815, SK6812, APA102, LPD8806, SK9822, TM1814, GS8208. Es kommen auch immer wieder neue Typen auf den Markt, die einen kompatiblen Ansteuerungsprotokoll haben.<br>WLED SW unterstützt aber auch die sogenannten Analogen LED Streifen, wo alle LEDs nur gleich eingesteuert werden können. Diese Typen brauchen pro Farbe einen eigenen GPIO. Es gibt einfarbige CCT, RGB, RGBW and RGBCCT Streifen. Zudem braucht man nicht nur ein Mikrocontroller, sondern in jedem Fall einige zusätzlichen Komponenten wie MOSFETs.</p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-3-heading-2">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-2" aria-expanded="false" aria-controls="accordion-tab-3-content-2"><a href="#tab3faq2">Was ist bei dem LED Typ WS2814 (12V oder 24V) zu beachten?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-2" aria-expanded="false" aria-controls="accordion-tab-3-content-2"><a href="#tab3faq2"><div itemprop="name">Was ist bei dem LED Typ WS2814 (12V oder 24V) zu beachten?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-3-content-2" aria-labelledby="accordion-tab-3-heading-2" data-bs-parent="#accordion-tab-3">
-<div class="accordion-body"><p>LED Streifen mit diesem Typ sind RGBW Streifen, ähnlich wie SK6812 Typ. Sie müssen also in WLED Einstellungen als SK6812 Typ behandelt werden. Zudem bei diesen Streifen ist oft der weiße Kanal und der Grüne Kanal vertauscht, man muss also in WLED Einstellungen „Swap W & G“ einstellen. Diese Einstellungsoption gibt es erst ab WLED Version 0.14.0-beta1.<br> ##03##Was ist bei adressierbaren 12V und 24V LED Typen zu beachten?<br>Zu einem ist bei diesen Typen ein störungsfreier Betrieb meistens nur mit einem LevelShifter möglich. Zum andren ist oft bei diesen Typen einzelne LEDs in Gruppen von 3 (bei 12V) oder in Gruppen von 6 (bei 24V) geordnet. LEDs in einer Gruppe lassen sich nicht unabhängig voneinander einsteuern. Man spricht auch von einer logischen LED, die dann physikalisch halt aus 3 oder 6 LEDs besteht.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>LED Streifen mit diesem Typ sind RGBW Streifen, ähnlich wie SK6812 Typ. Sie müssen also in WLED Einstellungen als SK6812 Typ behandelt werden. Zudem bei diesen Streifen ist oft der weiße Kanal und der Grüne Kanal vertauscht, man muss also in WLED Einstellungen „Swap W & G“ einstellen. Diese Einstellungsoption gibt es erst ab WLED Version 0.14.0-beta1.<br> ##03##Was ist bei adressierbaren 12V und 24V LED Typen zu beachten?<br>Zu einem ist bei diesen Typen ein störungsfreier Betrieb meistens nur mit einem LevelShifter möglich. Zum andren ist oft bei diesen Typen einzelne LEDs in Gruppen von 3 (bei 12V) oder in Gruppen von 6 (bei 24V) geordnet. LEDs in einer Gruppe lassen sich nicht unabhängig voneinander einsteuern. Man spricht auch von einer logischen LED, die dann physikalisch halt aus 3 oder 6 LEDs besteht.</p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-3-heading-3">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-3" aria-expanded="false" aria-controls="accordion-tab-3-content-3"><a href="#tab3faq3">Was ist ein Clock Signal?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-3" aria-expanded="false" aria-controls="accordion-tab-3-content-3"><a href="#tab3faq3"><div itemprop="name">Was ist ein Clock Signal?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-3-content-3" aria-labelledby="accordion-tab-3-heading-3" data-bs-parent="#accordion-tab-3">
-<div class="accordion-body"><p>Die meisten adressierbaren LED Typen benötigen nur ein Datensignal für die Ansteuerung. Die Frequenz des Steuersignals ist bei diesen Typen fest. Es gibt aber auch adressierbaren LED Typen, die außer Datensignal ein Clock-Signal benötigen. Bei diesen Typen wird als Taktgeber vom Controller an LED Streifen ein Clock Signal übertragen. Für diese Typen werden also für die Ansteuerung zwei GPIOs gebraucht und diese müssen in WLED Einstellungen korrekt eingestellt werden. Der Vorteil ist, dass durch die Clock-Steuerung eine schnellere Datenübertragung vom Controller an LED Streifen möglich. Es lassen sich schnellere Effekte bei sehr vielen LEDs ablaufen.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Die meisten adressierbaren LED Typen benötigen nur ein Datensignal für die Ansteuerung. Die Frequenz des Steuersignals ist bei diesen Typen fest. Es gibt aber auch adressierbaren LED Typen, die außer Datensignal ein Clock-Signal benötigen. Bei diesen Typen wird als Taktgeber vom Controller an LED Streifen ein Clock Signal übertragen. Für diese Typen werden also für die Ansteuerung zwei GPIOs gebraucht und diese müssen in WLED Einstellungen korrekt eingestellt werden. Der Vorteil ist, dass durch die Clock-Steuerung eine schnellere Datenübertragung vom Controller an LED Streifen möglich. Es lassen sich schnellere Effekte bei sehr vielen LEDs ablaufen.</p></div>
 </div>
 </div>
 </div>
 </div></div>
 <div class="tab-pane" id="tab4" role="tabpanel" aria-labelledby="tab4"><div class="accordion" id="accordion-tab-4">
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-4-heading-1">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-1" aria-expanded="false" aria-controls="accordion-tab-4-content-1"><a href="#tab4faq1">Welchen Querschnitt müssen die Kabel besitzen?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-1" aria-expanded="false" aria-controls="accordion-tab-4-content-1"><a href="#tab4faq1"><div itemprop="name">Welchen Querschnitt müssen die Kabel besitzen?</div></a></button>
 </h5>
 </div>
 <div class="collapse show" id="accordion-tab-4-content-1" aria-labelledby="accordion-tab-4-heading-1" data-bs-parent="#accordion-tab-4">
-<div class="accordion-body"><p>Die Leitungen für die Datenübertragung (Daten- und ggf. Clock-Signale) können einen sehr kleinen Querschnitt besitzen, weil da kaum Strom fließt. Die Leitungen für die Stromversorgung (GND und 5V/12V/24V etc.) müssen aber ordentlich dimensioniert werden. Dafür sollte man ausreichende elektrotechnischen Kenntnisse besitzen. Als eine Hilfe kann für die Auslegung der <a href="https://wled-calculator.github.io" target=”_blank” rel="noopener">WLED Calculator</a> verwendet werden.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Die Leitungen für die Datenübertragung (Daten- und ggf. Clock-Signale) können einen sehr kleinen Querschnitt besitzen, weil da kaum Strom fließt. Die Leitungen für die Stromversorgung (GND und 5V/12V/24V etc.) müssen aber ordentlich dimensioniert werden. Dafür sollte man ausreichende elektrotechnischen Kenntnisse besitzen. Als eine Hilfe kann für die Auslegung der <a href="https://wled-calculator.github.io" target=”_blank” rel="noopener">WLED Calculator</a> verwendet werden.</p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-4-heading-2">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-2" aria-expanded="false" aria-controls="accordion-tab-4-content-2"><a href="#tab4faq2">Braucht man eine Sicherung? Welche?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-2" aria-expanded="false" aria-controls="accordion-tab-4-content-2"><a href="#tab4faq2"><div itemprop="name">Braucht man eine Sicherung? Welche?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-4-content-2" aria-labelledby="accordion-tab-4-heading-2" data-bs-parent="#accordion-tab-4">
-<div class="accordion-body"><p>Für einen sicheren Betrieb müssen die Leitungen und LED Streifen unter anderem gegen Überlast und Kurzschluss abgesichert werden. Das ist allerdings nicht damit getan, einfach irgendeine Sicherung einzubauen. Eine Sicherung, z.B. eine Schmelzsicherung, ist nur dann wirksam, wenn sie richtig ausgelegt ist. Dafür sollte man ausreichende elektrotechnischen Kenntnisse besitzen. Als eine Hilfe kann für die Auslegung der <a href="https://wled-calculator.github.io" target=”_blank” rel="noopener">WLED Calculator</a> verwendet werden.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Für einen sicheren Betrieb müssen die Leitungen und LED Streifen unter anderem gegen Überlast und Kurzschluss abgesichert werden. Das ist allerdings nicht damit getan, einfach irgendeine Sicherung einzubauen. Eine Sicherung, z.B. eine Schmelzsicherung, ist nur dann wirksam, wenn sie richtig ausgelegt ist. Dafür sollte man ausreichende elektrotechnischen Kenntnisse besitzen. Als eine Hilfe kann für die Auslegung der <a href="https://wled-calculator.github.io" target=”_blank” rel="noopener">WLED Calculator</a> verwendet werden.</p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-4-heading-3">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-3" aria-expanded="false" aria-controls="accordion-tab-4-content-3"><a href="#tab4faq3">Was sind die Zwischeneinspeisungen? Brauche ich sie und wie viele?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-3" aria-expanded="false" aria-controls="accordion-tab-4-content-3"><a href="#tab4faq3"><div itemprop="name">Was sind die Zwischeneinspeisungen? Brauche ich sie und wie viele?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-4-content-3" aria-labelledby="accordion-tab-4-heading-3" data-bs-parent="#accordion-tab-4">
-<div class="accordion-body"><p>Ein längeres LED Streifen mit vielen LEDs kann recht viel Strom benötigen. Diesen Strom kann man nicht in voller Höhe nur am Beginn eines LED Streifens einspeisen. Das Problem ist, dass wegen des Spannungsabfalls innerhalb des Streifens an hinteren LEDs dann zu wenig Spannung ankommt, so dass diese dann nicht mit voller Stärke leuchten oder sogar die Farben verfälschen. Es kann also notwendig sein, LED Streifen auch von hinten oder sogar zusätzlich auch an einer oder mehreren Stellen dazwischen mit Strom zu versorgen. Wie viele Einspeisungen man idealerweise braucht, kann mit dem <a href="https://wled-calculator.github.io" target=”_blank” rel="noopener">WLED Calculator</a> berechnet werden.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Ein längeres LED Streifen mit vielen LEDs kann recht viel Strom benötigen. Diesen Strom kann man nicht in voller Höhe nur am Beginn eines LED Streifens einspeisen. Das Problem ist, dass wegen des Spannungsabfalls innerhalb des Streifens an hinteren LEDs dann zu wenig Spannung ankommt, so dass diese dann nicht mit voller Stärke leuchten oder sogar die Farben verfälschen. Es kann also notwendig sein, LED Streifen auch von hinten oder sogar zusätzlich auch an einer oder mehreren Stellen dazwischen mit Strom zu versorgen. Wie viele Einspeisungen man idealerweise braucht, kann mit dem <a href="https://wled-calculator.github.io" target=”_blank” rel="noopener">WLED Calculator</a> berechnet werden.</p></div>
 </div>
 </div>
 </div>
 </div></div>
 <div class="tab-pane" id="tab5" role="tabpanel" aria-labelledby="tab5"><div class="accordion" id="accordion-tab-5">
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-5-heading-1">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-1" aria-expanded="false" aria-controls="accordion-tab-5-content-1"><a href="#tab5faq1">Welche aktive WLED Abzweigungen gibt es?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-1" aria-expanded="false" aria-controls="accordion-tab-5-content-1"><a href="#tab5faq1"><div itemprop="name">Welche aktive WLED SW Abzweigungen gibt es?</div></a></button>
 </h5>
 </div>
 <div class="collapse show" id="accordion-tab-5-content-1" aria-labelledby="accordion-tab-5-heading-1" data-bs-parent="#accordion-tab-5">
-<div class="accordion-body"><p>Es sind vor allem drei Abzweigungen relevant:<br>1. Das Original: Aircoookie WLED. Das ist die ursprüngliche/originale WLED SW. Bis zu Version 0.13.3 gab es in dieser Version keine Möglichkeit Sound Reactive WLED zu machen. Ab Version 0.14.0 ist ein sog. Audio Reactive Usermod vorhanden.<br>2. Sound Reactive WLED: dieser Zweig ist vor einigen Jahren entstanden und implementiert die sogenannte Sound Reactive WLED. Dabei ist es möglich mit einem Mikrofon oder Line-In Eingang an erreichen, dass die LEDs auf die Musik (oder andere Geräusche) reagieren und zum Beispiel in Takt dann leuchten.<br>3. MoonModules WLED: diese Abzweigung ist eine „Spielwiese“, geschaffen durch einige WLED Entwickler, um vor allem neue Funktionen auszuprobieren oder Änderungen an vorhandenem Code zu testen.<br>Über diesen <a href="https://wled-install.github.io" target=”_blank” rel="noopener">WLED Installer</a> können Sie sich jede Version installieren und ausprobieren.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Es sind vor allem drei Abzweigungen relevant:<br>1. Das Original: Aircoookie WLED. Das ist die ursprüngliche/originale WLED SW. Bis zu Version 0.13.3 gab es in dieser Version keine Möglichkeit Sound Reactive WLED zu machen. Ab Version 0.14.0 ist ein sog. Audio Reactive Usermod vorhanden.<br>2. Sound Reactive WLED: dieser Zweig ist vor einigen Jahren entstanden und implementiert die sogenannte Sound Reactive WLED. Dabei ist es möglich mit einem Mikrofon oder Line-In Eingang an erreichen, dass die LEDs auf die Musik (oder andere Geräusche) reagieren und zum Beispiel in Takt dann leuchten.<br>3. MoonModules WLED: diese Abzweigung ist eine „Spielwiese“, geschaffen durch einige WLED Entwickler, um vor allem neue Funktionen auszuprobieren oder Änderungen an vorhandenem Code zu testen.<br>Über diesen <a href="https://wled-install.github.io" target=”_blank” rel="noopener">WLED Installer</a> können Sie sich jede Version installieren und ausprobieren.</p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-5-heading-2">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-2" aria-expanded="false" aria-controls="accordion-tab-5-content-2"><a href="#tab5faq2">Was ist ein Usermod?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-2" aria-expanded="false" aria-controls="accordion-tab-5-content-2"><a href="#tab5faq2"><div itemprop="name">Was ist ein Usermod in WLED SW?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-5-content-2" aria-labelledby="accordion-tab-5-heading-2" data-bs-parent="#accordion-tab-5">
-<div class="accordion-body"><p>Ein Usermod ist im Prinzip eine Erweiterung, die ein Nutzer/Programmierer zusätzlich zum Grundfunktionsumfang der WLED Software programmieren kann. Um ein Usermod nutzen zu können, muss dieser zusammen mit WLED Software kompiliert werden. Offizielle WLED Releases beinhalten keine Usermods, inoffizielle Quellen wie <a href="https://wled-install.github.io" target=”_blank” rel="noopener">WLED Installer</a> bieten auch bereits kompilierte WLED Versionen mit einigen Usermods an.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Ein Usermod ist im Prinzip eine Erweiterung, die ein Nutzer/Programmierer zusätzlich zum Grundfunktionsumfang der WLED Software programmieren kann. Um ein Usermod nutzen zu können, muss dieser zusammen mit WLED Software kompiliert werden. Offizielle WLED Releases beinhalten keine Usermods, inoffizielle Quellen wie <a href="https://wled-install.github.io" target=”_blank” rel="noopener">WLED Installer</a> bieten auch bereits kompilierte WLED Versionen mit einigen Usermods an.</p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-5-heading-3">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-3" aria-expanded="false" aria-controls="accordion-tab-5-content-3"><a href="#tab5faq3">Was ist ein Segment?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-3" aria-expanded="false" aria-controls="accordion-tab-5-content-3"><a href="#tab5faq3"><div itemprop="name">Was ist ein Segment in WLED SW?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-5-content-3" aria-labelledby="accordion-tab-5-heading-3" data-bs-parent="#accordion-tab-5">
-<div class="accordion-body"><p>Segmente sind die Möglichkeit, ein LED Streifen in virtuelle Teile aufzuteilen um jedem Teil eine eigene Farbe oder ein eigenes Effekt zuzuweisen. Damit lassen sich vielfältige Effekte realisieren. Z.B. man kann LED Streifen in zwei Segmente aufteilen und das zweite Segment als ein gespiegeltes einstellen: damit kann man dann symmetrische Effekte realisieren.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Segmente sind die Möglichkeit, ein LED Streifen in virtuelle Teile aufzuteilen um jedem Teil eine eigene Farbe oder ein eigenes Effekt zuzuweisen. Damit lassen sich vielfältige Effekte realisieren. Z.B. man kann LED Streifen in zwei Segmente aufteilen und das zweite Segment als ein gespiegeltes einstellen: damit kann man dann symmetrische Effekte realisieren.</p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-5-heading-4">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-4" aria-expanded="false" aria-controls="accordion-tab-5-content-4"><a href="#tab5faq4">Was bedeuten Symbole „Palette“, „Matrix“, „Note“ und „Doppelte Note“ bei Effekten?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-4" aria-expanded="false" aria-controls="accordion-tab-5-content-4"><a href="#tab5faq4"><div itemprop="name">Was bedeuten Symbole „Palette“, „Matrix“, „Note“ und „Doppelte Note“ bei WLED Effekten?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-5-content-4" aria-labelledby="accordion-tab-5-heading-4" data-bs-parent="#accordion-tab-5">
-<div class="accordion-body"><p>Ab WLED Version 14.0 werden bei Effekten zusätzliche Symbole angezeigt. Diese weisen auf bestimmte Möglichkeiten oder Besonderheiten des jeweiligen Effekts hin:<br>„Palette“: Bei diesem Effekt können unterschiedliche Paletten eingestellt werden.<br>„Matrix“: Diese Effekte sind 2D Effekte für LED Matrizen<br>„Note“: Dieser Effekt ist ein Audio Reactive Effekt und reagiert auf die Lautstärke des Audiosignals.<br>„Doppelte Note“: Dieser Effekt ist ein Audio Reactive Effekt und reagiert auf die Frequenzen in dem Audiosignal.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Ab WLED Version 14.0 werden bei Effekten zusätzliche Symbole angezeigt. Diese weisen auf bestimmte Möglichkeiten oder Besonderheiten des jeweiligen Effekts hin:<br>„Palette“: Bei diesem Effekt können unterschiedliche Paletten eingestellt werden.<br>„Matrix“: Diese Effekte sind 2D Effekte für LED Matrizen<br>„Note“: Dieser Effekt ist ein Audio Reactive Effekt und reagiert auf die Lautstärke des Audiosignals.<br>„Doppelte Note“: Dieser Effekt ist ein Audio Reactive Effekt und reagiert auf die Frequenzen in dem Audiosignal.</p></div>
 </div>
 </div>
 </div>
 </div></div>
 <div class="tab-pane" id="tab6" role="tabpanel" aria-labelledby="tab6"><div class="accordion" id="accordion-tab-6">
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-6-heading-1">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-6-content-1" aria-expanded="false" aria-controls="accordion-tab-6-content-1"><a href="#tab6faq1">Wie kann ich einstellen, dass beim Hochfahren WLED eine bestimmte Farbe einstellt oder ein bestimmtes Effekt abspielt?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-6-content-1" aria-expanded="false" aria-controls="accordion-tab-6-content-1"><a href="#tab6faq1"><div itemprop="name">Wie kann ich einstellen, dass beim Hochfahren WLED eine bestimmte Farbe einstellt oder ein bestimmtes Effekt abspielt?</div></a></button>
 </h5>
 </div>
 <div class="collapse show" id="accordion-tab-6-content-1" aria-labelledby="accordion-tab-6-heading-1" data-bs-parent="#accordion-tab-6">
-<div class="accordion-body"><p>Dafür sind zwei Schritte notwendig. Erstens muss man ein Preset erstellen, der die gewünschte Farbe oder ein Effekt aktiviert. Zweitens muss man unter Config -> LED Preferences bei der Einstellung „Apply preset … at boot“ den ID von dem erstellten Preset eintragen und unten auf „Save“ klicken.<br>Genau so kann auch eine ganze Playliste beim Hochfahren abgespielt werden. Dafür muss man anstatt Preset ID einen Playlist ID in die oben genannte Einstellung eintragen.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Dafür sind zwei Schritte notwendig. Erstens muss man ein Preset erstellen, der die gewünschte Farbe oder ein Effekt aktiviert. Zweitens muss man unter Config -> LED Preferences bei der Einstellung „Apply preset … at boot“ den ID von dem erstellten Preset eintragen und unten auf „Save“ klicken.<br>Genau so kann auch eine ganze Playliste beim Hochfahren abgespielt werden. Dafür muss man anstatt Preset ID einen Playlist ID in die oben genannte Einstellung eintragen.</p></div>
 </div>
 </div>
 </div>
 </div></div>
 <div class="tab-pane" id="tab7" role="tabpanel" aria-labelledby="tab7"><div class="accordion" id="accordion-tab-7">
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-7-heading-1">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-7-content-1" aria-expanded="false" aria-controls="accordion-tab-7-content-1"><a href="#tab7faq1">Was ist ein Preset?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-7-content-1" aria-expanded="false" aria-controls="accordion-tab-7-content-1"><a href="#tab7faq1"><div itemprop="name">Was ist ein Preset in WLED SW?</div></a></button>
 </h5>
 </div>
 <div class="collapse show" id="accordion-tab-7-content-1" aria-labelledby="accordion-tab-7-heading-1" data-bs-parent="#accordion-tab-7">
-<div class="accordion-body"><p>Ein Preset ist eine gespeicherte LED Lichtkonfiguration, die man später erneut aufrufen kann, ohne dass man alles wieder neu einstellen muss. Man kann zum Beispiel für ein bestimmtes gewünschtes Effekt Segmente einstellen, für jedes Segment eine Farbe oder ein Effekt definieren. Diese Einstellungen kann man dann in einem Preset abspeichern und mit einem Click immer wieder aufrufen, wen man es braucht. Man kann auch in WLED Einstellungen einstellen, dass ein bestimmtes Preset beim Start des Controllers automatisch aufgerufen wird. Oder man kann ein physikalischer Taster an den Controller anschließen und diesem Taster dann ein Preset zuweisen. Oder man kann in WLED Einstellungen einstellen, dass ein Preset zu einer bestimmter Tageszeit aktiviert wird.</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Ein Preset ist eine gespeicherte LED Lichtkonfiguration, die man später erneut aufrufen kann, ohne dass man alles wieder neu einstellen muss. Man kann zum Beispiel für ein bestimmtes gewünschtes Effekt Segmente einstellen, für jedes Segment eine Farbe oder ein Effekt definieren. Diese Einstellungen kann man dann in einem Preset abspeichern und mit einem Click immer wieder aufrufen, wen man es braucht. Man kann auch in WLED Einstellungen einstellen, dass ein bestimmtes Preset beim Start des Controllers automatisch aufgerufen wird. Oder man kann ein physikalischer Taster an den Controller anschließen und diesem Taster dann ein Preset zuweisen. Oder man kann in WLED Einstellungen einstellen, dass ein Preset zu einer bestimmter Tageszeit aktiviert wird.</p></div>
 </div>
 </div>
 </div>
-<div class="accordion-item">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-7-heading-2">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-7-content-2" aria-expanded="false" aria-controls="accordion-tab-7-content-2"><a href="#tab7faq2">Was ist ein Playlist?</a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-7-content-2" aria-expanded="false" aria-controls="accordion-tab-7-content-2"><a href="#tab7faq2"><div itemprop="name">Was ist ein Playlist in WLED SW?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-7-content-2" aria-labelledby="accordion-tab-7-heading-2" data-bs-parent="#accordion-tab-7">
-<div class="accordion-body"><p>Playlist (eine Playliste) ist die Möglichkeit eine ganze Reihe von Presets nacheinander abspielen zu lassen. So lassen sich aus einzelnen Effekten noch komplexere Effekte erstellen. Für jeden Preset kann man dabei die Abspieldauer (Duration) du die Übergangszeit zum nächsten Preset (Transition) definieren. Man kann wählen, ob die Playliste nur einmal oder unendlich oft (Repeat indefinately) abgespielt wird. Man kann auch einstellen, dass einzelne Presets in der Playliste nicht in definierter Reihenfolge, sondern zufällig nacheinander abgespielt werden (Shuffle).</p>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Playlist (eine Playliste) ist die Möglichkeit eine ganze Reihe von Presets nacheinander abspielen zu lassen. So lassen sich aus einzelnen Effekten noch komplexere Effekte erstellen. Für jeden Preset kann man dabei die Abspieldauer (Duration) du die Übergangszeit zum nächsten Preset (Transition) definieren. Man kann wählen, ob die Playliste nur einmal oder unendlich oft (Repeat indefinately) abgespielt wird. Man kann auch einstellen, dass einzelne Presets in der Playliste nicht in definierter Reihenfolge, sondern zufällig nacheinander abgespielt werden (Shuffle).</p></div>
 </div>
 </div>
 </div>

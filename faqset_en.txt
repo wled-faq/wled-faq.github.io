@@ -19,26 +19,26 @@ The most common mistakes are:
 
 ##01##What password has WLED-AP?
 If WLED software is installed on your controller for the first time and you have not already entered your WiFi data during installation with the web-based installer, then the WLED controller creates an access point (WLAN) with the name WLED-AP. The password for this WiFi is wled1234.
-##01## I have set the wrong password for my WLAN, what should I do?
+##01## I have set in WLED the wrong password for my WLAN, what should I do?
 In the initial state with default settings, WLED SW tries to connect to the WiFi selected. If it doesn't work, WLED-AP is created again. So just wait until WLED-AP reappears. However, this behavior can be changed in WLED settings. For example, WLED-AP can be prevented entirely. If you have already set it this way, only a "hard reset" or new flashing with WLED SW will help.
-##02##Which microcontroller types are supported?
+##02##Which microcontroller types are supported by WLED software?
 Currently (as of summer 2023) only the microcontrollers from Espressif, types ESP8266 and ESP32 (with dual core) are fully supported. Some of the newer types like ESP32-C3, ESP32-S2 and ESP32-S3 are experimentally supported, but productive use is not recommended yet because many bugs are suspected. In addition, the installation of these newer types is not that easy: there are several hardware variations/boards for which the SW must be specially compiled. It should also be mentioned that some ESP32-C3 boards (so-called C3 mini V1.0.0) are still being sold on the market where WLAN does not work properly.
-##02##Is a LevelShifter really needed?
+##02##Is a LevelShifter really needed in WLED controller?
 Many 5V LED strips can also be operated without a level shifter, especially if the wire between the controller and the LED strip is very short. Sometimes, however, flickering can occur, e.g. the LEDs briefly flash white. Larger disruptions are also possible. With 12V or 24V LED strips, you usually cannot proceed without a level shifter. However, a level shifter is also expressly recommended for 5V LED strips, especially in productive use, to ensure trouble-free operation: a level shifter adapts the signal level of the microcontroller (3.3V) to the signal level of the LED strip (5V for all addressable LED types).
 Professional WLED controllers always have an integrated level shifter.
 ##02##Which LevelShifters are recommended?
 The control of the addressable LED strips runs with control signals, which have a basic frequency in the range of 800 kHz up to the single-digit MHz range (depending on the type). Accordingly, a level shifter must be fast enough to be able to pass on these signals cleanly. Fast types such as SN74AHCT125, SN74AHCT32 or SN74LVC2T45 are therefore recommended. Types like SN74HCT (i.e. without “A”) are a bit slow and OK for LED types like WS2812B, but can be too slow for some other LED types. In any case, ready-made bidirectional I2C level shifters built with transistors are not recommended. If necessary, these can be used, but you should then replace the pull-up resistor at the output (usually 10 kOhm) with a smaller one (<=1 kOhm).
-##02##Does a resistor have to be installed in the data line between the controller and the LED strip?  Which one?
+##02##Does a resistor have to be installed in the data line between the WLED controller and the LED strip?  Which one?
 In most cases, a resistor in the 33K to 68K ohm range is recommended. The old recommendation was 470 kOhm, but from today's point of view the value in this range is not OK. In principle, operation without a resistor is also possible, but should be avoided in productive use.
 ##02##Is a ready-made WLED controller recommended, or can one be assembled from individual components?
 The answer depends on what you want to do with it. An ESP8266 or ESP32 microcontroller board without any additional components is sufficient for experimenting/trying it out. If you want to do a clean installation that should work for a longer period of time without problems, you really can't get around a ready-made professional part. Qualitative, ready-made WLED controllers not only integrate all the necessary components, they are also significantly more reliable than any hand-soldered PCBs due to industrial production/assembly. The worst idea is to build the whole thing with jumper wire or something similar: not only are loose contacts pre-programmed, but you can also create a high safety risk with them.
 
-##03##Which LED strip types are supported?
+##03##Which LED strip types are supported by WLED software?
 WLED makes most sense with so-called digital, addressable LED strips, where you can control individual LEDs separately. This allows you to set many effects. The supported types are: WS2801, WS2811, WS2812B, WS2813, WS2814, WS1815, SK6812, APA102, LPD8806, SK9822, TM1814, GS8208. There are sometimes new types coming onto the market that have a compatible control protocol.
 However, WLED SW also supports the so-called analog LED strips, where all LEDs can only be controlled in the same way. These types need their own GPIO for each color. There are monochrome CCT, RGB, RGBW and RGBCCT strips. In addition, you not only need a microcontroller, but in any case some additional components such as MOSFETs.
-##03##What should you watch out for with the LED type WS2814 (12V or 24V)?
+##03##What should I consider when using LED type WS2814 (12V or 24V)?
 LED strips of this type are RGBW strips, similar to SK6812 type. They must therefore be treated as SK6812 type in WLED LED preferences. In addition, in these strips, the white channel and the green channel are often swapped, so you have to set "Swap W & G" in the WLED preferences. This setting option is only available starting with WLED version 0.14.0-beta1.
- ##03##What should you watch out for with addressable 12V and 24V LED types?
+ ##03##What should I consider using addressable 12V and 24V LED types?
 On the one hand, with these types, trouble-free operation is usually only possible with a LevelShifter. On the other hand, these types often have individual LEDs arranged in groups of 3 (at 12V) or in groups of 6 (at 24V). LEDs in a group cannot be controlled independently of each other. One also speaks of a logical LED, which then physically consists of 3 or 6 LEDs.
 ##03##What is a clock signal?
 Most addressable LED strip types only require a data signal for control. The frequency of the control signal is fixed for these types. However, there are also addressable LED types that require a clock signal in addition to the data signal. With these types, a clock signal is transmitted from the controller to the LED strips. In this case two GPIOs are needed for the control and these must be set correctly in the WLED settings. The advantage is that the clock control enables faster data transfer from the controller to the LED strips. Faster effects can be run with a large number of LEDs.
@@ -48,17 +48,17 @@ The lines for data transmission (data and eventually clock signals) can have a v
 For safe operation, the cables and LED strips must be, among other, protected against overload and short circuits. However, this is not done by simply installing any fuse. A fuse, e.g. a melting fuse, is only effective if it is correctly rated. For this you should have sufficient electrical knowledge. The WLED Calculator can be used as a basis for the design.
 ##04##What are the power injections? Do I need them and how many?
 A longer LED strip with many LEDs can require quite a lot of power. In this case the current cannot be fed in full only at the beginning of an LED strip. The problem is that because of the voltage drop within the strip, too little voltage arrives at the rear LEDs, so that they don't shine with full intensity or the colors are even distorted. It may therefore be necessary to supply LED strips with power from back side or even additionally at one or more points in between. How many injections you need can be calculated with the WLED Calculator.
-##05##What active WLED SW forks are there?
+##05##What active WLED software forks exist?
 Three WLED SW forks are particularly important:
 1. The Original: Aircoookie WLED. This is the original WLED SW. Up to version 0.13.3 there was no way to make Sound Reactive WLED using this version. Beginning with version 0.14.0 a so-called Audio Reactive Usermod is available.
 2. Sound Reactive WLED: this branch was created a few years ago and implements the so-called Sound Reactive WLED. With a microphone or line-in input it is possible to have the LEDs react to the music (or other noises) and then light up with music beats, for example.
 3. MoonModules WLED: this branch is a "playground" created by some WLED developers, mainly to try out new functions or to test experimental changes of existing code.
 With this WLED installer you can install and try out every version.
-##05##What is a “Usermod”?
+##05##What is a “Usermod” in WLED software?
 In principle, a Usermod is an extension that a user/programmer can program in addition to the basic functions of the WLED software. In order to be able to use a Usermod, it must be compiled together with WLED software. Official WLED releases do not contain any Usermods, unofficial sources such as WLED Installer also offer pre-compiled WLED versions with some Usermods included.
-##05##What is a segment?
+##05##What is a segment in WLED software?
 Segments add the ability to divide an LED strip into virtual parts to assign each part its own color or effect. This allows a variety of special effects to be realized. For example, you can split LED strips into two segments and set the second segment as a mirrored one: this way you can create symmetrical effects.
-##05##What do Palette, Matrix, Note, and Double Note icons mean in effects?
+##05##What do Palette, Matrix, Note, and Double Note icons mean in WLED effects?
 As of WLED version 14.0, additional symbols are displayed for effects. These indicate certain possibilities or special features of the respective effect:
 "Palette": with this effect, different color palettes can be set.
 "Matrix": these effects are 2D effects for LED matrices.
@@ -67,8 +67,8 @@ As of WLED version 14.0, additional symbols are displayed for effects. These ind
 ##06##How can I make the WLED set a specific color or play a specific effect on startup?
 Two steps are necessary for this. First, you have to create a preset that activates the desired color or effect. Second, you have to enter the ID of the created preset under Config -> LED Preferences in the setting “Apply preset … at boot” and then click on “Save” at the bottom of the preferences page.
 In exactly the same way, an entire playlist can be played when booting up. For this you have to enter a playlist ID in the above setting instead of a preset ID.
-##07##What is a preset?
+##07##What is a preset in WLED Software?
 A preset is a saved LED light configuration that you can recall later without having to set every details again. For example, you can set segments for a certain desired effect, define a color or an effect for each segment. You can then save these settings in a preset and call them up again and again with only one click when you need them. You can also set in WLED settings that a certain preset is automatically called up when the controller is started. Or you can connect a physical button to the controller and then assign a preset to that button. Or you can set in WLED settings that a preset is activated at a certain time of day.
-##07##What is a playlist?
+##07##What is a playlist in WLED software?
 Playlist is the possibility to play a whole series of presets one after the other. In this way, even more complex effects can be created based on simple effects. For each preset you can define the playing time (duration) and the transition time to the next preset (transition). You can choose whether the playlist must be played only once or repeated indefinitely. You can also set that individual presets in the playlist are not played in a defined order, but randomly one after the other (shuffle).
 

@@ -9,7 +9,7 @@
 ###06###Einstellungen
 ###07###Presets und Playlists
 
-##01##Was sind die häufigsten Fehler bei der Inbetriebnahme?
+##01##Was sind die häufigsten Fehler bei der Inbetriebnahme von WLED?
 Die häufigsten Fehler sind:
 1. LED Streifen ist von hinten an angeschlossen: adressierbare LED Streifen haben eine Richtung, die durch kleine Pfeile auf dem Streifen gekennzeichnet ist. Der Anschluss der Datenleitung muss unbedingt von der Seite erfolgen, wo der Pfeil beginnt.
 2. Falsches GPIO eingestellt: Prüfen Sie in WLED Einstellungen, ob als Datenausgang die richtige GPIO Nummer eingestellt ist. Die fertigen Controller haben korrekte Einstellungen meistens entweder auf dem Gehäuse oder auf der Platine aufgedruckt.
@@ -19,20 +19,20 @@ Die häufigsten Fehler sind:
 
 ##01##Welches Password hat WLED-AP?
 Wenn WLED Software auf ihrem Controller zum ersten Mal installiert ist und Sie nicht bereits bei der Installation mit dem WEB-basierten Installer Ihre WiFi daten eingegeben haben, dann erzeugt bei einem Neustart der WLED Controller einen Access Point (WLAN) mit dem Namen WLED-AP. Das Passwort für dieses WLAN ist wled1234.
-##01##Ich habe Password für mein WLAN falsch eingestellt, was tun?
+##01##Ich habe Password für mein WLAN in WLED falsch eingestellt, was tun?
 Im initialen Zustand mit default Einstellungen versucht WLED SW mit dem eingegebenen WLAN sich zu verbinden. Klappt es nicht, wird wieder WLED-AP erzeugt. Also warten Sie einfach, bis WLED-AP wieder erscheint. Dieses verhalten kann jedoch in WLED Einstellungen geändert werden. WLED-AP kann also z.B. ganz verhindert werden. Wenn Sie das bereits so eingestellt haben, dann hilft nur ein „Hardreset“ oder Neuflaschen mit WLED SW.
-##02##Welche Mikrocontroller Typen werden unterstützt?
+##02##Welche Mikrocontroller Typen werden von WLED SW unterstützt?
 Aktuell (Stand Sommer 2023) werden vollständig nur die Mikrocontroller der Firma Espressif, Typen ESP8266 und ESP32 (mit Dual Core) unterstützt. Einige der neueren Typen wie ESP32-C3, ESP32-S2 und ESP32-S3 werden experimentell unterstützt, es ist aber noch kein produktiver Einsatz empfohlen, weil noch viele Bugs vermutet werden. Außerdem ist die Installation bei diesen neueren Typen nicht so einfach: es existieren mehrere Hardwarevariationen/Boards, für die man die SW speziell kompilieren muss. Zu erwähnen ist noch, dass am Markt immer noch einige ESP32-C3 Boards (sog. Mini Ver 1.0.0) verkauft werden, wo WLAN nicht richtig funktioniert.
-##02##Wird ein LevelShifter wirklich benötigt?
+##02##Wird ein LevelShifter beim WLED Controller wirklich benötigt?
 Viele 5V LED Streifen lassen sich auch ohne LevelShifter betreiben, insbesondere wenn die Leitung zwischen dem Controller und dem LED Streifen sehr kurz ist. Manchmal kann dabei aber zu Flickering kommen, z.B dass die LEDS mal kurz in weiß blinken. Auch größere Störungen sind möglich. Bei 12V oder 24V LED Streifen kommt man meistens ohne LevelShifter nicht klar. Ein LevelShifter wird aber auch bei 5V LED Streifen ausdrücklich empfohlen, insbesondere bei einem produktiven Einsatz, um einen störungsfreien Betrieb zu gewährleisten: ein LevelShifter passt den Signalpegel des Mikrocontrollers (3.3V) an den Signalpegel des LED Streifens (5V bei allen adressierbaren LED Typen).
 Professionelle WLED Controller haben einen LevelShifter immer integriert.
 ##02##Welche LevelShifter werden empfohlen?
 Die Ansteuerung der adressierbaren LED Streifen Läuft mit Steuersignalen, welche eine Grundfrequenz im Bereich 800 kHz bis ins einstelligen MHz Bereich haben (je nach Typ). Entsprechend muss ein LevelShifter schnell genug sein, ob diese Signale sauber weiter geben zu können. Empfohlen werden daher schnelle Typen wie SN74AHCT125, SN74AHCT32 oder SN74LVC2T45. Typen wie SN74HCT (also ohne „A“) sind etwas langsamen und für LED Typen wie WS2812B i.O., für einige andere LED Typen können aber zu langsam sein. In jedem Fall nicht empfohlen sind mit Transistoren aufgebaute fertige bidirektionale I2C LevelShifter. Notfalls können diese verwendet werden, man sollte aber dann den Pull-Up Widerstand am Ausgang (meistens 10 kOhm) durch einen kleineren ersetzen (<=1 kOhm).
-##02##Muss in der Datenleitung zwischen dem Controller und LED Streifen ein Widerstand eingebaut werden, welcher?
+##02##Muss in der Datenleitung zwischen dem WLED Controller und LED Streifen ein Widerstand eingebaut werden, welcher?
 In meisten Fällen wird ein Widerstand im Bereich 33 kOhm bis 68 kOhm empfohlen. Die alte Empfehlung war 470 kOhm, der Wert in dieser Größenordnung ist aber aus heutiger Sicht nicht i.O. Ein Betrieb ohne einen Widerstand ist grundsätzlich auch möglich, sollte aber bei einem produktiven Einsatz vermieden werden. 
 ##02##Wird ein fertiger WLED Controller empfohlen, oder kann man sich ein aus einzelnen Komponenten zusammen bauen?
 Die Antwort hängt davon ab, was man damit machen möchte. Für experimentieren/rumprobieren reicht auch einfach ein ESP8266 oder ESP32 Mikrocontroller Board ohne weitere Komponenten. Möchte man eine saubere Installation machen, die länger ohne Störungen funktionieren soll, kommt man um ein fertiges Teil eigentlich nicht drum herum. Qualitative fertige WLED Controller integrieren nicht nur alle notwendigen Komponenten, sie sind auch aufgrund industrieller Fertigung/Bestückung deutlich zuverlässiger als jedes mit Hand gelötetes Aufbau. Die schlechteste Idee ist das Ganze mit Jumper Wire oder ähnliches aufzubauen: es sind nicht nur Wackelkontakte vorprogrammiert, sondern man erzeugt damit unter Umständen auch ein hohes Sicherheitsrisiko.
-##03##Welche LED Streifentypen werden unterstützt?
+##03##Welche LED Streifentypen werden von WLED SW unterstützt?
 Am meisten macht WLED mit sogenannten digitalen, adressierbaren LED Streifen Sinn, wo man einzelne LEDs separat ansteuern kann. Damit lassen sich viele Effekte einzustellen. Die Unterstützten Typen sind: WS2801, WS2811, WS2812B, WS2813, WS2814, WS1815, SK6812, APA102, LPD8806, SK9822, TM1814, GS8208. Es kommen auch immer wieder neue Typen auf den Markt, die einen kompatiblen Ansteuerungsprotokoll haben.
 WLED SW unterstützt aber auch die sogenannten Analogen LED Streifen, wo alle LEDs nur gleich eingesteuert werden können. Diese Typen brauchen pro Farbe einen eigenen GPIO. Es gibt einfarbige CCT, RGB, RGBW and RGBCCT Streifen. Zudem braucht man nicht nur ein Mikrocontroller, sondern in jedem Fall einige zusätzlichen Komponenten wie MOSFETs.
 ##03##Was ist bei dem LED Typ WS2814 (12V oder 24V) zu beachten?
@@ -47,17 +47,17 @@ Die Leitungen für die Datenübertragung (Daten- und ggf. Clock-Signale) können
 Für einen sicheren Betrieb müssen die Leitungen und LED Streifen unter anderem gegen Überlast und Kurzschluss abgesichert werden. Das ist allerdings nicht damit getan, einfach irgendeine Sicherung einzubauen. Eine Sicherung, z.B. eine Schmelzsicherung, ist nur dann wirksam, wenn sie richtig ausgelegt ist. Dafür sollte man ausreichende elektrotechnischen Kenntnisse besitzen. Als eine Hilfe kann für die Auslegung der WLED Calculator verwendet werden.
 ##04##Was sind die Zwischeneinspeisungen? Brauche ich sie und wie viele?
 Ein längeres LED Streifen mit vielen LEDs kann recht viel Strom benötigen. Diesen Strom kann man nicht in voller Höhe nur am Beginn eines LED Streifens einspeisen. Das Problem ist, dass wegen des Spannungsabfalls innerhalb des Streifens an hinteren LEDs dann zu wenig Spannung ankommt, so dass diese dann nicht mit voller Stärke leuchten oder sogar die Farben verfälschen. Es kann also notwendig sein, LED Streifen auch von hinten oder sogar zusätzlich auch an einer oder mehreren Stellen dazwischen mit Strom zu versorgen. Wie viele Einspeisungen man idealerweise braucht, kann mit dem WLED Calculator berechnet werden.
-##05##Welche aktive WLED Abzweigungen gibt es?
+##05##Welche aktive WLED SW Abzweigungen gibt es?
 Es sind vor allem drei Abzweigungen relevant:
 1. Das Original: Aircoookie WLED. Das ist die ursprüngliche/originale WLED SW. Bis zu Version 0.13.3 gab es in dieser Version keine Möglichkeit Sound Reactive WLED zu machen. Ab Version 0.14.0 ist ein sog. Audio Reactive Usermod vorhanden.
 2. Sound Reactive WLED: dieser Zweig ist vor einigen Jahren entstanden und implementiert die sogenannte Sound Reactive WLED. Dabei ist es möglich mit einem Mikrofon oder Line-In Eingang an erreichen, dass die LEDs auf die Musik (oder andere Geräusche) reagieren und zum Beispiel in Takt dann leuchten.
 3. MoonModules WLED: diese Abzweigung ist eine „Spielwiese“, geschaffen durch einige WLED Entwickler, um vor allem neue Funktionen auszuprobieren oder Änderungen an vorhandenem Code zu testen.
 Über diesen WLED Installer können Sie sich jede Version installieren und ausprobieren.
-##05##Was ist ein Usermod?
+##05##Was ist ein Usermod in WLED SW?
 Ein Usermod ist im Prinzip eine Erweiterung, die ein Nutzer/Programmierer zusätzlich zum Grundfunktionsumfang der WLED Software programmieren kann. Um ein Usermod nutzen zu können, muss dieser zusammen mit WLED Software kompiliert werden. Offizielle WLED Releases beinhalten keine Usermods, inoffizielle Quellen wie WLED Installer bieten auch bereits kompilierte WLED Versionen mit einigen Usermods an.
-##05##Was ist ein Segment?
+##05##Was ist ein Segment in WLED SW?
 Segmente sind die Möglichkeit, ein LED Streifen in virtuelle Teile aufzuteilen um jedem Teil eine eigene Farbe oder ein eigenes Effekt zuzuweisen. Damit lassen sich vielfältige Effekte realisieren. Z.B. man kann LED Streifen in zwei Segmente aufteilen und das zweite Segment als ein gespiegeltes einstellen: damit kann man dann symmetrische Effekte realisieren.
-##05##Was bedeuten Symbole „Palette“, „Matrix“, „Note“ und „Doppelte Note“ bei Effekten?
+##05##Was bedeuten Symbole „Palette“, „Matrix“, „Note“ und „Doppelte Note“ bei WLED Effekten?
 Ab WLED Version 14.0 werden bei Effekten zusätzliche Symbole angezeigt. Diese weisen auf bestimmte Möglichkeiten oder Besonderheiten des jeweiligen Effekts hin:
 „Palette“: Bei diesem Effekt können unterschiedliche Paletten eingestellt werden.
 „Matrix“: Diese Effekte sind 2D Effekte für LED Matrizen
@@ -66,9 +66,9 @@ Ab WLED Version 14.0 werden bei Effekten zusätzliche Symbole angezeigt. Diese w
 ##06##Wie kann ich einstellen, dass beim Hochfahren WLED eine bestimmte Farbe einstellt oder ein bestimmtes Effekt abspielt?
 Dafür sind zwei Schritte notwendig. Erstens muss man ein Preset erstellen, der die gewünschte Farbe oder ein Effekt aktiviert. Zweitens muss man unter Config -> LED Preferences bei der Einstellung „Apply preset … at boot“ den ID von dem erstellten Preset eintragen und unten auf „Save“ klicken.
 Genau so kann auch eine ganze Playliste beim Hochfahren abgespielt werden. Dafür muss man anstatt Preset ID einen Playlist ID in die oben genannte Einstellung eintragen.
-##07##Was ist ein Preset?
+##07##Was ist ein Preset in WLED SW?
 Ein Preset ist eine gespeicherte LED Lichtkonfiguration, die man später erneut aufrufen kann, ohne dass man alles wieder neu einstellen muss. Man kann zum Beispiel für ein bestimmtes gewünschtes Effekt Segmente einstellen, für jedes Segment eine Farbe oder ein Effekt definieren. Diese Einstellungen kann man dann in einem Preset abspeichern und mit einem Click immer wieder aufrufen, wen man es braucht. Man kann auch in WLED Einstellungen einstellen, dass ein bestimmtes Preset beim Start des Controllers automatisch aufgerufen wird. Oder man kann ein physikalischer Taster an den Controller anschließen und diesem Taster dann ein Preset zuweisen. Oder man kann in WLED Einstellungen einstellen, dass ein Preset zu einer bestimmter Tageszeit aktiviert wird.
-##07##Was ist ein Playlist?
+##07##Was ist ein Playlist in WLED SW?
 Playlist (eine Playliste) ist die Möglichkeit eine ganze Reihe von Presets nacheinander abspielen zu lassen. So lassen sich aus einzelnen Effekten noch komplexere Effekte erstellen. Für jeden Preset kann man dabei die Abspieldauer (Duration) du die Übergangszeit zum nächsten Preset (Transition) definieren. Man kann wählen, ob die Playliste nur einmal oder unendlich oft (Repeat indefinately) abgespielt wird. Man kann auch einstellen, dass einzelne Presets in der Playliste nicht in definierter Reihenfolge, sondern zufällig nacheinander abgespielt werden (Shuffle).
 
 

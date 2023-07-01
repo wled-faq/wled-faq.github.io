@@ -70,6 +70,7 @@ if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 shutil.copyfile("index.css", os.path.join(output_dir,"index.css"))
 shutil.copyfile("google86f84e541110ff0a.html", os.path.join(output_dir,"google86f84e541110ff0a.html"))
+shutil.copyfile("sitemap.xml", os.path.join(output_dir,"sitemap.xml"))
 
 proceed_language("deutsch", "de", "index.html");
 proceed_language("english", "en", "en.html");

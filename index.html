@@ -130,6 +130,17 @@
 </div>
 </div>
 </div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-6">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-6" aria-expanded="false" aria-controls="accordion-tab-2-content-6"><a href="#tab2faq6"><div itemprop="name">Kann man ein Taster an WLED Controller anschließen?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-6" aria-labelledby="accordion-tab-2-heading-6" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Ja. Man braucht am Controller dafür einen freien digitalen Eingang (GPIO). Dann kann man zwischen diesem Eingang und Masse (GND) einen Taster verbinden. Klickt man auf den Taster, wird dieser GPIO in dem Moment mit der Masse verbunden und der Controller registriert das wie ein Klick. Damit das jedoch passiert, muss der Taster in WLED Einstellungen korrekt eingestellt werden. Zunächst muss ein Taster konfiguriert werden. Dafür muss man unter Config->LED Preferences einem „Button“ (z.B. man nimmt als erstes „Button 1“) die GPIO Nummer zuweisen, an den man den Taster angeschlossen hat. Zudem muss man den Taster-Typ definieren. Im Normallfall ist es ein „Pushbutton“. Danach kann man einstellen, was passieren soll, wenn der Taster angeklickt wird. Dafür geht man zu Config->Time & Macros. Hier im Bereich „Button actions“ kann man für jeden Taster bis zu drei Presets definieren (Preset ID eintragen), die ausgeführt werden müssen, wenn ein Taster kurz, lang oder doppel geklickt wird (daher drei Spalten). Presets muss man natürlich davor erstellt haben.</p></div>
+</div>
+</div>
+</div>
 </div></div>
 <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="tab3"><div class="accordion" id="accordion-tab-3">
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

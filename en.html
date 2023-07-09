@@ -130,6 +130,28 @@
 </div>
 </div>
 </div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-6">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-6" aria-expanded="false" aria-controls="accordion-tab-2-content-6"><a href="#tab2faq6"><div itemprop="name">Can I connect a button to a WLED controller? How?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-6" aria-labelledby="accordion-tab-2-heading-6" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Yes. You need a free digital input (GPIO) on the controller for this. Then you can connect a button between this input and ground (GND). If you click on the button, this GPIO is connected to ground at that moment and the controller registers this as a click. However, for this to happen, the button must be set correctly in the WLED preferences. First, a button must be configured. To do this, under Config->LED Preferences you have to assign the GPIO number to which the button is connected to a “Button” (e.g. you take “Button 1” first). You also have to define the button type. Normally it is a "Pushbutton". Then you can set what should happen when the button is clicked. To do this, go to Config->Time & Macros. Here in the "Button actions" area you can define up to three Presets for each button (enter Preset ID) that must be executed if a button is clicked briefly, long or double-clicked (therefore three columns). Of course, presets must have been created beforehand.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-7">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-7" aria-expanded="false" aria-controls="accordion-tab-2-content-7"><a href="#tab2faq7"><div itemprop="name">How many buttons can be connected to a WLED controller?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-7" aria-labelledby="accordion-tab-2-heading-7" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>WLED software supports up to 4 buttons. Each one needs its own GPIO input. Each button can perform up to three actions: at a short click, at a long click and at a double click.</p></div>
+</div>
+</div>
+</div>
 </div></div>
 <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="tab3"><div class="accordion" id="accordion-tab-3">
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

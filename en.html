@@ -163,6 +163,17 @@
 </div>
 </div>
 </div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-9">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-9" aria-expanded="false" aria-controls="accordion-tab-2-content-9"><a href="#tab2faq9"><div itemprop="name">Is it possible to connect a motion detector (PIR sensor) to a WLED controller?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-9" aria-labelledby="accordion-tab-2-heading-9" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Yes. There are two types of sensors:<br>1. With a possibility to adjust the sensitivity and the time delay. E.g. HC-SR501 type. These sensors can be connected to WLED and configured as a button.<br>2. Without the possibility to adjust the sensitivity and the time delay. E.g. HC-SR602 type. For these you have to compile WLED with a PIR Sensor UserMod.</p></div>
+</div>
+</div>
+</div>
 </div></div>
 <div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="tab3"><div class="accordion" id="accordion-tab-3">
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -253,7 +264,7 @@
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-5-content-2" aria-labelledby="accordion-tab-5-heading-2" data-bs-parent="#accordion-tab-5">
-<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>In principle, a Usermod is an extension that a user/programmer can program in addition to the basic functions of the WLED software. In order to be able to use a Usermod, it must be compiled together with WLED software. Official WLED releases do not contain any Usermods, unofficial sources such as <a href="https://wled-install.github.io" target=”_blank” rel="noopener">WLED Installer</a> also offer pre-compiled WLED versions with some Usermods included. In many cases, however, this means that if you want to use one or more usermods, you have to compile WLED software for them yourself. It is also important to note that some usermods may be outdated and may not work correctly or not at all with the current WLED version, because user mods were not programmed by the WLED community, but often by individual users/developers and are therefore not well maintained or not kept up to date.</p></div>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>In principle, a Usermod is an extension that a user/programmer can program in addition to the basic functions of the WLED software. In order to be able to use a Usermod, it must be compiled together with WLED software. Official WLED releases do not contain any Usermods, unofficial sources such as <a href="https://wled-install.github.io" target=”_blank” rel="noopener">WLED Installer</a> also offer pre-compiled WLED versions with some Usermods included. In many cases, however, this means that if you want to use one or more usermods, you have to compile WLED software for them yourself. This <a href="https://wled-compile.github.io" target="_blank" rel="noopener">WLED Compile Helper</a> can be useful. It is also important to note that some usermods may be outdated and may not work correctly or not at all with the current WLED version, because user mods were not programmed by the WLED community, but often by individual users/developers and are therefore not well maintained or not kept up to date.</p></div>
 </div>
 </div>
 </div>

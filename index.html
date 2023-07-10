@@ -89,65 +89,76 @@
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-2-heading-2">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-2" aria-expanded="false" aria-controls="accordion-tab-2-content-2"><a href="#tab2faq2"><div itemprop="name">Wird ein LevelShifter beim WLED Controller wirklich benötigt?</div></a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-2" aria-expanded="false" aria-controls="accordion-tab-2-content-2"><a href="#tab2faq2"><div itemprop="name">Wie viele LEDs kann ein WLED Controller ansteuern?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-2-content-2" aria-labelledby="accordion-tab-2-heading-2" data-bs-parent="#accordion-tab-2">
-<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Viele 5V LED Streifen lassen sich auch ohne LevelShifter betreiben, insbesondere wenn die Leitung zwischen dem Controller und dem LED Streifen sehr kurz ist. Manchmal kann dabei aber zu Flickering kommen, z.B dass die LEDS mal kurz in weiß blinken. Auch größere Störungen sind möglich. Bei 12V oder 24V LED Streifen kommt man meistens ohne LevelShifter nicht klar. Ein LevelShifter wird aber auch bei 5V LED Streifen ausdrücklich empfohlen, insbesondere bei einem produktiven Einsatz, um einen störungsfreien Betrieb zu gewährleisten: ein LevelShifter passt den Signalpegel des Mikrocontrollers (3.3V) an den Signalpegel des LED Streifens (5V bei allen adressierbaren LED Typen).<br>Professionelle WLED Controller haben einen LevelShifter immer integriert.</p></div>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>ESP8266 basierte Controller können bis zu ca. 600-650 LEDs ansteuern. ESP32 basierte Controller könne bis zu 4.000 LEDs ansteuern. Dabei wird jedoch empfohlen, LEDs Streifen auf mehrere Eingänge zu verteilen, so dass an einem Eingang nicht mehr als 1000 LEDs angeschlossen ist: viele LEDs n einem Ausgang führen dazu, dass die Ansteuerungsrate sinkt und man bei schnellen Effekten dann Unregelmäßigkeiten sieht.</p></div>
 </div>
 </div>
 </div>
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-2-heading-3">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-3" aria-expanded="false" aria-controls="accordion-tab-2-content-3"><a href="#tab2faq3"><div itemprop="name">Welche LevelShifter werden empfohlen?</div></a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-3" aria-expanded="false" aria-controls="accordion-tab-2-content-3"><a href="#tab2faq3"><div itemprop="name">Wird ein LevelShifter beim WLED Controller wirklich benötigt?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-2-content-3" aria-labelledby="accordion-tab-2-heading-3" data-bs-parent="#accordion-tab-2">
-<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Die Ansteuerung der adressierbaren LED Streifen Läuft mit Steuersignalen, welche eine Grundfrequenz im Bereich 800 kHz bis ins einstelligen MHz Bereich haben (je nach Typ). Entsprechend muss ein LevelShifter schnell genug sein, ob diese Signale sauber weiter geben zu können. Empfohlen werden daher schnelle Typen wie SN74AHCT125, SN74AHCT32 oder SN74LVC2T45. Typen wie SN74HCT (also ohne „A“) sind etwas langsamen und für LED Typen wie WS2812B i.O., für einige andere LED Typen können aber zu langsam sein. In jedem Fall nicht empfohlen sind mit Transistoren aufgebaute fertige bidirektionale I2C LevelShifter. Notfalls können diese verwendet werden, man sollte aber dann den Pull-Up Widerstand am Ausgang (meistens 10 kOhm) durch einen kleineren ersetzen (<=1 kOhm).</p></div>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Viele 5V LED Streifen lassen sich auch ohne LevelShifter betreiben, insbesondere wenn die Leitung zwischen dem Controller und dem LED Streifen sehr kurz ist. Manchmal kann dabei aber zu Flickering kommen, z.B dass die LEDS mal kurz in weiß blinken. Auch größere Störungen sind möglich. Bei 12V oder 24V LED Streifen kommt man meistens ohne LevelShifter nicht klar. Ein LevelShifter wird aber auch bei 5V LED Streifen ausdrücklich empfohlen, insbesondere bei einem produktiven Einsatz, um einen störungsfreien Betrieb zu gewährleisten: ein LevelShifter passt den Signalpegel des Mikrocontrollers (3.3V) an den Signalpegel des LED Streifens (5V bei allen adressierbaren LED Typen).<br>Professionelle WLED Controller haben einen LevelShifter immer integriert.</p></div>
 </div>
 </div>
 </div>
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-2-heading-4">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-4" aria-expanded="false" aria-controls="accordion-tab-2-content-4"><a href="#tab2faq4"><div itemprop="name">Muss in der Datenleitung zwischen dem WLED Controller und LED Streifen ein Widerstand eingebaut werden, welcher?</div></a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-4" aria-expanded="false" aria-controls="accordion-tab-2-content-4"><a href="#tab2faq4"><div itemprop="name">Welche LevelShifter werden empfohlen?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-2-content-4" aria-labelledby="accordion-tab-2-heading-4" data-bs-parent="#accordion-tab-2">
-<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>In meisten Fällen wird ein Widerstand im Bereich 33 kOhm bis 68 kOhm empfohlen. Die alte Empfehlung war 470 kOhm, der Wert in dieser Größenordnung ist aber aus heutiger Sicht nicht i.O. Ein Betrieb ohne einen Widerstand ist grundsätzlich auch möglich, sollte aber bei einem produktiven Einsatz vermieden werden. </p></div>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Die Ansteuerung der adressierbaren LED Streifen Läuft mit Steuersignalen, welche eine Grundfrequenz im Bereich 800 kHz bis ins einstelligen MHz Bereich haben (je nach Typ). Entsprechend muss ein LevelShifter schnell genug sein, ob diese Signale sauber weiter geben zu können. Empfohlen werden daher schnelle Typen wie SN74AHCT125, SN74AHCT32 oder SN74LVC2T45. Typen wie SN74HCT (also ohne „A“) sind etwas langsamen und für LED Typen wie WS2812B i.O., für einige andere LED Typen können aber zu langsam sein. In jedem Fall nicht empfohlen sind mit Transistoren aufgebaute fertige bidirektionale I2C LevelShifter. Notfalls können diese verwendet werden, man sollte aber dann den Pull-Up Widerstand am Ausgang (meistens 10 kOhm) durch einen kleineren ersetzen (<=1 kOhm).</p></div>
 </div>
 </div>
 </div>
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-2-heading-5">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-5" aria-expanded="false" aria-controls="accordion-tab-2-content-5"><a href="#tab2faq5"><div itemprop="name">Wird ein fertiger WLED Controller empfohlen, oder kann man sich ein aus einzelnen Komponenten zusammen bauen?</div></a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-5" aria-expanded="false" aria-controls="accordion-tab-2-content-5"><a href="#tab2faq5"><div itemprop="name">Muss in der Datenleitung zwischen dem WLED Controller und LED Streifen ein Widerstand eingebaut werden, welcher?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-2-content-5" aria-labelledby="accordion-tab-2-heading-5" data-bs-parent="#accordion-tab-2">
-<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Die Antwort hängt davon ab, was man damit machen möchte. Für experimentieren/rumprobieren reicht auch einfach ein ESP8266 oder ESP32 Mikrocontroller Board ohne weitere Komponenten. Möchte man eine saubere Installation machen, die länger ohne Störungen funktionieren soll, kommt man um ein fertiges Teil eigentlich nicht drum herum. Qualitative <a href="https://shop.myhome-control.de" target=”_blank” rel="noopener">fertige WLED Controller</a> integrieren nicht nur alle notwendigen Komponenten, sie sind auch aufgrund industrieller Fertigung/Bestückung deutlich zuverlässiger als jedes mit Hand gelötetes Aufbau. Die schlechteste Idee ist das Ganze mit Jumper Wire oder ähnliches aufzubauen: es sind nicht nur Wackelkontakte vorprogrammiert, sondern man erzeugt damit unter Umständen auch ein hohes Sicherheitsrisiko.</p></div>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>In meisten Fällen wird ein Widerstand im Bereich 33 kOhm bis 68 kOhm empfohlen. Die alte Empfehlung war 470 kOhm, der Wert in dieser Größenordnung ist aber aus heutiger Sicht nicht i.O. Ein Betrieb ohne einen Widerstand ist grundsätzlich auch möglich, sollte aber bei einem produktiven Einsatz vermieden werden. </p></div>
 </div>
 </div>
 </div>
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-2-heading-6">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-6" aria-expanded="false" aria-controls="accordion-tab-2-content-6"><a href="#tab2faq6"><div itemprop="name">Kann man ein Taster an WLED Controller anschließen?</div></a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-6" aria-expanded="false" aria-controls="accordion-tab-2-content-6"><a href="#tab2faq6"><div itemprop="name">Wird ein fertiger WLED Controller empfohlen, oder kann man sich ein aus einzelnen Komponenten zusammen bauen?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-2-content-6" aria-labelledby="accordion-tab-2-heading-6" data-bs-parent="#accordion-tab-2">
-<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Ja. Man braucht am Controller dafür einen freien digitalen Eingang (GPIO). Dann kann man zwischen diesem Eingang und Masse (GND) einen Taster verbinden. Klickt man auf den Taster, wird dieser GPIO in dem Moment mit der Masse verbunden und der Controller registriert das wie ein Klick. Damit das jedoch passiert, muss der Taster in WLED Einstellungen korrekt eingestellt werden. Zunächst muss ein Taster konfiguriert werden. Dafür muss man unter Config->LED Preferences einem „Button“ (z.B. man nimmt als erstes „Button 1“) die GPIO Nummer zuweisen, an den man den Taster angeschlossen hat. Zudem muss man den Taster-Typ definieren. Im Normallfall ist es ein „Pushbutton“. Danach kann man einstellen, was passieren soll, wenn der Taster angeklickt wird. Dafür geht man zu Config->Time & Macros. Hier im Bereich „Button actions“ kann man für jeden Taster bis zu drei Presets definieren (Preset ID eintragen), die ausgeführt werden müssen, wenn ein Taster kurz, lang oder doppel geklickt wird (daher drei Spalten). Presets muss man natürlich davor erstellt haben.</p></div>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Die Antwort hängt davon ab, was man damit machen möchte. Für experimentieren/rumprobieren reicht auch einfach ein ESP8266 oder ESP32 Mikrocontroller Board ohne weitere Komponenten. Möchte man eine saubere Installation machen, die länger ohne Störungen funktionieren soll, kommt man um ein fertiges Teil eigentlich nicht drum herum. Qualitative <a href="https://shop.myhome-control.de" target=”_blank” rel="noopener">fertige WLED Controller</a> integrieren nicht nur alle notwendigen Komponenten, sie sind auch aufgrund industrieller Fertigung/Bestückung deutlich zuverlässiger als jedes mit Hand gelötetes Aufbau. Die schlechteste Idee ist das Ganze mit Jumper Wire oder ähnliches aufzubauen: es sind nicht nur Wackelkontakte vorprogrammiert, sondern man erzeugt damit unter Umständen auch ein hohes Sicherheitsrisiko.</p></div>
 </div>
 </div>
 </div>
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-2-heading-7">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-7" aria-expanded="false" aria-controls="accordion-tab-2-content-7"><a href="#tab2faq7"><div itemprop="name">Wie viele Taster kann man an ein WLED Controller anbinden?</div></a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-7" aria-expanded="false" aria-controls="accordion-tab-2-content-7"><a href="#tab2faq7"><div itemprop="name">Kann man ein Taster an WLED Controller anschließen?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-2-content-7" aria-labelledby="accordion-tab-2-heading-7" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Ja. Man braucht am Controller dafür einen freien digitalen Eingang (GPIO). Dann kann man zwischen diesem Eingang und Masse (GND) einen Taster verbinden. Klickt man auf den Taster, wird dieser GPIO in dem Moment mit der Masse verbunden und der Controller registriert das wie ein Klick. Damit das jedoch passiert, muss der Taster in WLED Einstellungen korrekt eingestellt werden. Zunächst muss ein Taster konfiguriert werden. Dafür muss man unter Config->LED Preferences einem „Button“ (z.B. man nimmt als erstes „Button 1“) die GPIO Nummer zuweisen, an den man den Taster angeschlossen hat. Zudem muss man den Taster-Typ definieren. Im Normallfall ist es ein „Pushbutton“. Danach kann man einstellen, was passieren soll, wenn der Taster angeklickt wird. Dafür geht man zu Config->Time & Macros. Hier im Bereich „Button actions“ kann man für jeden Taster bis zu drei Presets definieren (Preset ID eintragen), die ausgeführt werden müssen, wenn ein Taster kurz, lang oder doppel geklickt wird (daher drei Spalten). Presets muss man natürlich davor erstellt haben.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-8">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-8" aria-expanded="false" aria-controls="accordion-tab-2-content-8"><a href="#tab2faq8"><div itemprop="name">Wie viele Taster kann man an ein WLED Controller anbinden?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-8" aria-labelledby="accordion-tab-2-heading-8" data-bs-parent="#accordion-tab-2">
 <div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>WLED Software unterstützt bis zu 4 Taster. Für jeden braucht man einen eigenen GPIO Eingang. Jeder Taster kann dabei bis zu drei Aktionen ausführen: bei einem kurzen Klick, bei einem langen Klick und bei einem Doppelklick.</p></div>
 </div>
 </div>

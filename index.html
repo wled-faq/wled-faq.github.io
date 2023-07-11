@@ -352,6 +352,17 @@
 </div>
 </div>
 </div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-8-heading-2">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-8-content-2" aria-expanded="false" aria-controls="accordion-tab-8-content-2"><a href="#tab8faq2"><div itemprop="name">Was sind „Virtuelle LEDs“?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-8-content-2" aria-labelledby="accordion-tab-8-heading-2" data-bs-parent="#accordion-tab-8">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>„Virtuelle LEDs“ sind die Möglichkeit, zwei oder mehr LED Streifen an unterschiedlichen Controllern wie ein Streifen zu betreiben. Z.B. man schlisst an ein WLED Controller ein LED Streifen an, und an einen anderen WLED Controller einen anderen LED Streifen. Man möchte aber, dass beide Streifen wie ein einzelnes Streifen angesteuert werden. Dafür muss man erstmal beide Streifen an jedem Controller ganz normal konfigurieren (LED Typ, Anzahl etc.). Dann fügt man am ersten Controller einen virtuellen LED Streifen dazu (als zweites Streifen). Man geht also zu „LED Outputs“ unter „Config->LED Preferences“, klickt auf ein „+“ Symbol und wählt da als Streifen Typ „DDP RGB (network)“ aus. Hier muss man dann auch Startnummer und die LED Anzahl eingeben (am zweiten Streifen). Zudem muss man die IP Adresse von dem zweiten Controller eingeben. So wird der erste Controller sein eigenes LED Streifen und auch über Netzwerk das zweite LED Streifen ansteuern, als ob das ein wäre.</p></div>
+</div>
+</div>
+</div>
 </div></div>
 
             </div>

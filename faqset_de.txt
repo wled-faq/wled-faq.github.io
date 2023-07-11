@@ -8,6 +8,7 @@
 ###05###WLED SW Allgemein
 ###06###Einstellungen
 ###07###Presets und Playlists
+###08###Sync, virtuelle LEDs etc.
 
 ##01##Was sind die häufigsten Fehler bei der Inbetriebnahme von WLED?
 Die häufigsten Fehler sind:
@@ -84,5 +85,6 @@ Genau so kann auch eine ganze Playliste beim Hochfahren abgespielt werden. Dafü
 Ein Preset ist eine gespeicherte LED Lichtkonfiguration, die man später erneut aufrufen kann, ohne dass man alles wieder neu einstellen muss. Man kann zum Beispiel für ein bestimmtes gewünschtes Effekt Segmente einstellen, für jedes Segment eine Farbe oder ein Effekt definieren. Diese Einstellungen kann man dann in einem Preset abspeichern und mit einem Click immer wieder aufrufen, wen man es braucht. Man kann auch in WLED Einstellungen einstellen, dass ein bestimmtes Preset beim Start des Controllers automatisch aufgerufen wird. Oder man kann ein physikalischer Taster an den Controller anschließen und diesem Taster dann ein Preset zuweisen. Oder man kann in WLED Einstellungen einstellen, dass ein Preset zu einer bestimmter Tageszeit aktiviert wird.
 ##07##Was ist ein Playlist in WLED SW?
 Playlist (eine Playliste) ist die Möglichkeit eine ganze Reihe von Presets nacheinander abspielen zu lassen. So lassen sich aus einzelnen Effekten noch komplexere Effekte erstellen. Für jeden Preset kann man dabei die Abspieldauer (Duration) du die Übergangszeit zum nächsten Preset (Transition) definieren. Man kann wählen, ob die Playliste nur einmal oder unendlich oft (Repeat indefinately) abgespielt wird. Man kann auch einstellen, dass einzelne Presets in der Playliste nicht in definierter Reihenfolge, sondern zufällig nacheinander abgespielt werden (Shuffle).
-
+##08##Was ist „WLED UDP Sync“?
+WLED UDP Sync ist die Möglichkeit mehrere WLED Controller so zu betreiben, dass die angeschlossenen LED Streifen an jedem Controller zueinander synchron und exakt gleich angesteuert werden, also immer gleiche Farbe oder gleiches Effekt abspielen indem man diese Farbe oder Effekt nur bei einem Controller einstellt. Man kann auch einstellen, was genau synchronisiert sein muss: Helligkeit, Farbe, Effekte, Segmente etc. So können mehrere LED Streifen das gleiche Farbspiel zeigen, auch wenn sie z.B. aus räumlichen Gründen an verschiedenen WLED Controllern angeschlossen sind. Die Einstellungen müssen im Bereich „WLED broadcast“ unter „Config->Sync Interfaces“ vorgenommen werden. Es können bis zu 8 Gruppen definiert werden. Man also z.B zwei Controller in eine Gruppe zuordnen und die anderen zwei in die andere. Dann werden die ersten zwei Controller untereinander synchronisiert (Gruppe 1) und die anderen zwei untereinander (Gruppe 2), nicht jedoch die Gruppen 1 und 2 untereinander. Auf der Haupt-User-interface WLED Seite gibt es oben ein „Sync“ Knopf, mit dem Man WLED Sync ein- und ausschalten kann. „UDP“ in „WLED UDP Sync” bedeutete, dass diese Synchronisatin über ein UDP Netzwerkprotokoll implementiert ist.
 

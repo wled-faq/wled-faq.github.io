@@ -352,6 +352,17 @@
 </div>
 </div>
 </div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-8-heading-2">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-8-content-2" aria-expanded="false" aria-controls="accordion-tab-8-content-2"><a href="#tab8faq2"><div itemprop="name">What are "Virtual LEDs"?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-8-content-2" aria-labelledby="accordion-tab-8-heading-2" data-bs-parent="#accordion-tab-8">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>"Virtual LEDs" are the possibility of operating two or more LED strips on different controllers like one strip. E.g. you connect one LED strip to a first WLED controller and another LED strip to second WLED controller. But you want both strips to be controlled like a single strip. To do this, you first have to configure both strips on each controller as usually (LED type, number, etc.). Then you add a virtual LED strip to the first controller (as the second strip). For that you go to "LED Outputs" under "Config->LED Preferences", click on a "+" symbol and select "DDP RGB (network)" as the strip type. Here you have to enter the start number and the number of LEDs (on the second strip). You also have to enter the IP address of the second controller. This way the first controller will control its own LED strip and also the second LED strip via network as if it were one.</p></div>
+</div>
+</div>
+</div>
 </div></div>
 
             </div>

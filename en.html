@@ -344,21 +344,32 @@
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-8-heading-1">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-8-content-1" aria-expanded="false" aria-controls="accordion-tab-8-content-1"><a href="#tab8faq1"><div itemprop="name"> What is WLED UDP Sync?</div></a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-8-content-1" aria-expanded="false" aria-controls="accordion-tab-8-content-1"><a href="#tab8faq1"><div itemprop="name"> Can I control WLED Controllers via the Internet?</div></a></button>
 </h5>
 </div>
 <div class="collapse show" id="accordion-tab-8-content-1" aria-labelledby="accordion-tab-8-heading-1" data-bs-parent="#accordion-tab-8">
-<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>WLED UDP Sync is the possibility to operate several WLED controllers in such a way that the connected LED strips on each controller are controlled synchronously and exactly the same way, i.e. always play the same color or the same effect by only setting this color or effect on one controller. You can also set what exactly needs to be synchronized: brightness, color, effects, segments, etc. In this way, several LED strips can show the same play of colors, even if they are connected to different WLED controllers for physical locations reasons, for example. The settings must be made in the "WLED broadcast" area under "Config->Sync Interfaces". Up to 8 groups can be defined. For example, you assign two controllers to one group and the other two to the other. Then the first two controllers are synchronized with each other (group 1) and the other two with each other (group 2), but not groups 1 and 2 with each other. On the main WLED user interface page there is a "Sync" button at the top that allows you to toggle WLED sync on and off. "UDP" in "WLED UDP Sync" means that this synchronization is implemented over a UDP network protocol.</p></div>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Unfortunately, not directly. WLED Interface in the browser or WLED app only work if the controller and the PC/smartphone are in the same local network. Secure direct control via the Internet is not possible. However, it is possible to install a home automation system (requires special hardware), such as Home Assistant or IoBroker. These have the ability to control WLED controllers and at the same time provide the options to access the systems via the Internet. Of course, you could theoretically enable direct access from the Internet to the WLED controller in the router. However, this is extremely insecure because the data is not protected in any way and anyone can control your controller in this way.</p></div>
 </div>
 </div>
 </div>
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-8-heading-2">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-8-content-2" aria-expanded="false" aria-controls="accordion-tab-8-content-2"><a href="#tab8faq2"><div itemprop="name">What are "Virtual LEDs"?</div></a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-8-content-2" aria-expanded="false" aria-controls="accordion-tab-8-content-2"><a href="#tab8faq2"><div itemprop="name"> What is WLED UDP Sync?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-8-content-2" aria-labelledby="accordion-tab-8-heading-2" data-bs-parent="#accordion-tab-8">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>WLED UDP Sync is the possibility to operate several WLED controllers in such a way that the connected LED strips on each controller are controlled synchronously and exactly the same way, i.e. always play the same color or the same effect by only setting this color or effect on one controller. You can also set what exactly needs to be synchronized: brightness, color, effects, segments, etc. In this way, several LED strips can show the same play of colors, even if they are connected to different WLED controllers for physical locations reasons, for example. The settings must be made in the "WLED broadcast" area under "Config->Sync Interfaces". Up to 8 groups can be defined. For example, you assign two controllers to one group and the other two to the other. Then the first two controllers are synchronized with each other (group 1) and the other two with each other (group 2), but not groups 1 and 2 with each other. On the main WLED user interface page there is a "Sync" button at the top that allows you to toggle WLED sync on and off. "UDP" in "WLED UDP Sync" means that this synchronization is implemented over a UDP network protocol.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-8-heading-3">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-8-content-3" aria-expanded="false" aria-controls="accordion-tab-8-content-3"><a href="#tab8faq3"><div itemprop="name">What are "Virtual LEDs"?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-8-content-3" aria-labelledby="accordion-tab-8-heading-3" data-bs-parent="#accordion-tab-8">
 <div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>"Virtual LEDs" are the possibility of operating two or more LED strips on different controllers like one strip. E.g. you connect one LED strip to a first WLED controller and another LED strip to second WLED controller. But you want both strips to be controlled like a single strip. To do this, you first have to configure both strips on each controller as usually (LED type, number, etc.). Then you add a virtual LED strip to the first controller (as the second strip). For that you go to "LED Outputs" under "Config->LED Preferences", click on a "+" symbol and select "DDP RGB (network)" as the strip type. Here you have to enter the start number and the number of LEDs (on the second strip). You also have to enter the IP address of the second controller. This way the first controller will control its own LED strip and also the second LED strip via network as if it were one.</p></div>
 </div>
 </div>

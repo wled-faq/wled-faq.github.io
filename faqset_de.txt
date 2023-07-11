@@ -78,6 +78,8 @@ Ab WLED Version 14.0 werden bei Effekten zusätzliche Symbole angezeigt. Diese w
 „Matrix“: Diese Effekte sind 2D Effekte für LED Matrizen
 „Note“: Dieser Effekt ist ein Audio Reactive Effekt und reagiert auf die Lautstärke des Audiosignals.
 „Doppelte Note“: Dieser Effekt ist ein Audio Reactive Effekt und reagiert auf die Frequenzen in dem Audiosignal.
+##05##Kann ich WLED Controller über Internet ansteuern?
+Leider nicht direkt. WLED Interface im Browser oder WLED App funktionieren nur dann, wenn der Controller und der PC/Smartphone im gleichen lokalen Netzwerk sind. Eine sichere direkte Ansteuerung über Internet ist nicht möglich. Es ist jedoch möglich ein Hausautomatisierungssystem zu installieren (spezielle Hardware notwendig), wie z.B. Home Assistant oder IoBroker. Diese haben die Möglichkeit WLED Controllern anzusteuern und stellen gelichzeitig die Optionen zur Verfügung, auf die Systeme über Internet zuzugreifen. Man könnte natürlich theoretisch den direkten Zugriff vom Internet auf WLED Controller im Router freizugeben. Das ist jedoch extrem unsicher, weil die Daten keinerlei geschützt sind und jeder so Ihr Controller ansteuern kann.
 ##06##Wie kann ich einstellen, dass beim Hochfahren WLED eine bestimmte Farbe einstellt oder ein bestimmtes Effekt abspielt?
 Dafür sind zwei Schritte notwendig. Erstens muss man ein Preset erstellen, der die gewünschte Farbe oder ein Effekt aktiviert. Zweitens muss man unter Config -> LED Preferences bei der Einstellung „Apply preset … at boot“ den ID von dem erstellten Preset eintragen und unten auf „Save“ klicken.
 Genau so kann auch eine ganze Playliste beim Hochfahren abgespielt werden. Dafür muss man anstatt Preset ID einen Playlist ID in die oben genannte Einstellung eintragen.

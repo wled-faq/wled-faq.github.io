@@ -34,6 +34,7 @@
 <a href="#tab5" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab5" aria-selected="false">WLED SW Allgemein</a>
 <a href="#tab6" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab6" aria-selected="false">Einstellungen</a>
 <a href="#tab7" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab7" aria-selected="false">Presets und Playlists</a>
+<a href="#tab8" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab8" aria-selected="false">Sync, virtuelle LEDs etc.</a>
 
             </div>
         </div>
@@ -335,6 +336,19 @@
 </div>
 <div class="collapse" id="accordion-tab-7-content-2" aria-labelledby="accordion-tab-7-heading-2" data-bs-parent="#accordion-tab-7">
 <div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Playlist (eine Playliste) ist die Möglichkeit eine ganze Reihe von Presets nacheinander abspielen zu lassen. So lassen sich aus einzelnen Effekten noch komplexere Effekte erstellen. Für jeden Preset kann man dabei die Abspieldauer (Duration) du die Übergangszeit zum nächsten Preset (Transition) definieren. Man kann wählen, ob die Playliste nur einmal oder unendlich oft (Repeat indefinately) abgespielt wird. Man kann auch einstellen, dass einzelne Presets in der Playliste nicht in definierter Reihenfolge, sondern zufällig nacheinander abgespielt werden (Shuffle).</p></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tab-pane" id="tab8" role="tabpanel" aria-labelledby="tab8"><div class="accordion" id="accordion-tab-8">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-8-heading-1">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-8-content-1" aria-expanded="false" aria-controls="accordion-tab-8-content-1"><a href="#tab8faq1"><div itemprop="name">Was ist „WLED UDP Sync“?</div></a></button>
+</h5>
+</div>
+<div class="collapse show" id="accordion-tab-8-content-1" aria-labelledby="accordion-tab-8-heading-1" data-bs-parent="#accordion-tab-8">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>WLED UDP Sync ist die Möglichkeit mehrere WLED Controller so zu betreiben, dass die angeschlossenen LED Streifen an jedem Controller zueinander synchron und exakt gleich angesteuert werden, also immer gleiche Farbe oder gleiches Effekt abspielen indem man diese Farbe oder Effekt nur bei einem Controller einstellt. Man kann auch einstellen, was genau synchronisiert sein muss: Helligkeit, Farbe, Effekte, Segmente etc. So können mehrere LED Streifen das gleiche Farbspiel zeigen, auch wenn sie z.B. aus räumlichen Gründen an verschiedenen WLED Controllern angeschlossen sind. Die Einstellungen müssen im Bereich „WLED broadcast“ unter „Config->Sync Interfaces“ vorgenommen werden. Es können bis zu 8 Gruppen definiert werden. Man also z.B zwei Controller in eine Gruppe zuordnen und die anderen zwei in die andere. Dann werden die ersten zwei Controller untereinander synchronisiert (Gruppe 1) und die anderen zwei untereinander (Gruppe 2), nicht jedoch die Gruppen 1 und 2 untereinander. Auf der Haupt-User-interface WLED Seite gibt es oben ein „Sync“ Knopf, mit dem Man WLED Sync ein- und ausschalten kann. „UDP“ in „WLED UDP Sync” bedeutete, dass diese Synchronisatin über ein UDP Netzwerkprotokoll implementiert ist.</p></div>
 </div>
 </div>
 </div>

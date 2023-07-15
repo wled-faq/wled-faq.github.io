@@ -75,6 +75,17 @@
 </div>
 </div>
 </div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-1-heading-4">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-1-content-4" aria-expanded="false" aria-controls="accordion-tab-1-content-4"><a href="#tab1faq4"><div itemprop="name">Was brauche ich so alles für „WLED“?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-1-content-4" aria-labelledby="accordion-tab-1-heading-4" data-bs-parent="#accordion-tab-1">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Die Antwort auf diese Frage häng davon ab, ob man WLED nur ausprobieren möchte oder einen zuverlässig funktionierenden und sicheren Aufbau machen möchte.<br>WLED Auszuprobieren: dafür reicht ein ESP8266 oder ESP32 Mikrocontroller Board (z.B. die sogenannten D1 mini oder NodeMCU Boards), ein 5V Netzteil und ein 5V LED Streifen (fürs Anfang z.B. mit 30-90 LEDs). Auf dem Mikrocontroller wird WLED Software installiert (z.B. mit diesem Web-basierten Installer).<br>Für einen richtigen Aufbau müssen aber noch einige andere Dinge beachtet werden:<br>1. Für eine zuverlässige Datenübertragung vom Controller zum LED Streifen braucht man ein LevelShifter (insbesondere bei 12V oder 24V LED Streifen ist das Pflicht). Da muss man dann einiges zusammenlöten oder man kauft gleich einen professionellen fertigen WLED Controller. Diese sind auch aufgrund industrieller Fertigung/Bestückung deutlich zuverlässiger als jedes mit Hand gelöteter Aufbau.<br>2. Aus Sicherheitsgründen muss über die richtige Verkabelung (Länge, Querschnitt, Kontaktierungen) und zu integrierende Sicherungen nachgedacht werden. Insbesondere bei LED Streifen wird es komplizierter, weil man die sogenannten Zwischeneinspeisungen braucht. Diese müssen korrekt geplant und umgesetzt werden. Als Hilfestellung kann dabei <a href="https://wled-calculator.github.io" target=”_blank” rel="noopener">WLED Calculator</a> dienen.<br>3. LED Streifen können im Betrieb recht warm werden und im Fehlerfall sogar überhitzen. Wiederum aus Sicherheitsgründen muss man die Umgebung davon schützen: man sollte LED Streifen deswegen nicht einfach so verlegen, sollte idealerweise in Aluprofile oder ähnliches integrieren. Diese wirken im normalen Betrieb wie ein Kühlkörper und verlängern damit die Lebensdauer der LEDs. Im Fehlerfall können sie die Umgebung vom Brad schützen.</p></div>
+</div>
+</div>
+</div>
 </div></div>
 <div class="tab-pane" id="tab2" role="tabpanel" aria-labelledby="tab2"><div class="accordion" id="accordion-tab-2">
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

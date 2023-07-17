@@ -279,6 +279,28 @@
 </div>
 </div>
 </div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-4-heading-4">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-4" aria-expanded="false" aria-controls="accordion-tab-4-content-4"><a href="#tab4faq4"><div itemprop="name">Schützt eine z.B. 10A Sicherung gegen Ströme größer als 10A?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-4-content-4" aria-labelledby="accordion-tab-4-heading-4" data-bs-parent="#accordion-tab-4">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Nein. Der bei der Sicherung angegeben Stromwert ist ein sogenannter Nominalwert der Sicherung. Deren genaue Bedeutung ist je nach Sicherungstyp leicht unterschiedlich. Betrachten wir im Folgenden als Beispiel eine typische KFZ Sicherung. Diese werden oft in WLED Controllern eingesetzt, weil deren Spanungsbereich (bis 32V), Tauglichkeit für DC-Ströme und großer Auswahl an Nominalwerten (1 A bis 40 A) sie dafür besonders geeignet machen. Diese Sicherungen sind in der Norm ISO 8820-3 spezifiziert und besitzen daher immer ein ähnliches Verhalten, auch wenn sie von diversen Herstellern produziert werden. Aber Achtung: auf diversen Verkaufsplattformen sind oft billige Nachbauten zu finden, die diese Spezifikation gar nicht erfüllen und teilweise somit gar nicht richtig funktionieren. Also, z.B. eine 10A KFZ Sicherung muss 110% vom Nominalstrom, also 11A, noch mindestens 100 Stunden tragen können. 135% vom Nominalstrom (also 13,5A) wird sie auch immer noch 0,75 s bis 600 Sekunden tragen, bevor sie schmelzt und den Strom trennt. Den doppelten Strom (20A) kann Sie noch bis zu 5 s tragen, mindestens 0,15 s. Und sogar noch 6-fachen Strom (60 A) wird sie bis zu 100 ms tragen. Diese Angaben gelten für die nominale Raumtemperatur, bei anderen Temperaturen können die Zeiten noch anders sein. Also wenn z.B. eine 10A Sicherung den Strom von 20A noch bis zu 5s tragen kann, müssen auch andere Komponenten, die die Sicherung schützen muss, diesen Strom noch tragen können, ohne dass sie in dieser Zeit beginnen zu brennen etc. </p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-4-heading-5">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-5" aria-expanded="false" aria-controls="accordion-tab-4-content-5"><a href="#tab4faq5"><div itemprop="name">Wie muss ich eine Sicherung auswählen? </div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-4-content-5" aria-labelledby="accordion-tab-4-heading-5" data-bs-parent="#accordion-tab-4">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Oft meint man, man kann irgendeine Sicherung einsetzen und damit ist alles sicher. In keinem Fall! Nur eine korrekt ausgewählte und dimensionierte Sicherung kann bei Überlast oder Kurzschluss rechtzeitig abschalten und damit ein Brand verhindern. Dabei ist die Vorgehensweise wie folgt:<br>1. Man bestimmt den notwendigen Betriebsstrom, der durch die Sicherung fließen muss. Das ist also z.B. der Strom, den die LEDs maximal verbrauchen.<br>2. Nun wählt man eine Sicherung, die genug Stromtragfähigkeit besitzt, um bei einem Betriebsstrom über die Lebensdauer zu funktionieren, ohne zu früh durchzuschmelzen.<br>3. Man wählt Verbindungskabel, Klemmen etc. Dabei spielen zwei Aspekte die Rolle:<br> a) Diese Komponenten dürfen nicht nur bei einem Betriebsstrom nicht überhitzen, sie müssen auch alle Ströme so lange standhalten können, wie lange sie die Sicherung durchlässt. Wenn z.B. bei einem Betriebsstrom von 8A eine 10A KFZ Mini-Sicherung gewählt wurde, müssen die Kabel etc. 11 A dauerhaft tragen können, 13,5 A für mindestens 600 s, 20 A für 5 Sekunden und sogar noch 60A für 100 ms ohne in Brand zu geraten.<br> b) Verbindungskabel dürfen keinen zu hohen Spannungsabfall verursachen. Hier kommt es nicht nur auf den Querschnitt des Kabels an, sondern auch auf die Länge. Der Spanungsabfall kann der Grund sein, warum man einen deutlich höheren Querschnitt nehmen muss, obwohl aus Punkt a) kein so großer Kabelquerschnitt notwendig wäre.</p></div>
+</div>
+</div>
+</div>
 </div></div>
 <div class="tab-pane" id="tab5" role="tabpanel" aria-labelledby="tab5"><div class="accordion" id="accordion-tab-5">
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

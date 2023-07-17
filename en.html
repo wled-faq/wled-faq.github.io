@@ -279,6 +279,28 @@
 </div>
 </div>
 </div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-4-heading-4">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-4" aria-expanded="false" aria-controls="accordion-tab-4-content-4"><a href="#tab4faq4"><div itemprop="name">Does a 10 A fuse, for example, protect against currents greater than 10 A?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-4-content-4" aria-labelledby="accordion-tab-4-heading-4" data-bs-parent="#accordion-tab-4">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>No. The value specified for the fuse is a so-called nominal value of the fuse. Their exact meaning varies slightly depending on the fuse type. Lets take a look at typical car fuses as an example. These are often used in WLED controllers because their voltage range (up to 32 V), suitability for DC currents and large selection of nominal values ​​(1 A to 40 A) make them particularly suitable for this application. These fuses are specified in the ISO 8820-3 standard and therefore always have a similar behavior, even if they are produced by different manufacturers. But be careful: cheap replicas can often be found on various sales platforms that do not meet this specification at all and therefore sometimes do not work properly. So, e.g. a 10A car fuse must be able to carry 110% of the nominal current, i.e. 11A, for at least 100 hours. It will still carry 135% of the nominal current (i.e. 13.5A) for 0.75s to 600 seconds before it melts and interrupts the current. It can carry twice of the nominal current (20A) for up to 5 s, at least for 0.15 s. And it will carry even 6 times of the nominal current (60 A) for up to 100 ms. This is valid for the nominal room temperature, at other temperatures the values can be different. If, for example, a 10A fuse can carry the current of 20A for up to 5s, other components that the fuse has to protect must also be able to carry this current without starting to burn during this time.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-4-heading-5">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-5" aria-expanded="false" aria-controls="accordion-tab-4-content-5"><a href="#tab4faq5"><div itemprop="name">How do I select a fuse?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-4-content-5" aria-labelledby="accordion-tab-4-heading-5" data-bs-parent="#accordion-tab-4">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>It is often believed that using any fuse is sufficient and everything is safe. In no case! Only a correctly selected and dimensioned fuse can interrupt the current in reasonable time perventing a fire in case of an overload or short circuit. The procedure of selecting fuse and wires is as follows:<br>1. You determine the operating current that must flow through the fuse. This is, for example, the maximum current that the LEDs consume.<br>2. Now you choose a fuse that has enough current carrying capability to carry the operating current over the lifetime without melting too early.<br>3. You choose connection cables, clamps, etc. Two aspects play a role here:<br>a) These components must not overheat at an operating current, but they must also be able to withstand all currents for as long as the fuse lets them through. If, for example, a 10A automotive mini fuse was selected for an operating current of 8A, the cables etc. must be able to carry 11 A permanently, 13.5 A for at least 600 s, 20 A for 5 seconds and even 60 A for 100 ms without catching a fire.<br>b) Connecting cables must not cause too high voltage drop too. Here it is not only the cross-section of the cable that is important, but also the length. The voltage drop can be the reason why you have to choose a significantly higher cross-section, although from point a) not such a high cable cross-section would be necessary.<br><a href="https://wled-calculator.github.io" target=”_blank” rel="noopener">WLED Calculator</a> provides a good starting point for such calculations.</p></div>
+</div>
+</div>
+</div>
 </div></div>
 <div class="tab-pane" id="tab5" role="tabpanel" aria-labelledby="tab5"><div class="accordion" id="accordion-tab-5">
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">

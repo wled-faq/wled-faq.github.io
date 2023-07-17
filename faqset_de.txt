@@ -82,6 +82,7 @@ Oft meint man, man kann irgendeine Sicherung einsetzen und damit ist alles siche
 3. Man wählt Verbindungskabel, Klemmen etc. Dabei spielen zwei Aspekte die Rolle:
  a) Diese Komponenten dürfen nicht nur bei einem Betriebsstrom nicht überhitzen, sie müssen auch alle Ströme so lange standhalten können, wie lange sie die Sicherung durchlässt. Wenn z.B. bei einem Betriebsstrom von 8A eine 10A KFZ Mini-Sicherung gewählt wurde, müssen die Kabel etc. 11 A dauerhaft tragen können, 13,5 A für mindestens 600 s, 20 A für 5 Sekunden und sogar noch 60A für 100 ms ohne in Brand zu geraten.
  b) Verbindungskabel dürfen keinen zu hohen Spannungsabfall verursachen. Hier kommt es nicht nur auf den Querschnitt des Kabels an, sondern auch auf die Länge. Der Spanungsabfall kann der Grund sein, warum man einen deutlich höheren Querschnitt nehmen muss, obwohl aus Punkt a) kein so großer Kabelquerschnitt notwendig wäre.
+Einen guten Startpunkt liefert WLED Calculator.
 ##05##Welche aktive WLED SW Abzweigungen gibt es?
 Es sind vor allem drei Abzweigungen relevant:
 1. Das Original: Aircoookie WLED. Das ist die ursprüngliche/originale WLED SW. Bis zu Version 0.13.3 gab es in dieser Version keine Möglichkeit Sound Reactive WLED zu machen. Ab Version 0.14.0 ist ein sog. Audio Reactive Usermod vorhanden.

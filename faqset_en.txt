@@ -39,6 +39,11 @@ Many 5V LED strips can also be operated without a level shifter, especially if t
 Professional WLED controllers always have an integrated level shifter.
 ##02##Which LevelShifters are recommended?
 The control of the addressable LED strips runs with control signals, which have a basic frequency in the range of 800 kHz up to the single-digit MHz range (depending on the type). Accordingly, a level shifter must be fast enough to be able to pass on these signals cleanly. Fast types such as SN74AHCT125, SN74AHCT32 or SN74LVC2T45 are therefore recommended. Types like SN74HCT (i.e. without “A”) are a bit slow and OK for LED types like WS2812B, but can be too slow for some other LED types. In any case, ready-made bidirectional I2C level shifters built with transistors are not recommended. If necessary, these can be used, but you should then replace the pull-up resistor at the output (usually 10 kOhm) with a smaller one (<=1 kOhm).
+SN74AHCT125 LevelShifters are interconnected as follows:
+[pic1]
+[pic2]
+TXS0108 LevelShifter can also be used. Small PCBs with this level shifter are often sold and can be used as follows:
+[pic3]
 ##02##Does a resistor have to be installed in the data line between the WLED controller and the LED strip?  Which one?
 In most cases, a resistor in the 33K to 68K ohm range is recommended. The old recommendation was 470 kOhm, but from today's point of view the value in this range is not OK. In principle, operation without a resistor is also possible, but should be avoided in productive use.
 ##02##Is a ready-made WLED controller recommended, or can one be assembled from individual components?

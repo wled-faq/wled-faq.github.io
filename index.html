@@ -225,32 +225,43 @@
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-3-heading-2">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-2" aria-expanded="false" aria-controls="accordion-tab-3-content-2"><a href="#tab3faq2"><div itemprop="name">Was ist bei dem LED Typ WS2814 (12V oder 24V) zu beachten?</div></a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-2" aria-expanded="false" aria-controls="accordion-tab-3-content-2"><a href="#tab3faq2"><div itemprop="name">Wie steuert man analoge LED Streifen an?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-3-content-2" aria-labelledby="accordion-tab-3-heading-2" data-bs-parent="#accordion-tab-3">
-<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>LED Streifen mit diesem Typ sind RGBW Streifen, ähnlich wie SK6812 Typ. Sie müssen also in WLED Einstellungen als SK6812 Typ behandelt werden. Zudem bei diesen Streifen ist oft der weiße Kanal und der Grüne Kanal vertauscht, man muss also in WLED Einstellungen „Swap W & G“ einstellen. Diese Einstellungsoption gibt es erst ab WLED Version 0.14.0-beta1.</p></div>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Analoge LED Streifen brauchen für die Ansteuerung nicht nur einen Mikrocontroller, sondern in jedem Fall einige zusätzlichen Komponenten wie MOSFETs.<br>Ein Prinzipschaltbild ist hier dargestellt. Pro Farbe braucht man einen MOSFET und einen GPIO. Man beachte, dass die MOSFETS bei Überlast sehr schnell zerstört werden. Um Brandgefahr zu verringern und Verletzungen zu vermeiden, sollte man zusätzliche Schaltungselemente vorsehen um MOSFETS gegen Übertemperatur und Überlast zu schützen. Schmelzsicherungen sind je nach Typ dafür zu langsam! Es könen auch selbst-schützende MOSFETs verwendet werden.<br><img src="pictures/pic29.jpg" class="img-fluid"></p></div>
 </div>
 </div>
 </div>
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-3-heading-3">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-3" aria-expanded="false" aria-controls="accordion-tab-3-content-3"><a href="#tab3faq3"><div itemprop="name">Was ist bei adressierbaren 12V und 24V LED Typen zu beachten?</div></a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-3" aria-expanded="false" aria-controls="accordion-tab-3-content-3"><a href="#tab3faq3"><div itemprop="name">Was ist bei dem LED Typ WS2814 (12V oder 24V) zu beachten?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-3-content-3" aria-labelledby="accordion-tab-3-heading-3" data-bs-parent="#accordion-tab-3">
-<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Zu einem ist bei diesen Typen ein störungsfreier Betrieb meistens nur mit einem LevelShifter möglich. Zum andren ist oft bei diesen Typen einzelne LEDs in Gruppen von 3 (bei 12V) oder in Gruppen von 6 (bei 24V) geordnet. LEDs in einer Gruppe lassen sich nicht unabhängig voneinander einsteuern. Man spricht auch von einer logischen LED, die dann physikalisch halt aus 3 oder 6 LEDs besteht.<br><img src="pictures/pic15.jpg" class="img-fluid"></p></div>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>LED Streifen mit diesem Typ sind RGBW Streifen, ähnlich wie SK6812 Typ. Sie müssen also in WLED Einstellungen als SK6812 Typ behandelt werden. Zudem bei diesen Streifen ist oft der weiße Kanal und der Grüne Kanal vertauscht, man muss also in WLED Einstellungen „Swap W & G“ einstellen. Diese Einstellungsoption gibt es erst ab WLED Version 0.14.0-beta1.</p></div>
 </div>
 </div>
 </div>
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-3-heading-4">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-4" aria-expanded="false" aria-controls="accordion-tab-3-content-4"><a href="#tab3faq4"><div itemprop="name">Was ist ein Clock Signal?</div></a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-4" aria-expanded="false" aria-controls="accordion-tab-3-content-4"><a href="#tab3faq4"><div itemprop="name">Was ist bei adressierbaren 12V und 24V LED Typen zu beachten?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-3-content-4" aria-labelledby="accordion-tab-3-heading-4" data-bs-parent="#accordion-tab-3">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Zu einem ist bei diesen Typen ein störungsfreier Betrieb meistens nur mit einem LevelShifter möglich. Zum andren ist oft bei diesen Typen einzelne LEDs in Gruppen von 3 (bei 12V) oder in Gruppen von 6 (bei 24V) geordnet. LEDs in einer Gruppe lassen sich nicht unabhängig voneinander einsteuern. Man spricht auch von einer logischen LED, die dann physikalisch halt aus 3 oder 6 LEDs besteht.<br><img src="pictures/pic15.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-3-heading-5">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-5" aria-expanded="false" aria-controls="accordion-tab-3-content-5"><a href="#tab3faq5"><div itemprop="name">Was ist ein Clock Signal?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-3-content-5" aria-labelledby="accordion-tab-3-heading-5" data-bs-parent="#accordion-tab-3">
 <div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Die meisten adressierbaren LED Typen benötigen nur ein Datensignal für die Ansteuerung. Die Frequenz des Steuersignals ist bei diesen Typen fest. Es gibt aber auch adressierbaren LED Typen, die außer Datensignal ein Clock-Signal benötigen. Bei diesen Typen wird als Taktgeber vom Controller an LED Streifen ein Clock Signal übertragen. Für diese Typen werden also für die Ansteuerung zwei GPIOs gebraucht und diese müssen in WLED Einstellungen korrekt eingestellt werden. Der Vorteil ist, dass durch die Clock-Steuerung eine schnellere Datenübertragung vom Controller an LED Streifen möglich. Es lassen sich schnellere Effekte bei sehr vielen LEDs ablaufen.</p></div>
 </div>
 </div>

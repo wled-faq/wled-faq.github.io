@@ -225,21 +225,32 @@
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-3-heading-2">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-2" aria-expanded="false" aria-controls="accordion-tab-3-content-2"><a href="#tab3faq2"><div itemprop="name">What should I consider when using LED type WS2814 (12V or 24V)?</div></a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-2" aria-expanded="false" aria-controls="accordion-tab-3-content-2"><a href="#tab3faq2"><div itemprop="name">How do you control analog LED strips?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-3-content-2" aria-labelledby="accordion-tab-3-heading-2" data-bs-parent="#accordion-tab-3">
-<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>LED strips of this type are RGBW strips, similar to SK6812 type. They must therefore be treated as SK6812 type in WLED LED preferences. In addition, in these strips, the white channel and the green channel are often swapped, so you have to set "Swap W & G" in the WLED preferences. This setting option is only available starting with WLED version 0.14.0-beta1.<br> ##03##What should I consider using addressable 12V and 24V LED types?<br>On the one hand, with these types, trouble-free operation is usually only possible with a LevelShifter. On the other hand, these types often have individual LEDs arranged in groups of 3 (at 12V) or in groups of 6 (at 24V). LEDs in a group cannot be controlled independently of each other. One also speaks of a logical LED, which then physically consists of 3 or 6 LEDs.<br><img src="pictures/pic15.jpg" class="img-fluid"></p></div>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Analog LED strips not only need a microcontroller for control, but also some additional components such as MOSFETs.<br>A basic circuit diagram is shown here. You need one MOSFET and one GPIO per color. It should be noted that the MOSFETs are destroyed very quickly in the event of an overload. To reduce the risk of fire and prevent personal injury, additional circuit elements should be implemented to protect MOSFETs from overtemperature and overload. Depending on the type, fuses are too slow for this! You might consider using self-protected MOSFETs too.<br><img src="pictures/pic29.jpg" class="img-fluid"></p></div>
 </div>
 </div>
 </div>
 <div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="accordion-header" id="accordion-tab-3-heading-3">
 <h5>
-<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-3" aria-expanded="false" aria-controls="accordion-tab-3-content-3"><a href="#tab3faq3"><div itemprop="name">What is a clock signal?</div></a></button>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-3" aria-expanded="false" aria-controls="accordion-tab-3-content-3"><a href="#tab3faq3"><div itemprop="name">What should I consider when using LED type WS2814 (12V or 24V)?</div></a></button>
 </h5>
 </div>
 <div class="collapse" id="accordion-tab-3-content-3" aria-labelledby="accordion-tab-3-heading-3" data-bs-parent="#accordion-tab-3">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>LED strips of this type are RGBW strips, similar to SK6812 type. They must therefore be treated as SK6812 type in WLED LED preferences. In addition, in these strips, the white channel and the green channel are often swapped, so you have to set "Swap W & G" in the WLED preferences. This setting option is only available starting with WLED version 0.14.0-beta1.<br> ##03##What should I consider using addressable 12V and 24V LED types?<br>On the one hand, with these types, trouble-free operation is usually only possible with a LevelShifter. On the other hand, these types often have individual LEDs arranged in groups of 3 (at 12V) or in groups of 6 (at 24V). LEDs in a group cannot be controlled independently of each other. One also speaks of a logical LED, which then physically consists of 3 or 6 LEDs.<br><img src="pictures/pic15.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-3-heading-4">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-4" aria-expanded="false" aria-controls="accordion-tab-3-content-4"><a href="#tab3faq4"><div itemprop="name">What is a clock signal?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-3-content-4" aria-labelledby="accordion-tab-3-heading-4" data-bs-parent="#accordion-tab-3">
 <div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Most addressable LED strip types only require a data signal for control. The frequency of the control signal is fixed for these types. However, there are also addressable LED types that require a clock signal in addition to the data signal. With these types, a clock signal is transmitted from the controller to the LED strips. In this case two GPIOs are needed for the control and these must be set correctly in the WLED settings. The advantage is that the clock control enables faster data transfer from the controller to the LED strips. Faster effects can be run with a large number of LEDs.</p></div>
 </div>
 </div>

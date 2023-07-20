@@ -80,6 +80,10 @@ Yes. However, this is only possible with an ESP32-based controller and additiona
 ##03##Which LED strip types are supported by WLED software?
 WLED makes most sense with so-called digital, addressable LED strips, where you can control individual LEDs separately. This allows you to set many effects. The supported types are: WS2801, WS2811, WS2812B, WS2813, WS2814, WS1815, SK6812, APA102, LPD8806, SK9822, TM1814, GS8208. There are sometimes new types coming onto the market that have a compatible control protocol.
 However, WLED SW also supports the so-called analog LED strips, where all LEDs can only be controlled in the same way. These types need their own GPIO for each color. There are monochrome CCT, RGB, RGBW and RGBCCT strips. In addition, you not only need a microcontroller, but in any case some additional components such as MOSFETs.
+##03##How do you control analog LED strips?
+Analog LED strips not only need a microcontroller for control, but also some additional components such as MOSFETs.
+A basic circuit diagram is shown here. You need one MOSFET and one GPIO per color. It should be noted that the MOSFETs are destroyed very quickly in the event of an overload. To reduce the risk of fire and prevent personal injury, additional circuit elements should be implemented to protect MOSFETs from overtemperature and overload. Depending on the type, fuses are too slow for this! You might consider using self-protected MOSFETs too.
+[pic29]
 ##03##What should I consider when using LED type WS2814 (12V or 24V)?
 LED strips of this type are RGBW strips, similar to SK6812 type. They must therefore be treated as SK6812 type in WLED LED preferences. In addition, in these strips, the white channel and the green channel are often swapped, so you have to set "Swap W & G" in the WLED preferences. This setting option is only available starting with WLED version 0.14.0-beta1.
  ##03##What should I consider using addressable 12V and 24V LED types?

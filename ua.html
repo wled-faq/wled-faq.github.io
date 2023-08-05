@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ua" itemscope itemtype="https://schema.org/FAQPage">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="copyright" content="&copy; 2023 Wladislaw Waag" />
+  <title>WLED FAQ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8">
+		<h3><b><span style="color:red">W</span><span style="color:orange">L</span><span style="color:darkblue">E</span><span style="color:lightpink">D</span><span style="color:blue"> F</span><span style="color:violett">A</span><span style="color:orchid">Q</span></b></h3>
+			(Неофіційна документація/FAQ)
+		</div>
+		<div class="col-lg-4 text-end">
+			<a href="index.html">Deutsch/German >></a>
+		</div>
+		
+	</div>
+</div>
+<div class="container">Перекладено на українською Ігорем Герасимовим.</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="nav nav-pills faq-pills" id="faq-tabs" role="tablist" aria-orientation="vertical">
+                <a href="#tab1" class="nav-link active" data-bs-toggle="pill" role="tab" aria-controls="tab1" aria-selected="true">Перші кроки</a>
+<a href="#tab2" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab2" aria-selected="false">Контролер</a>
+<a href="#tab3" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab3" aria-selected="false">Світлодіодні стрічки</a>
+<a href="#tab4" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab4" aria-selected="false">Підключення</a>
+<a href="#tab5" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab5" aria-selected="false">Програмне забезпечення WLED в цілому</a>
+<a href="#tab6" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab6" aria-selected="false">Налаштування</a>
+<a href="#tab7" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab7" aria-selected="false">Пресети та плейлисти</a>
+<a href="#tab8" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab8" aria-selected="false">Синхронізація, віртуальні світлодіоди і т.д.</a>
+<a href="#tab9" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab9" aria-selected="false">Реактивний звук / аудіо WLED</a>
+
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="tab-content" id="faq-tab-content">
+                <div class="tab-pane show active" id="tab1" role="tabpanel" aria-labelledby="tab1"><div class="accordion" id="accordion-tab-1">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-1-heading-1">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-1-content-1" aria-expanded="false" aria-controls="accordion-tab-1-content-1"><a href="#tab1faq1"><div itemprop="name">Які найпоширеніші помилки під час перших кроків?</div></a></button>
+</h5>
+</div>
+<div class="collapse show" id="accordion-tab-1-content-1" aria-labelledby="accordion-tab-1-heading-1" data-bs-parent="#accordion-tab-1">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Найпоширенішими помилками є наступні:<br>1. Світлодіодна стрічка підключається зі зворотнього боку: адресні світлодіодні стрічки мають напрямок, вказаний маленькими стрілками на стрічці. Лінію даних потрібно підключати з того боку, де починається стрілка.<br><img src="pictures/pic4.jpg" class="img-fluid">.<br>2. Неправильне налаштування GPIO: Перевірте в налаштуваннях WLED, чи правильний номер GPIO встановлено для виведення даних. Готові до використання контролери зазвичай мають правильні налаштування, надруковані або на корпусі, або на друкованій платі.<br><img src="pictures/pic5.jpg" class="img-fluid"><br>3. Світлодіодні стрічки з великою кількістю світлодіодів підключені і налаштовані, але обмежувач струму все ще має значення за замовчуванням (850 мА). Це часто призводить до того, що світлодіоди коротко спалахують при зміні кольору, а потім відразу гаснуть або світяться дуже тьмяно. Перевірте і, за необхідності, відкоригуйте налаштування у WLED.<br><img src="pictures/pic6.jpg" class="img-fluid"><br>4. Встановлено неправильний тип світлодіодів. У налаштуваннях WLED необхідно встановити правильний тип світлодіодів і правильну послідовність кольорів (RGB, BGR тощо). Перевірте правильність цих налаштувань. Ви повинні знати тип світлодіода, але ви можете просто спробувати послідовність кольорів, щоб побачити, яка є правильною. Особливу увагу слід звернути на світлодіодну стрічку WS2814, яку в налаштуваннях потрібно встановити як SK6812.<br><img src="pictures/pic7.jpg" class="img-fluid"><br>5. Погана проводка. Підключення повинно бути виконано ретельно. Слід уникати нещільних контактів, з'єднань холодною пайкою тощо. З міркувань безпеки також потрібно бути уважним до правильного підбору розмірів кабелів.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-1-heading-2">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-1-content-2" aria-expanded="false" aria-controls="accordion-tab-1-content-2"><a href="#tab1faq2"><div itemprop="name">Який пароль має WLED-AP?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-1-content-2" aria-labelledby="accordion-tab-1-heading-2" data-bs-parent="#accordion-tab-1">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Якщо програмне забезпечення WLED встановлюється на ваш контролер вперше і ви ще не ввели свої дані WiFi під час встановлення за допомогою веб-інсталятора, то контролер WLED створює точку доступу (WLAN) з назвою WLED-AP. Пароль для цього WiFi - wled1234.<br>Цей пароль можна змінити у розділі Конфігурація->Налаштування WiFi.<br><img src="pictures/pic8.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-1-heading-3">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-1-content-3" aria-expanded="false" aria-controls="accordion-tab-1-content-3"><a href="#tab1faq3"><div itemprop="name"> Я встановив у WLED неправильний пароль для своєї WLAN, що мені робити?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-1-content-3" aria-labelledby="accordion-tab-1-heading-3" data-bs-parent="#accordion-tab-1">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>У початковому стані з налаштуваннями за замовчуванням, WLED SW намагається підключитися до обраного WiFi. Якщо це не вдається, WLED-AP створюється знову. Тож просто зачекайте, поки WLED-AP знову з'явиться. Однак цю поведінку можна змінити у налаштуваннях WLED. Наприклад, WLED-AP можна повністю заборонити. Якщо ви вже налаштували його таким чином, допоможе лише "жорстке скидання" або нове перепрошивання за допомогою WLED SW.<br><img src="pictures/pic9.jpg" class="img-fluid"><br>Однак є ще кілька речей, про які слід пам'ятати для правильного налаштування:<br>1. Для надійної передачі даних від контролера до світлодіодної стрічки потрібен стабілізатор рівня (це обов'язково, особливо для світлодіодних стрічок на 12 або 24 В). Потім вам доведеться щось спаяти або ви можете відразу купити професійний готовий WLED-контролер. Завдяки промисловому виробництву/збірці вони також значно надійніші, ніж будь-яка конструкція, зібрана вручну.<br>2. З міркувань безпеки необхідно враховувати правильну прокладку кабелів (довжину, переріз, контакти) і вбудовані запобіжники. Особливо зі світлодіодними стрічками все ускладнюється, оскільки вам потрібні так звані проміжні кабелі. Вони повинні бути правильно сплановані та реалізовані. В якості відправної точки можна використовувати WLED Калькулятор.<br>3. Світлодіодні стрічки можуть сильно нагріватися під час роботи і навіть перегріватися в разі несправності. Знову ж таки, з міркувань безпеки, ви повинні захистити простір навколо них: не слід просто так прокладати світлодіодні стрічки, в ідеалі ви повинні інтегрувати їх в алюмінієві профілі або щось подібне. У нормальному режимі роботи вони діють як тепловідвід і, таким чином, продовжують термін служби світлодіодів. У разі несправності вони можуть захистити навколишнє середовище.<br><img src="pictures/pic11.jpg" class="img-fluid"><br>4. Для економії енергії, коли світлодіоди вимкнені, ви можете інтегрувати реле, які повністю вимикають напругу світлодіодів.</p></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tab-pane" id="tab2" role="tabpanel" aria-labelledby="tab2"><div class="accordion" id="accordion-tab-2">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-1">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-1" aria-expanded="false" aria-controls="accordion-tab-2-content-1"><a href="#tab2faq1"><div itemprop="name">Які типи мікроконтролерів підтримуються програмним забезпеченням WLED?</div></a></button>
+</h5>
+</div>
+<div class="collapse show" id="accordion-tab-2-content-1" aria-labelledby="accordion-tab-2-heading-1" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Наразі (станом на літо 2023 року) повністю підтримуються лише мікроконтролери Espressif, типи ESP8266 та ESP32 (з двома ядрами). Деякі новіші типи, такі як ESP32-C3, ESP32-S2 та ESP32-S3, підтримуються експериментально, але їх продуктивне використання поки що не рекомендується, оскільки підозрюється наявність багатьох помилок. Крім того, встановити ці нові типи не так просто: існує кілька варіантів апаратного забезпечення/плат, для яких необхідно спеціально компілювати ПЗ. Слід також зазначити, що на ринку все ще продаються деякі плати ESP32-C3 (так звані C3 mini V1.0.0), на яких WLAN не працює належним чином.<br>Слід також зазначити, що Sound Reactive WLED наразі підтримує лише мікроконтролери ESP32. Останньою версією для ESP8266 була SR WLED версії 13.0-beta3.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-2">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-2" aria-expanded="false" aria-controls="accordion-tab-2-content-2"><a href="#tab2faq2"><div itemprop="name">Скільки світлодіодів може контролювати контролер WLED?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-2" aria-labelledby="accordion-tab-2-heading-2" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Контролери на базі ESP8266 можуть керувати приблизно 600-650 світлодіодами. Контролери на базі ESP32 можуть керувати до 4,000 світлодіодів. Однак рекомендується розподіляти світлодіодні стрічки на кілька входів так, щоб до одного входу було підключено не більше 1000 світлодіодів: багато світлодіодів на одному виході призводить до падіння швидкості керування і швидкого прояву нерівномірностей. При використанні деяких протоколів передачі даних слід також враховувати, що вони можуть підтримувати лише обмежену кількість світлодіодів.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-3">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-3" aria-expanded="false" aria-controls="accordion-tab-2-content-3"><a href="#tab2faq3"><div itemprop="name">Чи дійсно потрібен перемикач рівнів у контролері WLED?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-3" aria-labelledby="accordion-tab-2-heading-3" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Багато світлодіодних стрічок на 5 В можуть працювати і без стабілізатора рівня, особливо якщо провід між контролером і світлодіодною стрічкою дуже короткий. Однак іноді може виникати мерехтіння, наприклад, світлодіоди короткочасно спалахують білим кольором. Можливі і більш серйозні збої. Зі світлодіодними стрічками на 12 або 24 В, як правило, неможливо обійтися без стабілізатора рівня. Однак для світлодіодних стрічок на 5 В, особливо в разі продуктивного використання, також рекомендується використовувати стабілізатор рівня, щоб забезпечити безперебійну роботу: стабілізатор рівня адаптує рівень сигналу мікроконтролера (3,3 В) до рівня сигналу світлодіодної стрічки (5 В для всіх адресних типів світлодіодів).<br>Професійні WLED-контролери завжди мають інтегрований стабілізатор рівня.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-4">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-4" aria-expanded="false" aria-controls="accordion-tab-2-content-4"><a href="#tab2faq4"><div itemprop="name">Які стабілізатори рівня рекомендується використовувати?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-4" aria-labelledby="accordion-tab-2-heading-4" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Управління адресними світлодіодними стрічками відбувається за допомогою керуючих сигналів, які мають базову частоту в діапазоні від 800 кГц до однозначного діапазону МГц (залежно від типу). Відповідно, щоб чисто передавати ці сигнали, шифратор повинен бути достатньо швидким. Тому рекомендуються швидкі типи, такі як SN74AHCT125, SN74AHCT32 або SN74LVC2T45. Типи типу SN74HCT (тобто без "A") трохи повільні і підходять для світлодіодів типу WS2812B, але можуть бути занадто повільними для деяких інших типів світлодіодів. У будь-якому випадку, не рекомендується використовувати готові двонаправлені перемикачі рівнів I2C, побудовані на транзисторах. При необхідності їх можна використовувати, але тоді слід замінити підтягуючий резистор на виході (зазвичай 10 кОм) на менший (<=1 кОм).<br>Перемикачі рівнів SN74AHCT125 підключаються між собою наступним чином:<br><img src="pictures/pic1.jpg" class="img-fluid"><br><img src="pictures/pic2.jpg" class="img-fluid"><br>Також можна використовувати TXS0108 LevelShifter. Невеликі друковані плати з цим перемикачем рівня часто продаються і можуть бути використані наступним чином:<br><img src="pictures/pic3.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-5">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-5" aria-expanded="false" aria-controls="accordion-tab-2-content-5"><a href="#tab2faq5"><div itemprop="name">Чи потрібно встановлювати резистор у лінії передачі даних між WLED-контролером і світлодіодною стрічкою?  Який саме?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-5" aria-labelledby="accordion-tab-2-heading-5" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>У більшості випадків рекомендується резистор в діапазоні від 33 до 68 кОм. Стара рекомендація була 470 кОм, але з сьогоднішньої точки зору значення в цьому діапазоні не є нормальним. В принципі, робота без резистора також можлива, але при продуктивному використанні її слід уникати.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-6">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-6" aria-expanded="false" aria-controls="accordion-tab-2-content-6"><a href="#tab2faq6"><div itemprop="name">Чи рекомендується використовувати готовий WLED-контролер, чи його можна зібрати з окремих компонентів?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-6" aria-labelledby="accordion-tab-2-heading-6" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Відповідь залежить від того, що ви хочете з ним зробити. Для експериментів/випробувань достатньо мікроконтролерної плати ESP8266 або ESP32 без будь-яких додаткових компонентів. Якщо ви хочете зробити чисту установку, яка повинна працювати без проблем протягом тривалого періоду часу, вам дійсно не обійтися без готової професійної частини. Якісні, <a href="https://shop.myhome-control.de" target=”_blank” rel="noopener">готові WLED-контролери</a> не тільки інтегрують всі необхідні компоненти, вони також значно надійніші, ніж будь-які друковані плати, зібрані вручну, завдяки промисловому виробництву/збірці. Найгірша ідея - збирати все це за допомогою перемичок або чогось подібного: мало того, що нещільні контакти запрограмовані заздалегідь, ви також можете створити високий ризик для безпеки.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-7">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-7" aria-expanded="false" aria-controls="accordion-tab-2-content-7"><a href="#tab2faq7"><div itemprop="name">Чи можна підключити кнопку до WLED-контролера? Як це зробити?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-7" aria-labelledby="accordion-tab-2-heading-7" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Так, для цього вам потрібен вільний цифровий вхід (GPIO) на контролері. Потім ви можете підключити кнопку між цим входом і заземленням (GND), наприклад, миттєву кнопку. Якщо ви натиснете на кнопку, цей GPIO буде з'єднаний із землею в цей момент, і контролер зареєструє це як клацання. Однак, щоб це сталося, кнопка повинна бути правильно налаштована у налаштуваннях WLED. Спочатку потрібно налаштувати кнопку. Для цього в розділі Config->LED Preferences ви повинні призначити номер GPIO, до якого підключена кнопка, на "Button" (наприклад, спочатку візьмемо "Button 1"). Ви також маєте визначити тип кнопки. Для миттєвої кнопки це буде "Кнопка". Потім ви можете встановити, що має відбуватися, коли кнопка натискається. Для цього перейдіть до Конфігурації->Час і макроси. Тут у розділі "Дії кнопок" ви можете визначити до трьох пресетів для кожної кнопки (введіть ідентифікатор пресета), які мають виконуватися при короткому, тривалому або подвійному натисканні кнопки (тому три стовпчики). Звичайно, пресети повинні бути створені заздалегідь. Для кнопки типу перемикач ви можете вказати, який пресет має викликатися при її вмиканні та вимиканні. Третій параметр (третій стовпчик) у цьому випадку не має жодного значення.<br><img src="pictures/pic12.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-8">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-8" aria-expanded="false" aria-controls="accordion-tab-2-content-8"><a href="#tab2faq8"><div itemprop="name">Скільки кнопок можна підключити до WLED-контролера?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-8" aria-labelledby="accordion-tab-2-heading-8" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Програмне забезпечення WLED підтримує до 4 кнопок для контролерів на базі ESP32 і до 2 кнопок для контролерів на базі ESP8266. Для кожної кнопки потрібен власний вхід GPIO, і кожна кнопка може виконувати до трьох дій: при короткому натисканні, при довгому натисканні і при подвійному натисканні.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-9">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-9" aria-expanded="false" aria-controls="accordion-tab-2-content-9"><a href="#tab2faq9"><div itemprop="name">Чи можна підключити датчик руху (PIR-сенсор) до WLED-контролера?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-9" aria-labelledby="accordion-tab-2-heading-9" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Так. Існує два типи датчиків:<br>1. З можливістю регулювання чутливості та часової затримки. Наприклад, тип HC-SR501. Ці датчики можна підключити до WLED і налаштувати як кнопку.<br>2. Без можливості регулювання чутливості та часової затримки. Наприклад, тип HC-SR602. Для них потрібно скомпілювати WLED з PIR-сенсором UserMod.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-10">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-10" aria-expanded="false" aria-controls="accordion-tab-2-content-10"><a href="#tab2faq10"><div itemprop="name">Чи можна керувати контролером WLED за допомогою пульта дистанційного керування?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-10" aria-labelledby="accordion-tab-2-heading-10" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Так, є два варіанти:<br>1. Інфрачервоний пульт дистанційного керування (ІЧ). Для цього, однак, до контролера WLED повинен бути підключений інфрачервоний приймач. Рекомендовані типи: TSOP38238 або KY-022. Кожен з цих приймачів має три контакти: 3,3 В, GND та ІЧ-дані. Вивід ІЧ-даних повинен бути підключений до вільного виводу GPIO. Потім цей GPIO потрібно встановити як IR GPIO у розділі "Config->LED Preferences". Ви також повинні вибрати, який інфрачервоний пульт дистанційного керування у вас є. Доступні наступні типи: 24-клавішний RGB, 24-клавішний з CT, 40-клавішний синій, 44-клавішний RGB, 21-клавішний RGB, 6-клавішний чорний, 9-клавішний червоний, JSON пульт. Останній тип дає можливість використовувати будь-який пульт дистанційного керування. Для цього ІЧ-коди необхідно перерахувати в JSON-файл, а потім завантажити в WLED.<br><img src="pictures/pic13.jpg" class="img-fluid">.<br>2. Починаючи з версії WLED 14.0-beta3: ESP-NOW-сумісний пульт дистанційного керування, який використовує радіомережу. Прикладом цього є пульт дистанційного керування "WIZmote". Він базується на мікроконтролері ESP. ESP-NOW можна активувати в налаштуваннях WLED. Вам потрібно ввести апаратну MAC-адресу пульта дистанційного керування. Визначається натисканням на будь-яку кнопку на пульті і копіюванням останньої отриманої MAC-адреси з поля "Last Seen" у поле "Hardware MAC" у налаштуваннях WLED ESP-NOW ("Config->WiFi Setup") і збереженням її за допомогою кнопки "Save". Переваги: до контролера WLED не потрібно під'єднувати спеціальний приймач, сигнали передаються через радіомережу. Тому не потрібна пряма видимість між пультом дистанційного керування і WLED-контролером, як у випадку з інфрачервоним пультом дистанційного керування.<br><img src="pictures/pic14.jpg" class="img-fluid"><br>4 кнопки "1"-"4" пульта дистанційного керування WIZmote пов'язані з пресетами від 1 до 4. Значення інших кнопок не потребує пояснень. Увага: Для належної роботи WIZmote потрібні дві високоякісні батарейки типу AAA. Якщо батарейки занадто слабкі, правильний сигнал не буде надіслано, навіть якщо синій світлодіод на пульті дистанційного керування короткочасно загориться, фактично вказуючи на передачу сигналу.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-2-heading-11">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-2-content-11" aria-expanded="false" aria-controls="accordion-tab-2-content-11"><a href="#tab2faq11"><div itemprop="name">Чи можна підключити контролер WLED через Ethernet (локальну мережу) замість бездротового зв'язку?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-2-content-11" aria-labelledby="accordion-tab-2-heading-11" data-bs-parent="#accordion-tab-2">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Так, але це можливо лише за наявності контролера на базі ESP32 та додаткового обладнання. Тоді ви можете активувати Ethernet у розділі "Config->WiFi Setup", вибравши тип Ethernet-контролера або тип адаптера: ABC! WLED V43 та сумісні, ESP32-POE, ESP32Deux, KIT-VE тощо. Використовувана версія WLED повинна бути скомпільована з підтримкою Ethernet.</p></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tab-pane" id="tab3" role="tabpanel" aria-labelledby="tab3"><div class="accordion" id="accordion-tab-3">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-3-heading-1">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-1" aria-expanded="false" aria-controls="accordion-tab-3-content-1"><a href="#tab3faq1"><div itemprop="name">Які типи світлодіодних стрічок підтримуються програмним забезпеченням WLED?</div></a></button>
+</h5>
+</div>
+<div class="collapse show" id="accordion-tab-3-content-1" aria-labelledby="accordion-tab-3-heading-1" data-bs-parent="#accordion-tab-3">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>WLED має найбільший сенс з так званими цифровими, адресними світлодіодними стрічками, де ви можете керувати окремими світлодіодами окремо. Це дозволяє налаштувати безліч ефектів. Підтримуються такі типи: WS2801, WS2811, WS2812B, WS2813, WS2814, WS1815, SK6812, APA102, LPD8806, SK9822, TM1814, GS8208. Іноді на ринку з'являються нові типи, які мають сумісний протокол керування.<br>Однак WLED SW також підтримує так звані аналогові світлодіодні стрічки, де всіма світлодіодами можна керувати лише однаково. Ці типи потребують власного GPIO для кожного кольору. Існують монохромні стрічки CCT, RGB, RGBW і RGBCCT. Крім того, вам потрібен не тільки мікроконтролер, але в будь-якому випадку деякі додаткові компоненти, такі як MOSFET.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-3-heading-2">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-2" aria-expanded="false" aria-controls="accordion-tab-3-content-2"><a href="#tab3faq2"><div itemprop="name">Як керувати аналоговими світлодіодними стрічками?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-3-content-2" aria-labelledby="accordion-tab-3-heading-2" data-bs-parent="#accordion-tab-3">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Для керування аналоговими світлодіодними стрічками потрібен не тільки мікроконтролер, але й деякі додаткові компоненти, такі як MOSFET.<br>Базова схема показана тут. Вам знадобиться один MOSFET і один GPIO на кожен колір. Слід зазначити, що MOSFET дуже швидко руйнуються в разі перевантаження. Щоб зменшити ризик пожежі та запобігти травмуванню людей, слід застосувати додаткові елементи схеми для захисту MOSFET від перегріву та перевантаження. Залежно від типу, запобіжники занадто повільні для цього! Ви також можете розглянути можливість використання самозахищених MOSFET.<br><img src="pictures/pic29.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-3-heading-3">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-3" aria-expanded="false" aria-controls="accordion-tab-3-content-3"><a href="#tab3faq3"><div itemprop="name">На що слід звернути увагу при використанні світлодіодів типу WS2814 (12В або 24В)?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-3-content-3" aria-labelledby="accordion-tab-3-heading-3" data-bs-parent="#accordion-tab-3">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Світлодіодні стрічки цього типу є RGBW стрічками, подібними до типу SK6812. Тому їх слід розглядати як тип SK6812 у налаштуваннях світлодіодів WLED. Крім того, у цих стрічках білий і зелений канали часто міняються місцями, тому в налаштуваннях WLED потрібно встановити "Swap W & G". Цей параметр доступний лише починаючи з версії WLED 0.14.0-beta1.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-3-heading-4">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-4" aria-expanded="false" aria-controls="accordion-tab-3-content-4"><a href="#tab3faq4"><div itemprop="name">Що слід враховувати при використанні адресних 12В та 24В світлодіодів?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-3-content-4" aria-labelledby="accordion-tab-3-heading-4" data-bs-parent="#accordion-tab-3">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>З одного боку, з цими типами світлодіодів безвідмовна робота зазвичай можлива лише за допомогою LevelShifter. З іншого боку, ці типи часто мають окремі світлодіоди, об'єднані в групи по 3 (на 12 В) або по 6 (на 24 В). Світлодіодами в групі неможливо керувати незалежно один від одного. Також говорять про логічний світлодіод, який фізично складається з 3 або 6 світлодіодів.<br><img src="pictures/pic15.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-3-heading-5">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-3-content-5" aria-expanded="false" aria-controls="accordion-tab-3-content-5"><a href="#tab3faq5"><div itemprop="name">Що таке тактовий сигнал?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-3-content-5" aria-labelledby="accordion-tab-3-heading-5" data-bs-parent="#accordion-tab-3">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Більшість адресних типів світлодіодних стрічок потребують лише сигналу даних для керування. Частота керуючого сигналу для цих типів фіксована. Однак існують також адресні типи світлодіодів, які потребують тактового сигналу на додаток до сигналу даних. У цих типах тактовий сигнал передається від контролера до світлодіодних стрічок. У цьому випадку для керування потрібні два GPIO, які повинні бути правильно встановлені в налаштуваннях WLED. Перевага полягає в тому, що тактове керування забезпечує швидшу передачу даних від контролера до світлодіодних стрічок. З великою кількістю світлодіодів можна запускати швидші ефекти.</p></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tab-pane" id="tab4" role="tabpanel" aria-labelledby="tab4"><div class="accordion" id="accordion-tab-4">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-4-heading-1">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-1" aria-expanded="false" aria-controls="accordion-tab-4-content-1"><a href="#tab4faq1"><div itemprop="name">Який переріз повинні мати кабелі?</div></a></button>
+</h5>
+</div>
+<div class="collapse show" id="accordion-tab-4-content-1" aria-labelledby="accordion-tab-4-heading-1" data-bs-parent="#accordion-tab-4">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Лінії для передачі даних (даних і, зрештою, тактових сигналів) можуть мати дуже малий переріз, оскільки по них протікає дуже малий струм. Однак лінії для живлення (GND і 5В/12В/24В тощо) повинні бути належним чином розраховані. Для цього ви повинні мати достатні електричні знання. Калькулятор WLED можна використовувати як основу для проектування.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-4-heading-2">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-2" aria-expanded="false" aria-controls="accordion-tab-4-content-2"><a href="#tab4faq2"><div itemprop="name">Мені потрібен запобіжник? Який саме?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-4-content-2" aria-labelledby="accordion-tab-4-heading-2" data-bs-parent="#accordion-tab-4">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Для безпечної роботи кабелі та світлодіодні стрічки повинні бути захищені від перевантаження та короткого замикання. Однак для цього недостатньо просто встановити будь-який запобіжник. Запобіжник, наприклад, плавкий запобіжник, ефективний лише тоді, коли він правильно розрахований. Для цього ви повинні мати достатні електричні знання. Калькулятор WLED можна використовувати як основу для проектування.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-4-heading-3">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-3" aria-expanded="false" aria-controls="accordion-tab-4-content-3"><a href="#tab4faq3"><div itemprop="name">Що таке ін'єкції потужності? Чи потрібні вони і скільки?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-4-content-3" aria-labelledby="accordion-tab-4-heading-3" data-bs-parent="#accordion-tab-4">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Довга світлодіодна стрічка з великою кількістю світлодіодів може вимагати досить великої потужності. У цьому випадку струм не може подаватися в повному обсязі тільки на початку світлодіодної стрічки. Проблема полягає в тому, що через падіння напруги всередині стрічки на задні світлодіоди надходить занадто мало напруги, тому вони не світять з повною інтенсивністю або навіть спотворюють кольори. Тому може знадобитися подача живлення на світлодіодні стрічки зі зворотного боку або навіть додатково в одній або декількох точках між ними. Кількість необхідних ін'єкцій можна розрахувати за допомогою <a href="https://wled-calculator.github.io" target=”_blank” rel="noopener"><a href="https://wled-calculator.github.io" target=”_blank” rel="noopener">WLED-калькулятор</a>а</a>.<br><img src="pictures/pic16.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-4-heading-4">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-4" aria-expanded="false" aria-controls="accordion-tab-4-content-4"><a href="#tab4faq4"><div itemprop="name">Чи захищає, наприклад, запобіжник на 10 А від струмів, що перевищують 10 А?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-4-content-4" aria-labelledby="accordion-tab-4-heading-4" data-bs-parent="#accordion-tab-4">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Ні. Значення, вказане для запобіжника, є так званим номінальним значенням запобіжника. Його точне значення дещо відрізняється залежно від типу запобіжника. Для прикладу розглянемо типові автомобільні запобіжники. Вони часто використовуються в контролерах WLED, оскільки їхній діапазон напруги (до 32 В), придатність для постійного струму і великий вибір номінальних значень (від 1 А до 40 А) роблять їх особливо придатними для цього застосування. Ці запобіжники визначені стандартом ISO 8820-3 і тому завжди мають схожу поведінку, навіть якщо вони виробляються різними виробниками. Але будьте обережні: на різних торгових платформах часто можна знайти дешеві репліки, які взагалі не відповідають цій специфікації і тому іноді не працюють належним чином. Так, наприклад, автомобільний запобіжник на 10А повинен витримувати 110% номінального струму, тобто 11А, протягом щонайменше 100 годин. Він все ще витримуватиме 135% номінального струму (тобто 13,5 А) від 0,75 секунди до 600 секунд, перш ніж розплавиться і перерве струм. Він може витримувати вдвічі більший номінальний струм (20 А) протягом 5 с, принаймні протягом 0,15 с. І навіть в 6 разів більший номінальний струм (60 А) протягом 100 мс. Це справедливо для номінальної кімнатної температури, при інших температурах значення можуть бути іншими. Якщо, наприклад, запобіжник на 10 А витримує струм 20 А протягом 5 с, то інші компоненти, які він має захищати, також повинні витримувати цей струм і не згоріти за цей час.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-4-heading-5">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-4-content-5" aria-expanded="false" aria-controls="accordion-tab-4-content-5"><a href="#tab4faq5"><div itemprop="name">Як вибрати запобіжник?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-4-content-5" aria-labelledby="accordion-tab-4-heading-5" data-bs-parent="#accordion-tab-4">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Часто вважають, що достатньо використовувати будь-який запобіжник, і все буде безпечно. Ні в якому разі! Тільки правильно підібраний і розрахований запобіжник може вчасно перервати струм, який може призвести до пожежі в разі перевантаження або короткого замикання. Процедура вибору запобіжника та проводів виглядає наступним чином:<br>1. Ви визначаєте робочий струм, який повинен протікати через запобіжник. Це, наприклад, максимальний струм, який споживають світлодіоди.<br>2. Тепер ви вибираєте запобіжник, який має достатню пропускну здатність, щоб витримувати робочий струм протягом усього терміну служби, не розплавляючись передчасно.<br>3. Вибираєте з'єднувальні кабелі, затискачі тощо. Тут відіграють роль два аспекти:<br>a) Ці компоненти не повинні перегріватися при робочому струмі, але вони також повинні бути здатні витримувати всі струми до тих пір, поки запобіжник їх пропускає. Якщо, наприклад, автомобільний міні-запобіжник на 10 А був обраний для робочого струму 8 А, кабелі і т.д. повинні витримувати 11 А постійно, 13,5 А протягом щонайменше 600 с, 20 А протягом 5 секунд і навіть 60 А протягом 100 мс без загоряння.<br>б) З'єднувальні кабелі також не повинні спричиняти занадто високе падіння напруги. Тут важливий не тільки переріз кабелю, але і його довжина. Падіння напруги може бути причиною того, що вам доведеться вибрати значно більший переріз, хоча з точки зору пункту а) не такий великий переріз кабелю був би необхідний.<br>WLED Калькулятор є хорошою відправною точкою для таких розрахунків.</p></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tab-pane" id="tab5" role="tabpanel" aria-labelledby="tab5"><div class="accordion" id="accordion-tab-5">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-5-heading-1">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-1" aria-expanded="false" aria-controls="accordion-tab-5-content-1"><a href="#tab5faq1"><div itemprop="name">Які активні програмні форки WLED існують?</div></a></button>
+</h5>
+</div>
+<div class="collapse show" id="accordion-tab-5-content-1" aria-labelledby="accordion-tab-5-heading-1" data-bs-parent="#accordion-tab-5">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Особливо важливими є три вилки програмного забезпечення (ПЗ) WLED:<br>1. Оригінал: Aircoookie WLED. Це оригінальне ПЗ WLED. До версії 0.13.3 не було способу зробити Sound Reactive WLED, використовуючи цю версію. Починаючи з версії 0.14.0 доступний так званий Audio Reactive Usermod.<br>2. Sound Reactive WLED: ця гілка була створена кілька років тому і реалізує так званий Sound Reactive WLED. За допомогою мікрофона або лінійного входу можна змусити світлодіоди реагувати на музику (або інші шуми), а потім загорятися, наприклад, з музичними ударами.<br>3. MoonModules WLED: ця гілка є "ігровим майданчиком", створеним деякими розробниками WLED, в основному для випробування нових функцій або експериментальних змін існуючого коду.<br>За допомогою цього інсталятора WLED ви можете встановити і випробувати кожну версію.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-5-heading-2">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-2" aria-expanded="false" aria-controls="accordion-tab-5-content-2"><a href="#tab5faq2"><div itemprop="name">Що таке "модуль користувача" у програмному забезпеченні WLED?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-5-content-2" aria-labelledby="accordion-tab-5-heading-2" data-bs-parent="#accordion-tab-5">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>В принципі, Usermod - це розширення, яке користувач/програміст може запрограмувати на додаток до основних функцій програмного забезпечення WLED. Для того, щоб мати можливість використовувати Usermod, він повинен бути скомпільований разом з програмним забезпеченням WLED. Офіційні випуски WLED не містять жодних Usermod'ів, неофіційні джерела, такі як <a href="https://wled-install.github.io" target=”_blank” rel="noopener">WLED Installer</a>, також пропонують попередньо скомпільовані версії WLED з деякими Usermod'ами. Однак у багатьох випадках це означає, що якщо ви хочете використовувати один або декілька юзермодів, вам доведеться скомпілювати програмне забезпечення WLED для них самостійно. Цей Помічник з компіляції WLED може бути корисним. Важливо також зазначити, що деякі користувацькі моди можуть бути застарілими і можуть працювати неправильно або взагалі не працювати з поточною версією WLED, оскільки користувацькі моди не були запрограмовані спільнотою WLED, а часто окремими користувачами/розробниками, і тому вони не підтримуються належним чином або не оновлюються.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-5-heading-3">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-3" aria-expanded="false" aria-controls="accordion-tab-5-content-3"><a href="#tab5faq3"><div itemprop="name">Що таке сегмент у програмному забезпеченні WLED?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-5-content-3" aria-labelledby="accordion-tab-5-heading-3" data-bs-parent="#accordion-tab-5">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Сегменти додають можливість розділити світлодіодну стрічку на віртуальні частини, щоб призначити кожній частині свій власний колір або ефект. Це дозволяє реалізувати різноманітні спецефекти. Наприклад, ви можете розділити світлодіодну стрічку на два сегменти і встановити другий сегмент як дзеркальний: таким чином ви можете створювати симетричні ефекти.<br><img src="pictures/pic17.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-5-heading-4">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-4" aria-expanded="false" aria-controls="accordion-tab-5-content-4"><a href="#tab5faq4"><div itemprop="name">Що означають піктограми Палітра, Матриця, Нота і Подвійна нота в ефектах WLED?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-5-content-4" aria-labelledby="accordion-tab-5-heading-4" data-bs-parent="#accordion-tab-5">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Починаючи з версії WLED 14.0, для ефектів відображаються додаткові символи. Вони вказують на певні можливості або особливості відповідного ефекту:<br>"Палітра": за допомогою цього ефекту можна встановити різні кольорові палітри.<br>"Матриця": ці ефекти є 2D-ефектами для світлодіодних матриць.<br>"Нота": цей ефект є аудіореактивним і реагує на гучність аудіосигналу.<br>"Подвійна нота": цей ефект є звуковим реактивним ефектом і реагує на частоти в аудіосигналі.<br><img src="pictures/pic18.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-5-heading-5">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-5" aria-expanded="false" aria-controls="accordion-tab-5-content-5"><a href="#tab5faq5"><div itemprop="name">Чи можна керувати WLED-контролерами через Інтернет?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-5-content-5" aria-labelledby="accordion-tab-5-heading-5" data-bs-parent="#accordion-tab-5">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>На жаль, не напряму. Інтерфейс WLED в браузері або додаток WLED працюють тільки в тому випадку, якщо контролер і ПК / смартфон знаходяться в одній локальній мережі. Безпечне пряме керування через Інтернет неможливе. Однак можна встановити систему домашньої автоматизації (вимагає спеціального обладнання), наприклад, Home Assistant або IoBroker. Вони мають можливість керувати WLED-контролерами і водночас надають можливість доступу до систем через Інтернет. Інший варіант - встановити VPN-з'єднання. Деякі сучасні роутери підтримують цю функцію. Тоді ви спочатку підключаєтеся до домашньої мережі через Інтернет (за допомогою захищеної технології VPN), а потім отримуєте доступ до WLED у звичайному режимі. Інший простий, але обмежений варіант - підключити контролер WLED до пристрою Alexa (наприклад, Amazon Echo), якщо він у вас є. Тоді ви зможете керувати контролером через додаток Alexa, але тільки змінювати стан увімкнення та вимкнення, а також яскравість. Звичайно, теоретично можна було б увімкнути прямий доступ з інтернету до WLED-контролера в роутері. Однак це вкрай небезпечно, оскільки дані ніяк не захищені, і будь-хто може керувати вашим контролером таким чином.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-5-heading-6">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-5-content-6" aria-expanded="false" aria-controls="accordion-tab-5-content-6"><a href="#tab5faq6"><div itemprop="name">Чи можна керувати WLED-контролером за допомогою Alexa?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-5-content-6" aria-labelledby="accordion-tab-5-heading-6" data-bs-parent="#accordion-tab-5">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Так. У розділі "Голосовий помічник Alexa" в меню "Конфігурація->Інтерфейси синхронізації" потрібно поставити галочку "Емулювати пристрій Alexa:" і зберегти за допомогою кнопки "Зберегти". Після цього ви перезавантажуєте контролер, запускаєте пошук нових пристроїв у застосунку Alexa і налаштовуєте контролер як лампу. Щоправда, можливості керування дуже обмежені: вмикання та вимикання, зміна яскравості та виклик деяких пресетів.<br><img src="pictures/pic19.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tab-pane" id="tab6" role="tabpanel" aria-labelledby="tab6"><div class="accordion" id="accordion-tab-6">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-6-heading-1">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-6-content-1" aria-expanded="false" aria-controls="accordion-tab-6-content-1"><a href="#tab6faq1"><div itemprop="name">Як зробити так, щоб при запуску WLED набував певного кольору або відтворював певний ефект?</div></a></button>
+</h5>
+</div>
+<div class="collapse show" id="accordion-tab-6-content-1" aria-labelledby="accordion-tab-6-heading-1" data-bs-parent="#accordion-tab-6">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Для цього необхідно зробити два кроки. По-перше, ви повинні створити пресет, який активує потрібний колір або ефект. По-друге, ви повинні ввести ідентифікатор створеного пресета в розділі Конфігурація -> Налаштування світлодіода в налаштуваннях "Застосовувати пресет ... при завантаженні", а потім натиснути на кнопку "Зберегти" внизу сторінки налаштувань.<br>Точно так само можна налаштувати відтворення цілого плейлиста при завантаженні. Для цього вам потрібно ввести ідентифікатор плейлиста у вищезгаданому налаштуванні замість ідентифікатора пресету.<br><img src="pictures/pic20.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-6-heading-2">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-6-content-2" aria-expanded="false" aria-controls="accordion-tab-6-content-2"><a href="#tab6faq2"><div itemprop="name">Що таке "мапінг"?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-6-content-2" aria-labelledby="accordion-tab-6-heading-2" data-bs-parent="#accordion-tab-6">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>"Мапування" - це можливість програмно змінювати порядок розташування окремих світлодіодів у стрічці. Зазвичай всі світлодіоди в стрічці з'єднані послідовно (по лінії даних): 1->2->3->4->.... Для деяких спеціальних ефектів або особливо для 2D матриць ви часто змінюєте порядок без необхідності паяти всю стрічку по-іншому. Наприклад, ви можете зробити так, щоб після кожних 3 світлодіодів порядок світлодіодів змінювався на протилежний, також за допомогою мапування, так, ніби логічний порядок світлодіодів у стрічці був таким: 1->2->3->6->5->4 ->7 ->8 ->9 ->12 ->11 ->10 і т.д.<br>Мапінг задається через JSON-файл, який повинен мати назву ledmap.json. Також потрібно підготувати спеціальний файл у форматі JSON. Для наведеного вище прикладу вміст цього файлу матиме такий вигляд {"map":[0,1,2,5,4,3,6,7,8,11,10,9]}. Зверніть увагу, що світлодіоди нумеруються, починаючи з 0. Також слід уникати використання зайвих пробілів. Ви можете опустити окремі позиції світлодіодів, вказавши на їх місці -1.<br>Також можна визначити декілька карт. Для кожної карти використовується окремий файл ledmapX.json, де X - це номер (1, 2 і т.д.). Яку мапу використовувати, можна вказати в пресеті за допомогою "ledmap":X,..., де X - номер мапи в JSON-файлі. У найпростішому випадку вміст пресета (команди API) виглядає так {"on":true,"ledmap":1}. Файл ledmap.json (навіть без номера), з іншого боку, застосовується не через пресет, а завжди автоматично під час запуску контролера.<br><img src="pictures/pic21.jpg" class="img-fluid">.<br>Створений файл ledmap.json (або файли ledmapX.json) необхідно завантажити в контролер WLED. Для цього відкрийте в браузері адресу http://<YourWLEDIP>/edit, де <YourWLEDIP> - це IP-адреса вашого WLED-контролера. Це інструмент для редагування конфігураційних файлів на контролері WLED. Щоб ця сторінка відображалася правильно, ваш контролер повинен бути підключений до Інтернету, а також вже інтегрований у вашу мережу WLAN і більше не бути "лише" доступним як WLED-AP. Ви також можете створювати JSON-файли безпосередньо тут. Для того, щоб створений або завантажений файл ledmap.json був застосований, необхідно перезапустити контролер.<br><img src="pictures/pic22.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tab-pane" id="tab7" role="tabpanel" aria-labelledby="tab7"><div class="accordion" id="accordion-tab-7">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-7-heading-1">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-7-content-1" aria-expanded="false" aria-controls="accordion-tab-7-content-1"><a href="#tab7faq1"><div itemprop="name">Що таке пресет у програмному забезпеченні WLED?</div></a></button>
+</h5>
+</div>
+<div class="collapse show" id="accordion-tab-7-content-1" aria-labelledby="accordion-tab-7-heading-1" data-bs-parent="#accordion-tab-7">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Пресет - це збережена конфігурація світлодіодного світла, яку ви можете згадати пізніше без необхідності встановлювати всі деталі знову. Наприклад, ви можете встановити сегменти для певного бажаного ефекту, визначити колір або ефект для кожного сегмента. Потім ви можете зберегти ці налаштування у вигляді пресетів і викликати їх знову і знову одним клацанням миші, коли вони вам знадобляться. Ви також можете встановити в налаштуваннях WLED, щоб певний пресет автоматично викликався при запуску контролера. Або ви можете підключити до контролера фізичну кнопку, а потім призначити їй пресет. Або в налаштуваннях WLED можна встановити, що пресет активується в певний час доби.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-7-heading-2">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-7-content-2" aria-expanded="false" aria-controls="accordion-tab-7-content-2"><a href="#tab7faq2"><div itemprop="name"> Чи є приклади для пресетів?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-7-content-2" aria-labelledby="accordion-tab-7-heading-2" data-bs-parent="#accordion-tab-7">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Деякі приклади пресетів показані нижче. Пресети можна створити, зафіксувавши поточний стан і зберігши його як пресет. Або ви можете описати пресет за допомогою API-команди. Існує два типи команд API: HTTP API або JSON API. Ви можете використовувати один або інший тип, хоча JSON API пропонує більше можливостей. Потім вам потрібно ввести ці API-команди в Preset у вікні "API-команда":<br><img src="pictures/pic30.jpg" class="img-fluid"><br><table class="table"><thead><tr><th scope="col">HTTP API</th><th scope="col">JSON API</th><th scope="col">Опис</th></tr></thead><tbody><tr><td>T=2</td><td>{&quot;on&quot;:&quot;t&quot;}</td><td>Він перемикається між увімкненим та вимкненим станом (перемикання). Тобто, коли світлодіоди вимкнені, вони вмикаються і навпаки. </td></tr><tr><td>T=1</td><td>{&quot;on&quot;:true}</td><td>Світлодіоди вмикаються (або нічого не змінюється, якщо вони були ввімкнені раніше)</td></tr><tr><td>T=0</td><td>{&quot;on&quot;: false}</td><td>Світлодіоди вимикаються (або без змін, якщо вони вже були увімкнені)</td></tr><tr><td></td><td>{&quot;on&quot;:true,&quot;tt&quot;:0}</td><td>Світлодіоди вмикаються, світлодіоди загоряються відразу без повільного згасання, незалежно від глобального налаштування "Перехід". </td></tr><tr><td>A=128</td><td>{&quot;bri&quot;: 128}</td><td>Яскравість встановлено на 50%. Мінімальне значення - 0, максимальне значення (100%) - 255. Тому 128 означає яскравість 50%</td></tr><tr><td>A=~10</td><td>{&quot;bri&quot;:&quot;~10&quot;}</td><td>Яскравість збільшується на 10. Отже, якщо раніше було 100, то стане 110.</td></tr><tr><td>A=~-20</td><td>{&quot;bri&quot;:&quot;~-10&quot;}</td><td>Яскравість зменшується на 20. Тобто, якщо раніше вона була 100, то тепер буде 80. </td></tr><tr><td>R=255&amp;G=0&amp;B=0</td><td>{&quot;seg&quot;:[{&quot;col&quot;: [[255,0,0]]}]}</td><td>Колір світлодіодів встановлено на червоний</td></tr><tr><td>R=0&amp;G=255&amp;B=0&amp;A=128&amp;FX=0</td><td>{&quot;seg&quot;:[{&quot;fx&quot;:0,&quot;col&quot;:[[0,255,0]]}],&quot;bri&quot;: 128}</td><td>Колір світлодіодів встановлено на зелений, яскравість на 50% (значення 128) та ефект на суцільний (FX=0)</td></tr><tr><td>P1=1&amp;P2=3&amp;PL=~</td><td>{&quot;ps&quot;: &quot;1~3~&quot;}</td><td>Чергування між пресетами з ідентифікаторами від 1 до 3: при виклику викликається наступний пресет і так далі по циклу: 1-&gt;2-&gt;3-&gt;1-&gt;2-&gt;3-&gt;1-&gt;.... .</td></tr></tbody></table></table</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-7-heading-3">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-7-content-3" aria-expanded="false" aria-controls="accordion-tab-7-content-3"><a href="#tab7faq3"><div itemprop="name">Що таке плейлист у програмі WLED?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-7-content-3" aria-labelledby="accordion-tab-7-heading-3" data-bs-parent="#accordion-tab-7">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Плейлист - це можливість відтворення цілої серії пресетів один за одним. Таким чином, на основі простих ефектів можна створювати ще більш складні ефекти. Для кожного пресета можна визначити час відтворення (тривалість) і час переходу до наступного пресета (перехід). Ви можете вибрати, чи повинен плейлист відтворюватися лише один раз або повторюватися безкінечно. Ви також можете встановити, щоб окремі пресети в списку відтворення відтворювалися не у визначеному порядку, а у випадковому порядку один за одним (шаффл).<br><img src="pictures/pic23.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tab-pane" id="tab8" role="tabpanel" aria-labelledby="tab8"><div class="accordion" id="accordion-tab-8">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-8-heading-1">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-8-content-1" aria-expanded="false" aria-controls="accordion-tab-8-content-1"><a href="#tab8faq1"><div itemprop="name">Що таке WLED UDP Sync?</div></a></button>
+</h5>
+</div>
+<div class="collapse show" id="accordion-tab-8-content-1" aria-labelledby="accordion-tab-8-heading-1" data-bs-parent="#accordion-tab-8">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>WLED UDP Sync - це можливість керувати кількома WLED контролерами таким чином, щоб підключені світлодіодні стрічки на кожному контролері управлялися синхронно і абсолютно однаково, тобто завжди відтворювали один і той же колір або один і той же ефект, встановивши цей колір або ефект тільки на одному контролері. Ви також можете встановити, що саме потрібно синхронізувати: яскравість, колір, ефекти, сегменти тощо. Таким чином, кілька світлодіодних стрічок можуть показувати однакову гру кольорів, навіть якщо вони підключені до різних WLED-контролерів, наприклад, з причин фізичного розташування. Налаштування потрібно виконати в області "WLED-трансляція" в розділі "Конфігурація->Інтерфейси синхронізації". Можна визначити до 8 груп. Наприклад, ви призначаєте два контролери до однієї групи, а два інших - до іншої. Тоді перші два контролери синхронізуються між собою (група 1), а інші два між собою (група 2), але не групи 1 і 2 між собою. На головній сторінці інтерфейсу користувача WLED вгорі є кнопка "Sync", яка дозволяє вмикати та вимикати синхронізацію WLED. "UDP" у полі "WLED UDP Sync" означає, що ця синхронізація здійснюється через мережевий протокол UDP.<br><img src="pictures/pic24.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-8-heading-2">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-8-content-2" aria-expanded="false" aria-controls="accordion-tab-8-content-2"><a href="#tab8faq2"><div itemprop="name">Що таке "Віртуальні світлодіоди"?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-8-content-2" aria-labelledby="accordion-tab-8-heading-2" data-bs-parent="#accordion-tab-8">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>"Віртуальні світлодіоди" - це можливість керування двома або більше світлодіодними стрічками на різних контролерах як однією стрічкою. Наприклад, ви підключаєте одну світлодіодну стрічку до першого контролера WLED, а іншу світлодіодну стрічку до другого контролера WLED. Але ви хочете, щоб обома стрічками можна було керувати як однією стрічкою. Для цього спочатку потрібно налаштувати обидві стрічки на кожному контролері як зазвичай (тип світлодіода, кількість тощо). Потім ви додаєте віртуальну світлодіодну стрічку до першого контролера (як другу стрічку). Для цього перейдіть до "LED-виходів" у розділі "Конфігурація->Параметри світлодіодів", натисніть на символ "+" і виберіть "DDP RGB (мережа)" або "DDP RGBW (мережа)" як тип стрічки. Тут потрібно ввести початковий номер і кількість світлодіодів (на другій стрічці). Також потрібно ввести IP-адресу другого контролера. Таким чином, перший контролер буде керувати власною світлодіодною стрічкою, а також другою світлодіодною стрічкою через мережу, як єдиним цілим.<br><img src="pictures/pic25.jpg" class="img-fluid"></p></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tab-pane" id="tab9" role="tabpanel" aria-labelledby="tab9"><div class="accordion" id="accordion-tab-9">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-9-heading-1">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-9-content-1" aria-expanded="false" aria-controls="accordion-tab-9-content-1"><a href="#tab9faq1"><div itemprop="name">Яка різниця між звукореактивною та звукореактивною світлодіодною стрічкою WLED?</div></a></button>
+</h5>
+</div>
+<div class="collapse show" id="accordion-tab-9-content-1" aria-labelledby="accordion-tab-9-heading-1" data-bs-parent="#accordion-tab-9">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>По суті, обидва варіанти означають можливість використання WLED-контролерів таким чином, щоб світлодіоди реагували на музику або інші шуми і вчасно загорялися. Однак оригінальне програмне забезпечення WLED не мало такої можливості, тому в той час було створено форк, в якому ця опція була додатково реалізована. Це програмне забезпечення WLED називається Sound Reactive WLED (SR WLED). Пізніше на основі Sound Reactive WLED було розроблено UserMod для оригінальної версії WLED, також з такою функціональністю. Цей UserMod називається AudioReactive (AR WLED). Для SR WLED і AR WLED вам потрібен WLED-контролер на базі ESP32. SR WLED також підтримував мікроконтролери ESP8266 до версії 0.13.0-beta3, але не більше.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-9-heading-2">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-9-content-2" aria-expanded="false" aria-controls="accordion-tab-9-content-2"><a href="#tab9faq2"><div itemprop="name">Які мікрофони можна використовувати для Sound Reactive WLED?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-9-content-2" aria-labelledby="accordion-tab-9-heading-2" data-bs-parent="#accordion-tab-9">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Підтримуються три типи мікрофонів:<br>1.аналогові мікрофони. Прикладами є MAX4466 та MAX9814 (трохи кращі). Ці мікрофони прості у використанні: вам просто потрібно підключити 3,3 В, GND і аналоговий вихід мікрофона до входу АЦП (аналого-цифрового перетворювача) ESP8266 або ESP32. Однак великим недоліком є якість: як самих мікрофонів, так і АЦП, інтегрованих в мікроконтролери, які насправді не дуже добре підходять для обробки звуку.<br><img src="pictures/pic26.jpg" class="img-fluid">.<br>2. Цифрові мікрофони I2S. Прикладами є INMP4411 та ICS-43434/ICS-43432. Вони мають вбудований АЦП і вже виводять цифровий сигнал. Перевагою є найкраща якість. Недоліки - вища складність (для цифрового сигналу потрібно декілька PIN-кодів) і підтримка лише контролерів на базі ESP32, але не в поєднанні з ESP8266, оскільки він не має інтерфейсу I2S.<br><img src="pictures/pic27.jpg" class="img-fluid"><br>3.PDM мікрофони. Прикладом може служити SPM1423. В принципі, це також цифрові мікрофони з вбудованим сигма-дельта АЦП. Вони трохи дешевші за I2S-мікрофони, вимагають на один PIN-код менше, а якість досить хороша. Крім того, для цього типу вам потрібен контролер на базі ESP32.<br>Потім у налаштуваннях WLED потрібно встановити правильний тип мікрофона і використовувані GPIO.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-9-heading-3">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-9-content-3" aria-expanded="false" aria-controls="accordion-tab-9-content-3"><a href="#tab9faq3"><div itemprop="name">Чи можна використовувати лінійний вихід або сигнал з навушників як джерело для Sound Reactive WLED?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-9-content-3" aria-labelledby="accordion-tab-9-heading-3" data-bs-parent="#accordion-tab-9">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Так, є два варіанти:<br>1. Підготувати аналоговий лінійний вихід або сигнал з навушників за допомогою простої схеми і підключити його до входу АЦП з ESP8266 або ESP32. В цьому випадку все працює як з аналоговим мікрофоном. Якість тут теж не найкраща, оскільки АЦП ESP8266/ESP32 не дуже добре перетворює аудіосигнали, а схема формування сигналу дуже проста, але не дуже хороша. Крім того, чутливість може бути досить низькою, так що все це працює лише при високій гучності сигналу.<br><img src="pictures/pic28.jpg" class="img-fluid"><br>У деяких випадках можна обійтися без цієї схеми і підключити GND джерела звуку і аудіоканал (лівий або правий) безпосередньо до ESP (GND і аналоговий вхід, наприклад, вивід A0 на ESP8266 або GPIO36 на ESP32). Це рішення є досить брудним обхідним шляхом, і якість може бути як кращою, так і гіршою.<br>2. Перетворіть аналоговий лінійний сигнал або сигнал з навушників в цифровий сигнал I2S за допомогою спеціального аналого-i2s адаптера (на основі, наприклад, мікросхем CirrusLogic CS5343 або TI PCM1808 або es7243), а потім підключіть його до ESP32. В цьому випадку все працює так само, як і з цифровим I2S мікрофоном. Єдина відмінність від I2S-мікрофона полягає в тому, що вам потрібен додатковий PIN-код для сигналу MCLK (Master Clock), який може генеруватися ESP32 тільки на GPIO 0, 1 або 3. Інша складність полягає в тому, що MCLK - це високочастотний сигнал, і він повинен бути підключений дуже точно і мати короткі дроти. Для стабільності краще використовувати готовий контролер зі спеціальним адаптером Line-In до I2S. Перевагою є найкраща якість, хороша чутливість і найкраща звукова реакція користувача.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-9-heading-4">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-9-content-4" aria-expanded="false" aria-controls="accordion-tab-9-content-4"><a href="#tab9faq4"><div itemprop="name">Як використовувати комп'ютер як джерело музики для Sound Reactive WLED?</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-9-content-4" aria-labelledby="accordion-tab-9-heading-4" data-bs-parent="#accordion-tab-9">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Окрім використання лінійних сигналів з ПК, хорошим варіантом є програмне забезпечення <a href="https://github.com/LedFx/LedFx" target=”_blank” rel="noopener">LED FX</a>. <a href="https://github.com/LedFx/LedFx" target=”_blank” rel="noopener">LED FX</a> - це програма (скрипт на python), яка запускається на ПК або ноутбуці (на Windows, Linux або Mac) і може передавати музичні дані на WLED за допомогою протоколів E1.31 або UDP.</p></div>
+</div>
+</div>
+</div>
+</div></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+ <hr>
+        <div class="container">
+        <h5 id="L15">Корисні сторінки:</h5>
+        <ul>
+          <li><span id="L12">Офіційна WLED Wiki (англійською): <a href="https://kno.wled.ge">https://kno.wled.ge</a></span></li>
+          <li><span id="L14">DIY WLED плати: </span><a href="https://github.com/wladwnt/wled">Github</a></li>
+          <li><span id="L13">Професійні плати WLED: <a href="https://wled.shop">WLED Shop</a>, <a href="https://www.zedfy.shop">ZEDFY Shop</a></span></li>
+          <li><span id="L16">WLED power calculator: <a href="https://wled-calculator.github.io">https://wled-calculator.github.io</a></span></li>
+		  <li><span id="L16">WLED WEB-based install: <a href="https://wled-install.github.io">https://wled-install.github.io</a></span></li>
+        </ul>
+      </div>
+<div class="container">
+   <div class="accordion accordion-flush bottompart" id="accordionBottom">
+		<div class="accordion-item">
+			<h4 class="accordion-header" id="headingImprint">
+			  <button class="accordion-button collapsed bottompart" style="padding-left:0;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseImprint" aria-expanded="true" aria-controls="collapseOne">
+				<span id="L18" style="color:blue;text-decoration: underline;">Legal notice</span>
+			  </button>
+			</h4>
+			<div id="collapseImprint" class="accordion-collapse collapse bottompart" aria-labelledby="headingImprint" data-bs-parent="#accordionBottom">
+			  <div class="accordion-body bottompart">
+				<small><br><h3>Legal notice</h3>Information according to § 5 TMG:<br>Responsible: Wladislaw Waag<br>Address: Wasserburger Landstr. 29, 81825 Munich, Germany<br>Contact: +49 176 47 11 5206, info@myhome-control.de<br><br>EU dispute settlement: The European Commission provides a platform for online dispute resolution (ODR): <a href='https://ec.europa.eu/consumers/odr/' target='_blank'>https://ec.europa.eu/consumers/odr/</a>.<br><br>Consumer dispute settlement / universal arbitration board: We are neither willing nor obliged to participate in dispute settlement proceedings before a consumer arbitration board.</small>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="accordion-item bottompart">
+			<h4 class="accordion-header bottompart" id="headingPrivacy">
+			  <button class="accordion-button collapsed bottompart" style="padding-left:0;" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrivacy" aria-expanded="true" aria-controls="collapseOne">
+				<span id="L19" style="color:blue;text-decoration: underline;">Data privacy</span>
+			  </button>
+			</h4>
+			<div id="collapsePrivacy" class="accordion-collapse collapse bottompart" aria-labelledby="headingPrivacy" data-bs-parent="#accordionBottom">
+			  <div class="accordion-body bottompart">
+				<small><br><h3>Data privacy</h3>The operator of this website (https://wled-faq.github.io) does not collect and process any personal data of the users of this website. However, this page is hosted and operated as part of 'Github Pages'. It is possible and probable that Github collects and processes personal data, which then also affects visitors of the wled-installer.github.io web page. But I have no influence on it. Please read the Github privacy statement: <a href='https://docs.github.com/en/github/site-policy/github-privacy-statement' target='_blank'>https://docs.github.com/en/github/site-policy/github-privacy-statement</a><br><br>Our website contains links to external websites over which we have no control. We cannot accept any liability for this third-party content. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at that time. If we become aware of any legal violations, we will remove the relevant link immediately.</small>
+			  </div>
+			</div>
+		</div>
+	  </div>
+</div>
+</div>
+<script>
+window.onload = function () {
+	const queryString = window.location.href;
+	const TabRegex1 = /#tab(?<tab>[\d+])/;
+	const found1 = queryString.match(TabRegex1);
+	if(found1) {
+		tabnumber=parseInt(found1.groups.tab);
+		document.querySelector("[aria-controls=tab"+String(tabnumber)+"]").click();
+	}
+	const TabRegex2 = /#tab(?<tab>[\d+])faq(?<faq>[\d+])/;
+	const found2 = queryString.match(TabRegex2);
+	if(found2) {
+		tabnumber=parseInt(found2.groups.tab);
+		faqnumber=parseInt(found2.groups.faq);
+		document.querySelector("[aria-controls=accordion-tab-"+String(tabnumber)+"-content-"+String(faqnumber)+"]").click();
+	}
+};
+</script>
+</body>
+</html>

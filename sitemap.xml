@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://wled-faq.github.io/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wled-faq.github.io/en.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://wled-faq.github.io/ru.html"/>
+        <xhtml:link rel="alternate" hreflang="ua" href="https://wled-faq.github.io/ua.html"/>
     </url>
     <url>
         <loc>https://wled-faq.github.io/en.html</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://wled-faq.github.io/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://wled-faq.github.io/ru.html"/>
+        <xhtml:link rel="alternate" hreflang="ua" href="https://wled-faq.github.io/ua.html"/>
     </url>
     <url>
-        <loc>https://wled-faq.github.io/index.html</loc>
+        <loc>https://wled-faq.github.io/ru.html</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://wled-faq.github.io/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wled-faq.github.io/en.html"/>
+        <xhtml:link rel="alternate" hreflang="ua" href="https://wled-faq.github.io/ua.html"/>
+    </url>
+    <url>
+        <loc>https://wled-faq.github.io/ua.html</loc>
+        <xhtml:link rel="alternate" hreflang="de" href="https://wled-faq.github.io/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wled-faq.github.io/en.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://wled-faq.github.io/ru.html"/>
     </url>
 </urlset>

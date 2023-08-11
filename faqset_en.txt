@@ -166,7 +166,7 @@ Basically, both means the possibility of using WLED controllers in such a way th
 Three microphone types are supported:
 1.Analog microphones. Examples are MAX4466 and MAX9814 (slightly better). These microphones are easy to use: you just have to connect 3.3V, GND and the analog output from the microphone to an ADC input (Analog-to-Digital Converter) of an ESP8266 or ESP32. However, the big disadvantage is the quality: both from the microphones themselves and from the ADCs integrated into microcontrollers, which are actually not well suited for audio processing.
 [pic26]
-2. I2S digital microphones. Examples are INMP4411 and ICS-43434/ICS-43432. These have an integrated ADC and already output a digital signal. The advantage is the best possible quality. The disadvantages are higher complexity (you need several PINs for a digital signal) and support only for ESP32-based controllers, not in combination with ESP8266 because it has no I2S interface.
+2. I2S digital microphones. Examples are INMP441 and ICS-43434/ICS-43432. These have an integrated ADC and already output a digital signal. The advantage is the best possible quality. The disadvantages are higher complexity (you need several PINs for a digital signal) and support only for ESP32-based controllers, not in combination with ESP8266 because it has no I2S interface.
 [pic27]
 3.PDM microphones. An example is SPM1423. In principle, these are also digital microphones with an integrated Sigma-Delta ADC. They are slightly cheaper than I2S microphones, require one PIN less and the quality is quite good. Also, for this type you need an ESP32 based controller.
 The correct microphone type and the GPIOs used must then be set in WLED settings.

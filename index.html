@@ -38,6 +38,7 @@
 <a href="#tab7" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab7" aria-selected="false">Presets und Playlists</a>
 <a href="#tab8" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab8" aria-selected="false">Sync, virtuelle LEDs etc.</a>
 <a href="#tab9" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab9" aria-selected="false">Sound-/Audioreaktive WLED</a>
+<a href="#tab10" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab10" aria-selected="false">Bekannte Probleme</a>
 
             </div>
         </div>
@@ -519,6 +520,19 @@
 </div>
 <div class="collapse" id="accordion-tab-9-content-4" aria-labelledby="accordion-tab-9-heading-4" data-bs-parent="#accordion-tab-9">
 <div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Neben Verwendung der Line-Out Signalen vom PC, stellt <a href="https://github.com/LedFx/LedFx" target=”_blank” rel="noopener">LED FX</a> Software eine gute Option dar. <a href="https://github.com/LedFx/LedFx" target=”_blank” rel="noopener">LED FX</a> ist ein Programm (Python Script), welches auf dem PC oder Laptop ausgeführt wird (unter Windows, Linux oder auf einem Mac) und Musikdaten an WLED über E1.31 oder UDP Protokolle streamen kann.</p></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tab-pane" id="tab10" role="tabpanel" aria-labelledby="tab10"><div class="accordion" id="accordion-tab-10">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-10-heading-1">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-10-content-1" aria-expanded="false" aria-controls="accordion-tab-10-content-1"><a href="#tab10faq1"><div itemprop="name">WLED Controller (ESP32 basierte) rebooten ständig</div></a></button>
+</h5>
+</div>
+<div class="collapse show" id="accordion-tab-10-content-1" aria-labelledby="accordion-tab-10-heading-1" data-bs-parent="#accordion-tab-10">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Es gibt ein Problem mit WLED Versionen >0.13.2 in Verbindung mit Fritzboxen mit SW >=7.50. WLED Controller rebooten teilweise jede Minute. Eine mögliche Abhilfe (wohl aber nicht 100%) ist in Fritzbox Einstellungen UPnP deaktivieren (Unter Heimnetz -> Netzwerk -> Netzwerkeinstellungen -> weitere Einstellungen -> Statusinformationen über UPnP übertragen). Eine andere möglichen Maßnahme ist in WLED Einstellungen mDNS zu deaktivieren (mDNS Name löschen). Die MoonModules Version (siehe diesen Web-basierten <a href="https://wled-install.github.io" target=”_blank” rel="noopener">WLED Installer</a>) ist wohl nicht betroffen. </p></div>
 </div>
 </div>
 </div>

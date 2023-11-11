@@ -123,8 +123,10 @@ Segments add the ability to divide an LED strip into virtual parts to assign eac
 [pic17]
 ##05##What do Palette, Matrix, Note, and Double Note icons mean in WLED effects?
 As of WLED version 14.0, additional symbols are displayed for effects. These indicate certain possibilities or special features of the respective effect:
-"Palette": with this effect, different color palettes can be set.
+"One dot": these effects are 0D effects, meaning that all LEDs will have the same color for these effects.
+"3 dots": these effects are 1D effects for LED strips.
 "Matrix": these effects are 2D effects for LED matrices.
+"Palette": with this effect, different color palettes can be set.
 "Note": this effect is an audio reactive effect and reacts to the volume of the audio signal.
 "Double Note": this effect is an audio reactive effect and reacts to the frequencies in the audio signal.
 [pic18]

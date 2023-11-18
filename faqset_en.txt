@@ -10,6 +10,7 @@
 ###07###Presets and Playlists
 ###08###Sync, virtual LEDs etc.
 ###09###Sound / Audio Reactive WLED
+###10###Known bugs/issues
 
 ##01## What are the most common mistakes during first steps?
 The most common mistakes are:
@@ -182,3 +183,7 @@ In some cases you can do without this circuit and connect the GND of the audio s
 
 ##09##How to use PC as music source for Sound Reactive WLED?
 Besides using the line-out signals from the PC, LED FX software is a good option. LED FX is a program (python script) that runs on the PC or laptop (on Windows, Linux or on a Mac) and can stream music data to WLED using E1.31 or UDP protocols.
+
+##10##Reboots of ESP32 based WLED controllers
+There is an issue with WLED versions >0.13.2 in connection with some FritzBoxes with SW >=7.50 and possibly with the activated mesh. The WLED controller sometimes restarts every minute. A possible solution (but probably not 100%) is to deactivate UPnP in the FritzBox settings (under home network -> network -> network settings -> other settings -> transfer status information via UPnP). Another possible measure is to deactivate mDNS in WLED settings (delete mDNS name). The issue may also affect some UniFi devices with mesh activated.
+

@@ -38,6 +38,7 @@
 <a href="#tab7" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab7" aria-selected="false">Presets and Playlists</a>
 <a href="#tab8" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab8" aria-selected="false">Sync, virtual LEDs etc.</a>
 <a href="#tab9" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab9" aria-selected="false">Sound / Audio Reactive WLED</a>
+<a href="#tab10" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="tab10" aria-selected="false">Known bugs/issues</a>
 
             </div>
         </div>
@@ -508,6 +509,19 @@
 </div>
 <div class="collapse" id="accordion-tab-9-content-4" aria-labelledby="accordion-tab-9-heading-4" data-bs-parent="#accordion-tab-9">
 <div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Besides using the line-out signals from the PC, <a href="https://github.com/LedFx/LedFx" target=”_blank” rel="noopener">LED FX</a> software is a good option. <a href="https://github.com/LedFx/LedFx" target=”_blank” rel="noopener">LED FX</a> is a program (python script) that runs on the PC or laptop (on Windows, Linux or on a Mac) and can stream music data to WLED using E1.31 or UDP protocols.</p></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tab-pane" id="tab10" role="tabpanel" aria-labelledby="tab10"><div class="accordion" id="accordion-tab-10">
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-10-heading-1">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-10-content-1" aria-expanded="false" aria-controls="accordion-tab-10-content-1"><a href="#tab10faq1"><div itemprop="name">Reboots of ESP32 based WLED controllers</div></a></button>
+</h5>
+</div>
+<div class="collapse show" id="accordion-tab-10-content-1" aria-labelledby="accordion-tab-10-heading-1" data-bs-parent="#accordion-tab-10">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>There is an issue with WLED versions >0.13.2 in connection with some FritzBoxes with SW >=7.50 and possibly with the activated mesh. The WLED controller sometimes restarts every minute. A possible solution (but probably not 100%) is to deactivate UPnP in the FritzBox settings (under home network -> network -> network settings -> other settings -> transfer status information via UPnP). Another possible measure is to deactivate mDNS in WLED settings (delete mDNS name). The issue may also affect some UniFi devices with mesh activated.</p></div>
 </div>
 </div>
 </div>

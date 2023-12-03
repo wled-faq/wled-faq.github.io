@@ -155,6 +155,21 @@ To set the 2D LED matrix, go to "Config" -> "2D Configuration". Here you can def
 You set the properties for each panel: position of the first LED, orientation, number of LEDs in the X and Y directions. Don't forget to set the LEDs correctly under "Config" -> "LED Preferences": the total number of LEDs, GPIO etc.
 [pic31]
 If you have set everything correctly, 2D effects can be used. You can also display simple images on LED matrices using WLED (see next question).
+##06##Can you display an image on an LED matrix with WLED?
+Yes. With the help of special API commands, which can also be set and saved as a preset, you can tell WLED in which color and brightness each individual pixel must be controlled. This is how an image can be displayed. If you want to manually convert an image into an API command, it would take a lot of time. However, there is a tool (PixelArt Converter) that helps. This means that anyone without WLED API knowledge can convert an image into an API command that is understood by WLED software. The source code of this tool can be found <a href="https://github.com/werkstrom/WLED-PixelArtConverter/" target="_blank">here</a> (ext. link). The following describes how it works. Essentially the whole thing consists of three steps:
+1) Download WLED PixelArt Converter from GitHub to your PC and open it in a browser
+2) Select image, set parameters and convert
+3) Send the result (API command) to the WLED controller and, if necessary, save it as a preset.
+To use the WLED PixelArt Converter you have to download the file <a href="https://raw.githubusercontent.com/werkstrom/WLED-PixelArtConverter/main/pixart.htm" target="_blank"> https://raw.githubusercontent.com/werkstrom/WLED-PixelArtConverter/main/pixart.htm</a> (ext. link). When the file opens in the browser, right-click and then click "Save As" or "Save Page As". You can then open the saved file in the browser like a website:
+[pic32]
+Here you have to enter the IP address of your own WLED controller under "Device IP/host name:". Then click on the "Download from cloud" icon. In the simplest case, if you have not defined any segments in WLED itself, the following appears under "Target segment id:": "undefined (index: 0)". Normally you should turn on "Scale image" and enter the dimension of the matrix (X/Y). Next, select the file with the image. The original image and the generated API command, immediately appears below
+[pic33]
+as well as a preview of how LEDs are controlled:
+[pic34]
+With "Send to device" you can send the image directly to the WLED controller. The result then looks like this:
+[pic35]
+In order for the image to be permanently saved on the controller, you have to copy the API command and then save it as a preset in the WLED controller. To do this, create a new preset, give it a name, deselect the "use current state" option, insert the API command into the API input area ("API Command") and save the preset:
+[pic36]
 ##07##What is a preset in WLED Software?
 A preset is a saved LED light configuration that you can recall later without having to set every details again. For example, you can set segments for a certain desired effect, define a color or an effect for each segment. You can then save these settings in a preset and call them up again and again with only one click when you need them. You can also set in WLED settings that a certain preset is automatically called up when the controller is started. Or you can connect a physical button to the controller and then assign a preset to that button. Or you can set in WLED settings that a preset is activated at a certain time of day.
 ##07##Are there some examples for presets?

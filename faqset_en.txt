@@ -153,7 +153,7 @@ The created ledmap.json file (or ledmapX.json files) must be uploaded to the WLE
 Yes. 2D support was first introduced in Sound Reactive WLED and then implemented and significantly improved in standard WLED version 0.14.0. This status is described here.
 To set the 2D LED matrix, go to "Config" -> "2D Configuration". Here you can define the number of physical panels that together form a matrix. In the simplest case, the matrix consists of one single panel.
 You set the properties for each panel: position of the first LED, orientation, number of LEDs in the X and Y directions. Don't forget to set the LEDs correctly under "Config" -> "LED Preferences": the total number of LEDs, GPIO etc.
-[pic_2D_setup.jpg]
+[pic31.jpg]
 If you have set everything correctly, 2D effects can be used. You can also display simple images on LED matrices using WLED (see next question).
 ##07##What is a preset in WLED Software?
 A preset is a saved LED light configuration that you can recall later without having to set every details again. For example, you can set segments for a certain desired effect, define a color or an effect for each segment. You can then save these settings in a preset and call them up again and again with only one click when you need them. You can also set in WLED settings that a certain preset is automatically called up when the controller is started. Or you can connect a physical button to the controller and then assign a preset to that button. Or you can set in WLED settings that a preset is activated at a certain time of day.

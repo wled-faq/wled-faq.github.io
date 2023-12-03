@@ -6,7 +6,7 @@
 ###03###LED strips
 ###04###Wireing
 ###05###WLED SW in general
-###06###Preferences
+###06###Preferences, 2D etc.
 ###07###Presets and Playlists
 ###08###Sync, virtual LEDs etc.
 ###09###Sound / Audio Reactive WLED
@@ -149,6 +149,12 @@ Multiple maps can also be defined. For each map you then use a separate file cal
 [pic21]
 The created ledmap.json file (or ledmapX.json files) must be uploaded to the WLED controller. To do this, open the address http://YourWLEDIP/edit in the browser, where YourWLEDIP is the IP address of your WLED controller. This is a tool to edit the configuration files on the WLED controller. In order for this page to be displayed correctly, your controller must be connected to the Internet, also already integrated into your WLAN network and no longer "only" available as a WLED-AP. You can also create the JSON files directly here. In order for the created or uploaded ledmap.json file to be applied, the controller must be restarted.
 [pic22]
+##06##Does WLED support 2D (LED matrices)?
+Yes. 2D support was first introduced in Sound Reactive WLED and then implemented and significantly improved in standard WLED version 0.14.0. This status is described here.
+To set the 2D LED matrix, go to "Config" -> "2D Configuration". Here you can define the number of physical panels that together form a matrix. In the simplest case, the matrix consists of one single panel.
+You set the properties for each panel: position of the first LED, orientation, number of LEDs in the X and Y directions. Don't forget to set the LEDs correctly under "Config" -> "LED Preferences": the total number of LEDs, GPIO etc.
+[pic_2D_setup.jpg]
+If you have set everything correctly, 2D effects can be used. You can also display simple images on LED matrices using WLED (see next question).
 ##07##What is a preset in WLED Software?
 A preset is a saved LED light configuration that you can recall later without having to set every details again. For example, you can set segments for a certain desired effect, define a color or an effect for each segment. You can then save these settings in a preset and call them up again and again with only one click when you need them. You can also set in WLED settings that a certain preset is automatically called up when the controller is started. Or you can connect a physical button to the controller and then assign a preset to that button. Or you can set in WLED settings that a preset is activated at a certain time of day.
 ##07##Are there some examples for presets?

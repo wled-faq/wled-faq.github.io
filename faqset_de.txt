@@ -168,6 +168,12 @@ Mit "Send to device" kann man das Bild direkt an WLED Controller senden. Das erg
 [pic35]
 Damit das Bild auf dem Controller dauerhaft gespeichert ist, muss man API Befehl kopieren und dann als ein Preset im WLED Controller speichern. Dafür erstellt man einen neuen Preset, gibt dem einen Namen, wählt die Option "Use current state" ab, fügt das API-Befehl in das API-Eingabebereich ("API Command") ein und speichert das Preset:
 [pic36]
+##06##Kann man auf einer Matrize ein Lauftext mit WLED darstellen?
+Ja. Ab WLED Version 0.14.0 ist ein Effekt „Scrolling Text“ vorhanden. Der Text, der angezeigt werden soll, wird durch Segment Name eingestellt. Im einfachsten Fall hat man nur ein Segment und man benennt diesen mit dem Text, der angezeigt werden soll. Beim Lauftext kann man unter anderem die Schriftgröße und die Geschwindigkeit regulieren.
+Es ist auch möglich den Lauftext mit einem anderen Effekt überlagern. Man kann z.B. so als Hintergrund für den Text eine Farbe einstellen. Dafür muss man zwei Segmente einstellen, die exakt gleich (außer Segmentname). Dann überlappen sich die Segmente quasi.
+[pic37]
+Bei dem ersten Segment stellt man den gewünschten Effekt ein, der als Hintergrund dienen soll (z.B. „Solid“ für eine einfache Hintergrundfarbe). Bei dem zweiten Segment gibt man den gewünschten Text als Segmentname ein und wählt „Scrolling Text“ Effekt. Dabei muss man „Overlay“ anklicken.
+[pic38]
 ##07##Was ist ein Preset in WLED SW?
 Ein Preset ist eine gespeicherte LED Lichtkonfiguration, die man später erneut aufrufen kann, ohne dass man alles wieder neu einstellen muss. Man kann zum Beispiel für ein bestimmtes gewünschtes Effekt Segmente einstellen, für jedes Segment eine Farbe oder ein Effekt definieren. Diese Einstellungen kann man dann in einem Preset abspeichern und mit einem Click immer wieder aufrufen, wen man es braucht. Man kann auch in WLED Einstellungen einstellen, dass ein bestimmtes Preset beim Start des Controllers automatisch aufgerufen wird. Oder man kann ein physikalischer Taster an den Controller anschließen und diesem Taster dann ein Preset zuweisen. Oder man kann in WLED Einstellungen einstellen, dass ein Preset zu einer bestimmter Tageszeit aktiviert wird.
 ##07##Gibt es Beispiele für Presets API Befehle?

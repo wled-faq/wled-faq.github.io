@@ -170,6 +170,12 @@ With "Send to device" you can send the image directly to the WLED controller. Th
 [pic35]
 In order for the image to be permanently saved on the controller, you have to copy the API command and then save it as a preset in the WLED controller. To do this, create a new preset, give it a name, deselect the "use current state" option, insert the API command into the API input area ("API Command") and save the preset:
 [pic36]
+##06##Can you display scrolling text on a matrix with WLED?
+Yes. From WLED version 0.14.0 there is a "Scrolling Text" effect. The text to be displayed is set by segment name. In the simplest case you only have one segment and you name it with the text that should be displayed. When it comes to scrolling text, you can regulate the font size and speed, among other things.
+It is also possible to overlay the scrolling text with a different effect. For example, you can set a color as the background for the text. To do this you have to set two segments that are exactly the same (except for the segment name). Then the segments virtually overlap.
+[pic37]
+In the first segment you set the desired effect that should serve as the background (e.g. "Solid" for a simple background color). For the second segment, enter the desired text as the segment name and select the "Scrolling Text" effect. You have to click on "Overlay".
+[pic38]
 ##07##What is a preset in WLED Software?
 A preset is a saved LED light configuration that you can recall later without having to set every details again. For example, you can set segments for a certain desired effect, define a color or an effect for each segment. You can then save these settings in a preset and call them up again and again with only one click when you need them. You can also set in WLED settings that a certain preset is automatically called up when the controller is started. Or you can connect a physical button to the controller and then assign a preset to that button. Or you can set in WLED settings that a preset is activated at a certain time of day.
 ##07##Are there some examples for presets?

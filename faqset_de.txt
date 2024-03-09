@@ -102,6 +102,7 @@ Ein Prinzipschaltbild ist hier dargestellt. Pro Farbe braucht man einen MOSFET u
 [pic29]
 Es können auch die handelsüblichen sogenannten RGB(W) LED-Verstärker eingesetzt werden (werden auch Repeater/Booster genannt). Diese beinhalten typischerweise Optokoppler und MOSFET-Schaltung (1 bis 5 Kanäle) und können z.B. wie folgt verwendet werden:
 [pic43]
+Man merke, dass zwischen dem Controller und dem Verstärker keine GND Verbindung besteht. Und das obwohl bei allen anderen WLED Schaltungen man sagt immer, dass alle GNDs müssen miteinander verbunden werden. Diese Besonderheit hier ist aber dem geschuldet, dass die Eingänge des Verstärkers von Ausgängen durch Optokoppler galvanisch entkoppelt sind und der Verstärker in dieser Schaltung etwas anders verwendet wird, als seine übliche Anwendung.
 Man kann dabei die GPIOs direkt (3.3V Signalpegel) zum Eingang des Verstärkers anschließen oder, wenn man einen fertigen WLED Controller verwendet, auch die Datenausgänge (des LevelShifters, also 5V Signalpegel) nutzen. Man kann auch beides gleichzeitig verwenden:
 [pic45]
 Der auf dem Bild dargestellte Verstärker ist ein günstiges Produkt. Sein Vorteil ist ein metallisches Gehäuse. Seine Schaltung ist jedoch sehr einfach gebaut:

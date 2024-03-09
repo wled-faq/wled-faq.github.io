@@ -102,7 +102,8 @@ A basic circuit diagram is shown here. You need one MOSFET and one GPIO per colo
 [pic29]
 The commercially available so-called RGB(W) LED amplifiers can also be used (also called repeaters/boosters). These typically include optocouplers and MOSFET circuitry (1 to 5 channels) and can be used, for example, as follows:
 [pic44]
-You can connect the GPIOs directly (3.3V signal level) to the input of the amplifier or, if you use a ready-made WLED controller, you can also use the data outputs (of the level shifter, i.e. 5 V signal level). You can also use both at the same time:
+Note that there is no GND connection between the controller and the amplifier. And this despite the fact that with all other WLED circuits it is always said that all GNDs must be connected to each other. This special feature is due to the fact that the inputs of the amplifier are galvanically decoupled from the outputs by optocouplers and the amplifier in this circuit is used slightly differently than its usual application.
+You can connect the GPIOs directly (3.3V signal level) to the inputs of the amplifier or, if you use a ready-made WLED controller, you can also use the data outputs (of the level shifter, i.e. 5 V signal level). You can also use both at the same time:
 [pic46]
 The amplifier shown in the picture is a cheap product. Its advantage is a metal case. However, its circuit is very simple:
 [pic48]

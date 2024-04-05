@@ -113,6 +113,10 @@ There are also other variants on the market (e.g. MiBoxer RGBW 5-channel amplifi
 With this modification, this amplifier can be used, for example, as follows:
 [pic51]
 The disadvantage of this type, however, is that it has a plastic housing. We have not investigated whether this plastic housing has a fire-retardant effect. Special safety precautions may therefore be necessary.
+Three other types are shown below:
+[pic52]
+The first type works quite well, the second only with modification of the resistors. The third type must under no circumstances be used for the application discussed here, as it has no galvanic isolation through optocouplers and an attempt to use it would lead to the destruction of the WLED controller.
+
 ##03##What should I consider when using LED type WS2814 (12V or 24V)?
 LED strips of this type are RGBW strips, similar to SK6812 type. They must therefore be treated as SK6812 type in WLED LED preferences. In addition, in these strips, the white channel and the green channel are often swapped, so you have to set "Swap W & G" in the WLED preferences. This setting option is only available starting with WLED version 0.14.0-beta1.
  ##03##What should I consider using addressable 12V and 24V LED types?

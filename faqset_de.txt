@@ -113,6 +113,10 @@ Es sind auch andere Varianten auf dem Markt (z.B. MiBoxer RGBW 5-Kanal Verstärk
 Mit dieser Modifikation kann dieser Verstärker zum Beispiel wie folgt eingesetzt werden:
 [pic50]
 Der Nachteil von diesem Typ ist jedoch, dass er ein Kunststoffgehäuse besitzt. Wir haben nicht untersucht, ob dieses Kunststoffgehäuse brandhemmend wirkt. Es sind daher eventuell besondere Sicherheitsvorkehrungen notwendig.
+Drei andere Typen sind in im Folgenden abgebildet:
+[pic52] 
+Der erste Typ funktioniert ganz gut, der zweite nur mit der Modifikation der Widerstände. Der dritte Typ darf in keinem Fall für die hier besprochene Anwendung eingesetzt werden, da er keine galvanische Trennung durch Optokoppler besitzt und ein Versuch den zu verwenden würde zur Zerstörung des WLED Controllers führen.
+
 ##03##Was ist bei dem LED Typ WS2814 (12V oder 24V) zu beachten?
 LED Streifen mit diesem Typ sind RGBW Streifen, ähnlich wie SK6812 Typ. Sie müssen also in WLED Einstellungen als SK6812 Typ behandelt werden. Zudem bei diesen Streifen ist oft der weiße Kanal und der Grüne Kanal vertauscht, man muss also in WLED Einstellungen „Swap W & G“ einstellen. Diese Einstellungsoption gibt es erst ab WLED Version 0.14.0-beta1.
 ##03##Was ist bei adressierbaren 12V und 24V LED Typen zu beachten?

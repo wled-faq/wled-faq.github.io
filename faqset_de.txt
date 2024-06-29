@@ -54,8 +54,19 @@ Professionelle WLED Controller haben einen LevelShifter immer integriert.
 Die Ansteuerung der adressierbaren LED Streifen Läuft mit Steuersignalen, welche eine Grundfrequenz im Bereich 800 kHz bis ins einstelligen MHz Bereich haben (je nach Typ). Entsprechend muss ein LevelShifter schnell genug sein, ob diese Signale sauber weiter geben zu können. Empfohlen werden daher schnelle Typen wie SN74AHCT125, SN74AHCT32 oder SN74LVC2T45. Typen wie SN74HCT (also ohne „A“) sind etwas langsamen und für LED Typen wie WS2812B i.O., für einige andere LED Typen können aber zu langsam sein. In jedem Fall nicht empfohlen sind mit Transistoren aufgebaute fertige bidirektionale I2C LevelShifter. Notfalls können diese verwendet werden, man sollte aber dann den Pull-Up Widerstand am Ausgang (meistens 10 kOhm) durch einen kleineren ersetzen (<=1 kOhm). Die SN74AHCT125 LevelShifter werden wie folgt verschaltet:
 [pic1]
 [pic2]
-Es kann auch ein TXS0108 LevelShifter verwndet werden. Diese sind auch verfügbar bereits auf kleiner Leiterplate verlötet:
+Bei kurzen Leitungen kann auch ein TXS0108 LevelShifter verwndet werden. Diese sind auch verfügbar bereits auf kleiner Leiterplate verlötet:
 [pic3]
+Im Folgenden sind verschiedene LevelShifter mit und ohne einen Widerstand in Data-Linie messtechnisch verglichen.
+Zusammengefasst, können die Ergebnisse wie folgt interpretiert werden:
+1) SN74AHCT ist die beste Wahl. Zusammen mit einem 60 Ohm Widerstand liefert er bis zu 2 Meter Länger der Datenleitung gute Ergebnisse. Auch bei 10 Meter ist das Signal noch gut brauchbar. Der Nachteil ist, dass er wegen seiner Geschwindigkeit (steile Flanken) hohe Überschwingungen erzeugt. Dem kann man mit einem EMV-Filter entgegnen, wie bei einem ABC! WLED V43 Controller verbaut. Bei kurzen Leitungen ist das sehr effizient, bei längeren Leitungen können die Schwingungen jedoch nicht ganz vermieden werden. 
+2) Die Messung bestätigt, dass ein I2C Levelshifter ist zu langsam, genauer gesagt der zweite Teil der Anstiegsflanke, denn jede Anstiegsflanke aus zwei Teilen besteht: einem schnellen Anstieg bis zu 3.3V und einem darauffolgenden langsamen Anstieg bis 5V, welcher meistens gar nicht komplett vollzogen wird. Ein Widerstand in der Datenleitung kann hier eher Kontraproduktiv wirken. Der zweite Teil der Anstiegsflanke kann mit einem zusätzlichen 1kOhm Widerstand zwischen dem I2C LevelShifter Ausgang und 5V etwas beschleunigt werden.
+3) TXS0108 LevelShifter ist ganz Ok bei kurzen Leitungen, liefert jedoch bei längeren Leitungen gar keine brauchbaren Ergebnisse. 
+Die Bilder zeigen die Vergleiche. Gemessen wurde mit einem Oszilloskop direkt am Controller Ausgang (3.3V Pegel, also vor dem LevelShifter, Kanal 1 bzw. gelbe Linie) und am Ende der Datenleitung (also nach dem LevelShifter, und nach der Datenleitung, direkt am LED Strip: Kanal 2 bzw. blaue Linie).
+[pic56]
+[pic54]
+[pic55]
+Bei 10 Meter Leitung ist auch ein Verzug zwischen beiden Kanälen zu sehen: mit 3*10^8 m/s Lichtgeschwindigkeit und 10 Meter beträgt dieser ca. 33 ns. Bei einer Teilung auf der X-Achse von 500 ns ist daher dieser deutlich zu sehen, hat jedoch keine Bedeutung.
+
 ##02##Muss in der Datenleitung zwischen dem WLED Controller und LED Streifen ein Widerstand eingebaut werden, welcher?
 In meisten Fällen wird ein Widerstand im Bereich 33 kOhm bis 68 kOhm empfohlen. Die alte Empfehlung war 470 kOhm, der Wert in dieser Größenordnung ist aber aus heutiger Sicht nicht i.O. Ein Betrieb ohne einen Widerstand ist grundsätzlich auch möglich, sollte aber bei einem produktiven Einsatz vermieden werden. 
 ##02##Wird ein fertiger WLED Controller empfohlen, oder kann man sich ein aus einzelnen Komponenten zusammen bauen?

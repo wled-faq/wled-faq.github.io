@@ -117,6 +117,14 @@ Folgende Tabelle zeigt die Ergebnisse der Messungen der Beleuchtungsstärke (in 
 -	Die oben beschriebenen Ausführungen bedeuten, dass einzelne Werte an sich nicht so genau betrachtet werden dürfen. Die Tabelle zeigt also eher nur grobe/allgemeine Tendenzen.
 [pic53]
 
+##03##Welche adressierbaren LED Streifen bieten die beste Farbqualität?
+Die Antwort ist eindeutig: LED Streifen mit einer separaten weißen LED (sog. RGBW LEDs) bieten viel bessere Farbqualität als reine RGB LED Streifen. Man kann zwar auch mit reinen RGB LEDs ein weißes Licht erzeugen (sog. RGB-Weiß), dieses ist jedoch von der Farbqualität sehr minderwertig. Das bedeutet, dass Gegenstände in diesem Licht farblich stark verfälscht erscheinen im Vergleich zum deren Aussehen unter einem normalen Tageslicht. Das liegt daran, dass RGB-Weiß im Grunde kein weißes Licht ist, sondern eine Mischung von Rot-Grün-Blau ist, wobei aber viele anderen spektralen Anteile in diesem Licht fehlen, wie folgendes Bild zeigt:
+[pic57]
+Die Farbqualität wird oft in CRI (Ra) gemessen, wenn auch im professionellen Bereich mittlerweile besser geeignete verfahren wie TM-30 sich etabliert haben. CRI hat einen maximalen Wert von 100. RGB-Weiß erreicht Ra Werte von ca. 20-30. Mit einer separaten weißen LED sind Werte deutlich über 80 oder sogar über 90 möglich.
+Im Vergleich zu RGB-Weiß erzeugt eine separate weiße Led ein deutlich natürlicheres weises Licht, wenn auch dessen Spektrum auch weit von dem natürlichen Tageslicht entfernt ist. Das ist jedoch ausreichend, um eine gute Farbwiedergabe zu erreichen. Wenn man jedoch die separate weiße LED zusammen mit RGB-Weiß mischt (um z.B. höhere Beleuchtungsstärke zu erreichen), verschlechtert man wieder die Farbqualität. Das ist beispielhaft im Folgenden für zwei LED Typen dargestellt. 
+[pic58]
+[pic59]
+
 ##03##Wie steuert man analoge LED Streifen an?
 Analoge LED Streifen brauchen für die Ansteuerung nicht nur einen Mikrocontroller, sondern in jedem Fall einige zusätzlichen Komponenten wie MOSFETs.
 Ein Prinzipschaltbild ist hier dargestellt. Pro Farbe braucht man einen MOSFET und einen GPIO. Man beachte, dass die MOSFETS bei Überlast sehr schnell zerstört werden. Um Brandgefahr zu verringern und Verletzungen zu vermeiden, sollte man zusätzliche Schaltungselemente vorsehen um MOSFETS gegen Übertemperatur und Überlast zu schützen. Schmelzsicherungen sind je nach Typ dafür zu langsam! Es können auch selbst-schützende MOSFETs verwendet werden oder man packt die ganze MOSFET Schaltung in ein brandhemmendes (z.B. metallisches) Gehäuse.

@@ -56,8 +56,19 @@ The control of the addressable LED strips runs with control signals, which have 
 SN74AHCT125 LevelShifters are interconnected as follows:
 [pic1]
 [pic2]
-TXS0108 LevelShifter can also be used. Small PCBs with this level shifter are often sold and can be used as follows:
+TXS0108 LevelShifter can also be used for short data lines. Small PCBs with this level shifter are often sold and can be used as follows:
 [pic3]
+In the following, various LevelShifters with and without a resistor in the data line are compared in terms of measurements.
+In summary, the results can be interpreted as follows:
+1) SN74AHCT is the best choice. Together with a 60 Ohm resistor, it delivers good results for up to 2 meters of data cable length. Even at 10 meters the signal is still usable. The disadvantage is that it generates high overshoots due to its speed (high slope). You can counteract this with an EMC filter, like an ABC! WLED V43 controller does. This is very efficient with short lines, but with longer lines the oscillations cannot be completely avoided. 
+2) The measurement confirms that an I2C level shifter is too slow, more precisely the second part of the rising edge, because each rising edge consists of two parts: a fast rise up to 3.3 V and a subsequent slow rise up to 5 V, most of which is not at all fully completed. A resistance in the data line can have a counterproductive effect here. The second part of the rising edge can be accelerated slightly with an additional 1kOhm resistor between the I2C LevelShifter output and 5V.
+3) TXS0108 LevelShifter is ok for short cables, but does lead to usable results for longer cables.
+The pictures show the comparisons. The measurements were taken with an oscilloscope directly at the controller output (3.3V level, i.e. before the LevelShifter, channel 1 or yellow line) and at the end of the data line (i.e. after the LevelShifter, and after the data line, directly at the LED strip: channel 2 or blue line).
+[pic56]
+[pic54]
+[pic55]
+With a 10 meter line there is also a delay between both channels: with 3*10^8 m/s speed of light and 10 meters this is approx. 33 ns. With a division on the X-axis of 500 ns, this can be clearly seen, but has no meaning.
+
 ##02##Does a resistor have to be installed in the data line between the WLED controller and the LED strip?  Which one?
 In most cases, a resistor in the 33K to 68K ohm range is recommended. The old recommendation was 470 kOhm, but from today's point of view the value in this range is not OK. In principle, operation without a resistor is also possible, but should be avoided in productive use.
 ##02##Is a ready-made WLED controller recommended, or can one be assembled from individual components?

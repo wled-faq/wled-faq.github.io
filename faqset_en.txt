@@ -117,6 +117,14 @@ The following table shows the results of measurements of the illuminance (in lux
 - The statements described above mean that individual values themselves should not be viewed so closely. The table therefore only shows rough/general tendencies.
 [pic53]
 
+##03##Which addressable LED strips offer the best color quality?
+The answer is clear: LED strips with a separate white LED (so-called RGBW LEDs) offer much better color quality than pure RGB LED strips. Although you can also produce white light with pure RGB LEDs (so-called RGB white), the color quality is very low. This means that objects in this light appear very distorted in color compared to how they would appear under normal daylight. This is because RGB white is basically not really white light, but is a mixture of red-green-blue, where many other spectral components are missing in this light, as the following image shows:
+[pic57]
+Color quality is often measured in CRI (Ra), although more suitable methods such as TM-30 have now become established in the professional sector. CRI has a maximum value of 100. RGB white achieves Ra values of approx. 20-30. With a separate white LED, values well over 80 or even over 90 are possible.
+Compared to RGB white, a separate white LED produces a significantly more natural white light, although its spectrum is far away from natural daylight. However, this is sufficient to achieve good color reproduction. But be careful: if you mix the separate white LED together with RGB white (e.g. to achieve higher illuminance), the color quality will deteriorate again. This is shown below as an example for two LED types. 
+[pic58]
+[pic59]
+
 ##03##How do you control analog LED strips?
 Analog LED strips not only need a microcontroller for control, but also some additional components such as MOSFETs.
 A basic circuit diagram is shown here. You need one MOSFET and one GPIO per color. It should be noted that the MOSFETs are destroyed very quickly in the event of an overload. To reduce the risk of fire and prevent personal injury, additional circuit elements should be implemented to protect MOSFETs from overtemperature and overload. Depending on the type, fuses are too slow for this! You might consider using self-protected MOSFETs too or the entire MOSFET circuit can be packed into a fire-retardant (e.g. metallic) housing.

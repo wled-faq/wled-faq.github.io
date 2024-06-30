@@ -126,7 +126,7 @@ Im Vergleich zu RGB-Weiß erzeugt eine separate weiße Led ein deutlich natürli
 [pic59]
 
 ##03##Welche LED Typen haben die höchste Effizienz (höchste Beleuchtungsstärke pro Watt)?
-Um die Effizienz zu vergleichen, können vereinfacht die Daten der Beleuchtungsstärke (siehe Frage „Welche adressierbare LED Typen sind die hellsten?“) mit der Daten des LED-Verbrauchs (https://wled-calculator.github.io) in Relation gestellt werden, da beide Datensätze auf der Vermessung der gleichen LED-Streifen basieren. Dabei muss man bei RGB(W) LED-Streifen zwischen der Effizient bei Einzelnen-Farben (RGB) und der Effizienz im Mischmodus (RGB-Weiß) unterschieden werden:
+Um die Effizienz zu vergleichen, können vereinfacht die Daten der Beleuchtungsstärke (siehe Frage „Welche adressierbare LED Typen sind die hellsten?“) mit der Daten des LED-Verbrauchs (WLED Calculator) in Relation gestellt werden, da beide Datensätze auf der Vermessung der gleichen LED-Streifen basieren. Dabei muss man bei RGB(W) LED-Streifen zwischen der Effizient bei Einzelnen-Farben (RGB) und der Effizienz im Mischmodus (RGB-Weiß) unterschieden werden:
 1)	R/G/B-Farben: die Beste Effizienz haben die Typen SK6812 (5V, 12V) und WS2814 (12V, 24V). Im Mittelfeld sind die Typen WS2812B, WS2813, APA102. Die schlechteste Effizienz haben die Typen WS2815 (12V) und WS2811 (12V, 24V).
 2)	RGB-Weiß: die Beste Effizienz hat der Typ SK6812. Im Mittelfeld sind die Typen WS2812B, WS2813, APA102, WS2814, WS2815. Die schlechteste Effizienz haben die Typen WS2811 (12V, 24V).
 3)	Separate weiße LED: WS2814 Typ schient etwas höhere Effizienz als SK6812 zu haben, beide liegen jedoch nahe zueinander.

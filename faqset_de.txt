@@ -125,6 +125,13 @@ Im Vergleich zu RGB-Weiß erzeugt eine separate weiße Led ein deutlich natürli
 [pic58]
 [pic59]
 
+##03##Welche LED Typen haben die höchste Effizienz (höchste Beleuchtungsstärke pro Watt)?
+Um die Effizienz zu vergleichen, können vereinfacht die Daten der Beleuchtungsstärke (siehe Frage „Welche adressierbare LED Typen sind die hellsten?“) mit der Daten des LED-Verbrauchs (https://wled-calculator.github.io) in Relation gestellt werden, da beide Datensätze auf der Vermessung der gleichen LED-Streifen basieren. Dabei muss man bei RGB(W) LED-Streifen zwischen der Effizient bei Einzelnen-Farben (RGB) und der Effizienz im Mischmodus (RGB-Weiß) unterschieden werden:
+1)	R/G/B-Farben: die Beste Effizienz haben die Typen SK6812 (5V, 12V) und WS2814 (12V, 24V). Im Mittelfeld sind die Typen WS2812B, WS2813, APA102. Die schlechteste Effizienz haben die Typen WS2815 (12V) und WS2811 (12V, 24V).
+2)	RGB-Weiß: die Beste Effizienz hat der Typ SK6812. Im Mittelfeld sind die Typen WS2812B, WS2813, APA102, WS2814, WS2815. Die schlechteste Effizienz haben die Typen WS2811 (12V, 24V).
+3)	Separate weiße LED: WS2814 Typ schient etwas höhere Effizienz als SK6812 zu haben, beide liegen jedoch nahe zueinander.
+An dieser Stelle wird bewusst auf die Darstellung der quantitativen Vergleichsergebnisse verzichtet, da diese wegen der Komplexität des Begriffs Beleuchtungsstärke und wegen hohen Unsicherheiten bei deren Vermessung nur mit einem Augenmaß bewertet werden können.
+
 ##03##Wie steuert man analoge LED Streifen an?
 Analoge LED Streifen brauchen für die Ansteuerung nicht nur einen Mikrocontroller, sondern in jedem Fall einige zusätzlichen Komponenten wie MOSFETs.
 Ein Prinzipschaltbild ist hier dargestellt. Pro Farbe braucht man einen MOSFET und einen GPIO. Man beachte, dass die MOSFETS bei Überlast sehr schnell zerstört werden. Um Brandgefahr zu verringern und Verletzungen zu vermeiden, sollte man zusätzliche Schaltungselemente vorsehen um MOSFETS gegen Übertemperatur und Überlast zu schützen. Schmelzsicherungen sind je nach Typ dafür zu langsam! Es können auch selbst-schützende MOSFETs verwendet werden oder man packt die ganze MOSFET Schaltung in ein brandhemmendes (z.B. metallisches) Gehäuse.

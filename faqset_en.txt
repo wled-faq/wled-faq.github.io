@@ -126,7 +126,7 @@ Compared to RGB white, a separate white LED produces a significantly more natura
 [pic59]
 
 ##03##Which addressable LED types have the highest efficiency (highest illuminance per watt)?
-In order to compare the efficiency, the illuminance data (see question “Which addressable LED types are the brightest?”) can be compared with the LED consumption data (https://wled-calculator.github.io), since both data sets are based on measuring the same LED strips. With RGB(W) LED strips, a distinction must be made between efficiency in individual colors (RGB) and efficiency in mixed mode (RGB-white):
+In order to compare the efficiency, the illuminance data (see question “Which addressable LED types are the brightest?”) can be compared with the LED consumption data (WLED Calculator), since both data sets are based on measuring the same LED strips. With RGB(W) LED strips, a distinction must be made between efficiency in individual colors (RGB) and efficiency in mixed mode (RGB-white):
 1) R/G/B colors: The types SK6812 (5V, 12V) and WS2814 (12V, 24V) have the best efficiency. In the middle field are the types WS2812B, WS2813, APA102. The types WS2815 (12V) and WS2811 (12V, 24V) have the worst efficiency.
 2) RGB white: the type SK6812 has the best efficiency. In the middle field are the types WS2812B, WS2813, APA102, WS2814, WS2815. The types WS2811 (12V, 24V) have the worst efficiency.
 3) Separate white LED: WS2814 type seems to have slightly higher efficiency than SK6812, but both are close to each other.

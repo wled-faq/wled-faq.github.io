@@ -144,6 +144,7 @@ You can connect the GPIOs directly (3.3V signal level) to the inputs of the ampl
 The amplifier shown in the picture is a cheap product. Its advantage is a metal case. However, its circuit is very simple:
 [pic48]
 The simple structure means that the duty cycle of the PWM signal (the ratio between pulse and period duration) at the output is slightly distorted compared to the input. In many cases this is not critical, but it does result in the color composition of an RGB strip being slightly distorted. A significantly better (and slightly more expensive) version is described in <a href="https://files2.elv.com/public/14/1431/143195/Internet/143195_led_rgbw_repeater.pdf" target="_blank">this article (in German)</a>. Here the MOSFETs are controlled with push-pull drivers. This and some other measures in the circuit mean that the PWM signal is reproduced very accurately at the output.
+Always check beforehand that your amplifier is optocoupler-based! Different versions can be sold in the same housing.
 There are also other variants on the market (e.g. MiBoxer RGBW 5-channel amplifier and similar ones) that enable more precise PWM reproduction, but require modification as shown in this picture:
 [pic49]
 With this modification, this amplifier can be used, for example, as follows:

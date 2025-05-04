@@ -4,7 +4,7 @@
 ###01###First steps
 ###02###Controller
 ###03###LED strips
-###04###Wireing
+###04###Wiring
 ###05###WLED SW in general
 ###06###Preferences, 2D etc.
 ###07###Presets and Playlists

@@ -183,7 +183,7 @@ Einen guten Startpunkt liefert WLED Calculator.
 ##05##Welche aktive WLED SW Abzweigungen gibt es?
 Es sind vor allem drei Abzweigungen relevant:
 1. Das Original: Aircoookie WLED. Das ist die ursprüngliche/originale WLED SW. Bis zu Version 0.13.3 gab es in dieser Version keine Möglichkeit Sound Reactive WLED zu machen. Ab Version 0.14.0 ist ein sog. Audio Reactive Usermod vorhanden.
-2. Sound Reactive WLED: dieser Zweig ist vor einigen Jahren entstanden und implementiert die sogenannte Sound Reactive WLED. Dabei ist es möglich mit einem Mikrofon oder Line-In Eingang an erreichen, dass die LEDs auf die Musik (oder andere Geräusche) reagieren und zum Beispiel in Takt dann leuchten.
+2. (veraltet) Sound Reactive WLED: dieser Zweig ist vor einigen Jahren entstanden und implementiert die sogenannte Sound Reactive WLED. Dabei ist es möglich mit einem Mikrofon oder Line-In Eingang an erreichen, dass die LEDs auf die Musik (oder andere Geräusche) reagieren und zum Beispiel in Takt dann leuchten. Mittlerweile muss dieser Zweig als veraltet angesehen werden. Man sollte den originalen mit Audio Reactive Usermod verwenden.
 3. MoonModules WLED: diese Abzweigung ist eine „Spielwiese“, geschaffen durch einige WLED Entwickler, um vor allem neue Funktionen auszuprobieren oder Änderungen an vorhandenem Code zu testen.
 Über diesen WLED Installer können Sie sich jede Version installieren und ausprobieren.
 ##05##Was ist ein Usermod in WLED SW?
@@ -284,3 +284,7 @@ Neben Verwendung der Line-Out Signalen vom PC, stellt LED FX Software eine gute 
 
 ##10##WLED Controller (ESP32 basierte) rebooten ständig
 Es gibt ein Problem mit WLED Versionen >0.13.2 in Verbindung mit einigen FritzBoxen mit SW >=7.50 und eventuell mit dem aktivierten Mesh. WLED Controller rebooten teilweise jede Minute. Eine mögliche Abhilfe (wohl aber nicht 100%) ist in FritzBox Einstellungen UPnP deaktivieren (Unter Heimnetz -> Netzwerk -> Netzwerkeinstellungen -> weitere Einstellungen -> Statusinformationen über UPnP übertragen). Eine andere mögliche Maßnahme ist in WLED Einstellungen mDNS zu deaktivieren (mDNS Name löschen). Das Problem betrifft eventuell auch einige UniFi Geräte mit dem aktivierten Mesh.
+Aktuell wird ein WLED Software Build basierend auf ESP IDF V4 empfohlen, um das problem zu lösen.
+
+##10##Flackern von LEDs mit WLED Software ab 0.15.0
+Es wird oft davon berichtet, dass WLED SW 0.15.x und 0.16.x dazu führt, dass LEDs ab und zu flackern. Das Problem tritt dann auf, wenn mehr als ein LED Ausgänge verwendet werden. Nach dem aktuellen Kenntnisstand wird das flackern durch die LED RMT Ansteuerungsmethode verursacht, die genaue Ursache ist jedoch noch nicht verstanden. Um das Problem zu beheben, wurde in WLED Version 0.5.1-beta2 eine andere Ansteuerungsmethode eingeführt: ParallelI2S. Diese kann bei mehr als 2 LED Ausgängen in WLED LED Einstellungen aktiviert werden. Die Methode kann jedoch nur dann verwendet werden, wenn gleiche LED Typen an allen Ausgängen angeschlossen sind (genau genommen LEDs mit dem gleichen Timing).  Außerdem ist die Anzahl der LEDs pro Ausgang auf 600 begrenzt. Ansonsten wird empfohlen nach Möglichkeit weiterhin erstmal 0.14.4 WLED Version zu verwenden.

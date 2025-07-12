@@ -368,7 +368,7 @@
 </h5>
 </div>
 <div class="collapse show" id="accordion-tab-5-content-1" aria-labelledby="accordion-tab-5-heading-1" data-bs-parent="#accordion-tab-5">
-<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Three WLED SW forks are particularly important:<br>1. The Original: Aircoookie WLED. This is the original WLED SW. Up to version 0.13.3 there was no way to make Sound Reactive WLED using this version. Beginning with version 0.14.0 a so-called Audio Reactive Usermod is available.<br>2. Sound Reactive WLED: this branch was created a few years ago and implements the so-called Sound Reactive WLED. With a microphone or line-in input it is possible to have the LEDs react to the music (or other noises) and then light up with music beats, for example.<br>3. MoonModules WLED: this branch is a "playground" created by some WLED developers, mainly to try out new functions or to test experimental changes of existing code.<br>With this WLED installer you can install and try out every version.</p></div>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Three WLED SW forks are particularly important:<br>1. The Original: Aircoookie WLED. This is the original WLED SW. Up to version 0.13.3 there was no way to make Sound Reactive WLED using this version. Beginning with version 0.14.0 a so-called Audio Reactive Usermod is available.<br>2. (obsolete) Sound Reactive WLED: this branch was created a few years ago and implements the so-called Sound Reactive WLED. With a microphone or line-in input it is possible to have the LEDs react to the music (or other noises) and then light up with music beats, for example. This branch must now be considered obsolete. You should use the original one with Audio Reactive Usermod.<br>3. MoonModules WLED: this branch is a "playground" created by some WLED developers, mainly to try out new functions or to test experimental changes of existing code.<br>With this WLED installer you can install and try out every version.</p></div>
 </div>
 </div>
 </div>
@@ -598,7 +598,18 @@
 </h5>
 </div>
 <div class="collapse show" id="accordion-tab-10-content-1" aria-labelledby="accordion-tab-10-heading-1" data-bs-parent="#accordion-tab-10">
-<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>There is an issue with WLED versions >0.13.2 in connection with some FritzBoxes with SW >=7.50 and possibly with the activated mesh. The WLED controller sometimes restarts every minute. A possible solution (but probably not 100%) is to deactivate UPnP in the FritzBox settings (under home network -> network -> network settings -> other settings -> transfer status information via UPnP). Another possible measure is to deactivate mDNS in WLED settings (delete mDNS name). The issue may also affect some UniFi devices with mesh activated.</p></div>
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>There is an issue with WLED versions >0.13.2 in connection with some FritzBoxes with SW >=7.50 and possibly with the activated mesh. The WLED controller sometimes restarts every minute. A possible solution (but probably not 100%) is to deactivate UPnP in the FritzBox settings (under home network -> network -> network settings -> other settings -> transfer status information via UPnP). Another possible measure is to deactivate mDNS in WLED settings (delete mDNS name). The issue may also affect some UniFi devices with mesh activated. Currently, a WLED software build based on ESP IDF V4 is recommended to solve the problem.</p></div>
+</div>
+</div>
+</div>
+<div class="accordion-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+<div class="accordion-header" id="accordion-tab-10-heading-2">
+<h5>
+<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-tab-10-content-2" aria-expanded="false" aria-controls="accordion-tab-10-content-2"><a href="#tab10faq2"><div itemprop="name">LED Flickering with WLED Software 0.15.0 and newer</div></a></button>
+</h5>
+</div>
+<div class="collapse" id="accordion-tab-10-content-2" aria-labelledby="accordion-tab-10-heading-2" data-bs-parent="#accordion-tab-10">
+<div class="accordion-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>It is often reported that WLED software versions 0.15.x and 0.16.x cause LEDs to flicker occasionally. This problem occurs when more than one LED output is used. According to current knowledge, the flickering is caused by the LED RMT control method, but the exact cause is not yet understood. To resolve this issue, a different control method was introduced in WLED version 0.5.1-beta2: ParallelI2S. This can be enabled in the WLED LED settings for more than two LED outputs. However, this method can only be used if the same LED types are connected to all outputs (more precisely, LEDs with the same timing). Furthermore, the number of LEDs per output is limited to 600. Otherwise, it is recommended to continue using WLED version 0.14.4 if possible.</p></div>
 </div>
 </div>
 </div>

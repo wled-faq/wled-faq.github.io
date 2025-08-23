@@ -42,7 +42,7 @@ However, there are a few other things to keep in mind for a proper setup:
 2. For safety reasons, the correct cabling (length, cross-section, contacts) and the fuses to be integrated must be considered. Especially with LED strips, it gets more complicated because you need the so-called intermediate feeds. These must be planned and implemented correctly. WLED Calculator can be used as an starting point.
 3. LED strips can get quite warm during operation and even overheat in the event of a fault. Again, for safety reasons, you have to protect the area around it: you shouldn't just lay LED strips like that, ideally you should integrate them into aluminum profiles or something similar. In normal operation, these act like a heat sink and thus extend the service life of the LEDs. In the event of a fault, they can protect the surroundings.
 [pic11]
-4. To save energy while LEDs are off, you might integarte relays that switch the voltage of LEDs off completely.
+4. To save energy while LEDs are off, you might integarte relays (or special Switch Board) that switch the voltage of LEDs off completely.
 ##02##Which microcontroller types are supported by WLED software?
 Currently (as of summer 2025), only Espressif microcontrollers, types ESP8266 and ESP32 (with dual core), are supported. The newer types ESP32-C3, ESP32-S2, and ESP32-S3 are also supported, but installation is not as easy with these newer types: there are several hardware variations/boards for which the software must be specifically compiled. It should also be noted that some ESP32-C3 boards (so-called Mini Ver 1.0.0) are still on the market where Wi-Fi does not work properly. The other types such as ESP32-C5, ESP32-C6, and ESP32-P4 are currently NOT supported.
 It should also be noted that the current Audio Reactive WLED versions only support ESP32 microcontrollers. The last release for ESP8266 was WLED SR 13.0-beta3. In general, ESP8266 is too slow for the newer WLED versions and is not recommended.
@@ -288,6 +288,7 @@ There is an issue with WLED versions >0.13.2 in connection with some FritzBoxes 
 
 ##10##LED Flickering with WLED Software 0.15.0 and newer
 It is often reported that WLED software versions 0.15.x and 0.16.x cause LEDs to flicker occasionally. This problem occurs when more than one LED output is used. According to current knowledge, the flickering is caused by the LED RMT control method, but the exact cause is not yet understood. To resolve this issue, a different control method was introduced in WLED version 0.5.1-beta2: ParallelI2S. This can be enabled in the WLED LED settings for more than two LED outputs. However, this method can only be used if the same LED types are connected to all outputs (more precisely, LEDs with the same timing). Furthermore, the number of LEDs per output is limited to 600. Otherwise, it is recommended to continue using WLED version 0.14.4 if possible.
+
 
 
 

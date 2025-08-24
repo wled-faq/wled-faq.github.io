@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de" itemscope itemtype="https://schema.org/FAQPage">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="copyright" content="&copy; 2023 Wladislaw Waag" />
+  <title>WLED FAQ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8">
+		<h3><b><span style="color:red">W</span><span style="color:orange">L</span><span style="color:darkblue">E</span><span style="color:lightpink">D</span><span style="color:blue"> F</span><span style="color:violett">A</span><span style="color:orchid">Q</span></b></h3>
+			(Inoffizielle Dokumentation/FAQ)
+		</div>
+		<div class="col-lg-4 text-end">
+			<a href="../en/index.html">Englisch>></a>
+			&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../ua/index.html">Ukrainian>></a>
+			&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../ru/index.html">Russian>></a>
+		</div>
+		
+	</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="nav nav-pills faq-pills" id="faq-tabs" role="tablist" aria-orientation="vertical">
+                <a href="index.html" class="nav-link" aria-selected="false" aria-controls="tab1">Inbetriebnahme</a>
+<a href="tab2.html" class="nav-link active" aria-selected="true" aria-controls="tab2">Controller</a>
+<a href="tab3.html" class="nav-link" aria-selected="false" aria-controls="tab3">LED Streifen</a>
+<a href="tab4.html" class="nav-link" aria-selected="false" aria-controls="tab4">Verkabelung</a>
+<a href="tab5.html" class="nav-link" aria-selected="false" aria-controls="tab5">WLED SW Allgemein</a>
+<a href="tab6.html" class="nav-link" aria-selected="false" aria-controls="tab6">Einstellungen, 2D etc.</a>
+<a href="tab7.html" class="nav-link" aria-selected="false" aria-controls="tab7">Presets und Playlists</a>
+<a href="tab8.html" class="nav-link" aria-selected="false" aria-controls="tab8">Sync, virtuelle LEDs etc.</a>
+<a href="tab9.html" class="nav-link" aria-selected="false" aria-controls="tab9">Sound-/Audioreaktive WLED</a>
+<a href="tab10.html" class="nav-link" aria-selected="false" aria-controls="tab10">Bekannte Probleme</a>
+
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="tab-content" id="faq-tab-content">
+                <ul><li><a href="Welche_Mikrocontroller_Typen_werden_von_WLED_SW_unterstuetzt.html"><span>Welche Mikrocontroller Typen werden von WLED SW unterstützt?</span></a>
+</li>
+<li><a href="Wie_viele_LEDs_kann_ein_WLED_Controller_ansteuern.html"><span>Wie viele LEDs kann ein WLED Controller ansteuern?</span></a>
+</li>
+<li><a href="Wird_ein_LevelShifter_beim_WLED_Controller_wirklich_benoetigt.html"><span>Wird ein LevelShifter beim WLED Controller wirklich benötigt?</span></a>
+</li>
+<li itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><a href="Welche_LevelShifter_werden_empfohlen.html"><span itemprop="text">Welche LevelShifter werden empfohlen?</span></a>
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Die Ansteuerung der adressierbaren LED Streifen Läuft mit Steuersignalen, welche eine Grundfrequenz im Bereich 800 kHz bis ins einstelligen MHz Bereich haben (je nach Typ). Entsprechend muss ein LevelShifter schnell genug sein, ob diese Signale sauber weiter geben zu können. Empfohlen werden daher schnelle Typen wie SN74AHCT125, SN74AHCT32 oder SN74LVC2T45. Typen wie SN74HCT (also ohne „A“) sind etwas langsamen und für LED Typen wie WS2812B i.O., für einige andere LED Typen können aber zu langsam sein. In jedem Fall nicht empfohlen sind mit Transistoren aufgebaute fertige bidirektionale I2C LevelShifter. Notfalls können diese verwendet werden, man sollte aber dann den Pull-Up Widerstand am Ausgang (meistens 10 kOhm) durch einen kleineren ersetzen (<=1 kOhm). Die SN74AHCT125 LevelShifter werden wie folgt verschaltet:<br><img src="../pictures/pic1.jpg" class="img-fluid"><br><img src="../pictures/pic2.jpg" class="img-fluid"><br>Bei kurzen Leitungen kann auch ein TXS0108 LevelShifter verwndet werden. Diese sind auch verfügbar bereits auf kleiner Leiterplate verlötet:<br><img src="../pictures/pic3.jpg" class="img-fluid"><br>Im Folgenden sind verschiedene LevelShifter mit und ohne einen Widerstand in Data-Linie messtechnisch verglichen.<br>Zusammengefasst, können die Ergebnisse wie folgt interpretiert werden:<br>1) SN74AHCT ist die beste Wahl. Zusammen mit einem 60 Ohm Widerstand liefert er bis zu 2 Meter Länger der Datenleitung gute Ergebnisse. Auch bei 10 Meter ist das Signal noch gut brauchbar. Der Nachteil ist, dass er wegen seiner Geschwindigkeit (steile Flanken) hohe Überschwingungen erzeugt. Dem kann man mit einem EMV-Filter entgegnen, wie bei einem <a href="https://shop.myhome-control.de/Ethernet-Adapter-fuer-WLED-Controller/HW10016" target=”_blank” rel="noopener">ABC! WLED V43 Controller</a> verbaut. Bei kurzen Leitungen ist das sehr effizient, bei längeren Leitungen können die Schwingungen jedoch nicht ganz vermieden werden. <br>2) Die Messung bestätigt, dass ein I2C Levelshifter ist zu langsam, genauer gesagt der zweite Teil der Anstiegsflanke, denn jede Anstiegsflanke aus zwei Teilen besteht: einem schnellen Anstieg bis zu 3.3V und einem darauffolgenden langsamen Anstieg bis 5V, welcher meistens gar nicht komplett vollzogen wird. Ein Widerstand in der Datenleitung kann hier eher Kontraproduktiv wirken. Der zweite Teil der Anstiegsflanke kann mit einem zusätzlichen 1kOhm Widerstand zwischen dem I2C LevelShifter Ausgang und 5V etwas beschleunigt werden.<br>3) TXS0108 LevelShifter ist ganz Ok bei kurzen Leitungen, liefert jedoch bei längeren Leitungen gar keine brauchbaren Ergebnisse. <br>Die Bilder zeigen die Vergleiche. Gemessen wurde mit einem Oszilloskop direkt am Controller Ausgang (3.3V Pegel, also vor dem LevelShifter, Kanal 1 bzw. gelbe Linie) und am Ende der Datenleitung (also nach dem LevelShifter, und nach der Datenleitung, direkt am LED Strip: Kanal 2 bzw. blaue Linie).<br><img src="../pictures/pic56.jpg" class="img-fluid"><br><img src="../pictures/pic54.jpg" class="img-fluid"><br><img src="../pictures/pic55.jpg" class="img-fluid"><br>Bei 10 Meter Leitung ist auch ein Verzug zwischen beiden Kanälen zu sehen: mit 3*10^8 m/s Lichtgeschwindigkeit und 10 Meter beträgt dieser ca. 33 ns. Bei einer Teilung auf der X-Achse von 500 ns ist daher dieser deutlich zu sehen, hat jedoch keine Bedeutung.</div></div>
+</li>
+<li><a href="Muss_in_der_Datenleitung_zwischen_dem_WLED_Controller_und_LED_Streifen_ein_Widerstand_eingebaut_werden_welcher.html"><span>Muss in der Datenleitung zwischen dem WLED Controller und LED Streifen ein Widerstand eingebaut werden, welcher?</span></a>
+</li>
+<li><a href="Wird_ein_fertiger_WLED_Controller_empfohlen_oder_kann_man_sich_ein_aus_einzelnen_Komponenten_zusammen_bauen.html"><span>Wird ein fertiger WLED Controller empfohlen, oder kann man sich ein aus einzelnen Komponenten zusammen bauen?</span></a>
+</li>
+<li><a href="Kann_man_ein_Taster_an_WLED_Controller_anschliessen.html"><span>Kann man ein Taster an WLED Controller anschließen?</span></a>
+</li>
+<li><a href="Wie_viele_Taster_kann_man_an_einen_WLED_Controller_anbinden.html"><span>Wie viele Taster kann man an einen WLED Controller anbinden?</span></a>
+</li>
+<li><a href="Kann_man_ein_Bewegungsmelder_PIR_Sensor_an_WLED_Controller_anschliessen.html"><span>Kann man ein Bewegungsmelder (PIR-Sensor) an WLED Controller anschließen?</span></a>
+</li>
+<li><a href="Kann_WLED_Controller_mit_einer_Fernbedienung_angesteuert_werden.html"><span>Kann WLED Controller mit einer Fernbedienung angesteuert werden?</span></a>
+</li>
+<li><a href="Kann_WLED_Controller_ueber_Ethernet_LAN_angeschlossen_werden_anstatt_Wireless.html"><span>Kann WLED Controller über Ethernet (LAN) angeschlossen werden anstatt Wireless?</span></a>
+</li>
+</ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <hr>
+        <div class="container">
+        <h5 id="L15">Nützliche Informationen:</h5>
+        <ul>
+          <li><span id="L12">Offizielle WLED Wiki (in Englisch): <a href="https://kno.wled.ge">https://kno.wled.ge</a></span></li>
+          <li><span id="L14">DIY WLED boards: </span><a href="https://github.com/wladwnt/wled">Github</a></li>
+          <li><span id="L13">Professionelle WLED Boards: <a href="https://shop.myhome-control.de">MyHome-Control Shop</a></span></li>
+          <li><span id="L16">WLED power calculator: <a href="https://wled-calculator.github.io">https://wled-calculator.github.io</a></span></li>
+		  <li><span id="L16">WLED WEB-basierter Installer: <a href="https://wled-install.github.io">https://wled-install.github.io</a></span></li>
+        </ul>
+      </div>
+<div class="container">
+   <div class="accordion accordion-flush bottompart" id="accordionBottom">
+		<div class="accordion-item">
+			<h4 class="accordion-header" id="headingImprint">
+			  <button class="accordion-button collapsed bottompart" style="padding-left:0;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseImprint" aria-expanded="true" aria-controls="collapseOne">
+				<span id="L18" style="color:blue;text-decoration: underline;">Impressum</span>
+			  </button>
+			</h4>
+			<div id="collapseImprint" class="accordion-collapse collapse bottompart" aria-labelledby="headingImprint" data-bs-parent="#accordionBottom">
+			  <div class="accordion-body bottompart">
+				<small><br><h3>Impressum</h3>Angaben:<br>Verantwortlicher: Wladislaw Waag<br>Adresse: Wasserburger Landstr. 29, 81825 München, Deutschland<br>Kontakt: +49 (0) 176 47 11 5206, info@myhome-control.de<br><br>Verbraucherstreitbeilegung/Universalschlichtungsstelle: Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</small>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="accordion-item bottompart">
+			<h4 class="accordion-header bottompart" id="headingPrivacy">
+			  <button class="accordion-button collapsed bottompart" style="padding-left:0;" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrivacy" aria-expanded="true" aria-controls="collapseOne">
+				<span id="L19" style="color:blue;text-decoration: underline;">Datenschutzerklärung</span>
+			  </button>
+			</h4>
+			<div id="collapsePrivacy" class="accordion-collapse collapse bottompart" aria-labelledby="headingPrivacy" data-bs-parent="#accordionBottom">
+			  <div class="accordion-body bottompart">
+				<small><br><h3>Datenschutzerklärung</h3>Der Betreiber dieser Webseite (https://wled-faq.github.io) sammelt und verarbeitet keinerlei personenbezogenen Daten der Nutzer dierser Webseite. Diese Seite wird jedoch im Rahmen von 'Github Pages' gehostet und betrieben. Es ist möglich und wahrscheinlich, dass Github die personenbezogenen Daten sammelt und verarbeitet. Das betrifft dann auch die Besucher der Webseite wled-installer.github.io. Ich habe aber keinerlei Einfluss darauf. Bitte lesen Sie dazu die Datenschutzerklärung von Github: <a href='https://docs.github.com/en/github/site-policy/github-privacy-statement' target='_blank'>https://docs.github.com/en/github/site-policy/github-privacy-statement</a><br><br>Unsere Webseite enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte können wir keine Gewähr und keine Haftung übernehmen. Für die Inhalte der verlinkten Seiten ist immer der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren dabei nicht erkennbar. Sollten uns Rechtsverletzungen bekannt werden, werden wir die entsprechende Verlinkung umgehend entfernen.</small>
+			  </div>
+			</div>
+		</div>
+	  </div>
+</div>
+</body>
+</html>

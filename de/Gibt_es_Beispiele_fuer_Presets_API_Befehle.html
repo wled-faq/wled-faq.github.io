@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de" itemscope itemtype="https://schema.org/FAQPage">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="copyright" content="&copy; 2023 Wladislaw Waag" />
+  <title>WLED FAQ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8">
+		<h3><b><span style="color:red">W</span><span style="color:orange">L</span><span style="color:darkblue">E</span><span style="color:lightpink">D</span><span style="color:blue"> F</span><span style="color:violett">A</span><span style="color:orchid">Q</span></b></h3>
+			(Inoffizielle Dokumentation/FAQ)
+		</div>
+		<div class="col-lg-4 text-end">
+			<a href="../en/index.html">Englisch>></a>
+			&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../ua/index.html">Ukrainian>></a>
+			&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../ru/index.html">Russian>></a>
+		</div>
+		
+	</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="nav nav-pills faq-pills" id="faq-tabs" role="tablist" aria-orientation="vertical">
+                <a href="index.html" class="nav-link" aria-selected="false" aria-controls="tab1">Inbetriebnahme</a>
+<a href="tab2.html" class="nav-link" aria-selected="false" aria-controls="tab2">Controller</a>
+<a href="tab3.html" class="nav-link" aria-selected="false" aria-controls="tab3">LED Streifen</a>
+<a href="tab4.html" class="nav-link" aria-selected="false" aria-controls="tab4">Verkabelung</a>
+<a href="tab5.html" class="nav-link" aria-selected="false" aria-controls="tab5">WLED SW Allgemein</a>
+<a href="tab6.html" class="nav-link" aria-selected="false" aria-controls="tab6">Einstellungen, 2D etc.</a>
+<a href="tab7.html" class="nav-link active" aria-selected="true" aria-controls="tab7">Presets und Playlists</a>
+<a href="tab8.html" class="nav-link" aria-selected="false" aria-controls="tab8">Sync, virtuelle LEDs etc.</a>
+<a href="tab9.html" class="nav-link" aria-selected="false" aria-controls="tab9">Sound-/Audioreaktive WLED</a>
+<a href="tab10.html" class="nav-link" aria-selected="false" aria-controls="tab10">Bekannte Probleme</a>
+
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="tab-content" id="faq-tab-content">
+                <ul><li><a href="Was_ist_ein_Preset_in_WLED_SW.html"><span>Was ist ein Preset in WLED SW?</span></a>
+</li>
+<li itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><a href="Gibt_es_Beispiele_fuer_Presets_API_Befehle.html"><span itemprop="text">Gibt es Beispiele für Presets API Befehle?</span></a>
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>Im Folgenden werden einige Preset Beispiele gezeigt. Presets kann man erstellen, indem man den aktuellen Zustand erfasst und als Preset abspeichert. Oder man kann ein Preset durch ein API Befehl beschreiben. API Befehle gibt es zwei Varianten: HTTP API oder JSON API. Man kann wahlweise die eine oder die andere Variante verwenden, wobei JSON API mehr Möglichkeiten bietet. Diese API Befehle muss man dann bei Preset im Fenster „API command“ eintippen:<br><img src="../pictures/pic30.jpg" class="img-fluid"><br>Beispiele:<br><table class="table"><thead><tr><th scope="col">HTTP API</th><th scope="col">JSON API</th><th scope="col">Beschreibung</th></tr></thead><tbody><tr><td>T=2</td><td>{&quot;on&quot;:&quot;t&quot;}</td><td>Es wird zwischen Ein und Aus Zustand gewechselt (toggeln). Also wenn LEDs aus sind, werden die eingeschaltet und umgekehrt.</td></tr><tr><td>T=1</td><td>{&quot;on&quot;:true}</td><td>Die LEDs werden eingeschaltet (bzw. keine Änderung, wenn sie schon davor eingeschaltet waren)</td></tr><tr><td>T=0</td><td>{&quot;on&quot;:false}</td><td>Die LEDs werden ausgeschaltet (bzw. keine Änderung, wenn sie schon davor eingeschaltet waren)</td></tr><tr><td></td><td>{&quot;on&quot;:true,&quot;tt&quot;:0}</td><td>Die LEDs werden eingeschaltet, dabei leuchten die LEDs sofort ohne langsames dimmen unabhängig von der globalen Einstellung „Transition“.</td></tr><tr><td>A=128</td><td>{&quot;bri&quot;: 128}</td><td>Die Helligkeit wird auf 50% eingestellt. Minimaler Wert ist 0, maximaler Wert (100%) ist 255. Daher bedeutet 128 die Helligkeit von 50%</td></tr><tr><td>A=~10</td><td>{&quot;bri&quot;:&quot;~10&quot;}</td><td>Die Helligkeit wird um 10 erhöht. Also wenn diese bisher 100 war, wird es 110.</td></tr><tr><td>A=~-20</td><td>{&quot;bri&quot;:&quot;~-10&quot;}</td><td>Die Helligkeit wird um 20 verringert. Also wenn diese bisher 100 war, wird es 80.</td></tr><tr><td>R=255&amp;G=0&amp;B=0</td><td>{&quot;seg&quot;:[{&quot;col&quot;:[[255,0,0]]}]}</td><td>Die Farbe von LEDs wird auf Rot eingestellt</td></tr><tr><td>R=0&amp;G=255&amp;B=0&amp;A=128&amp;FX=0</td><td>{&quot;seg&quot;:[{&quot;fx&quot;:0,&quot;col&quot;:[[0,255,0]]}],&quot;bri&quot;:128}</td><td>Die Farbe von LEDs wird auf Grün eingestellt, die Helligkeit auf 50% (Wert 128) und Effekt auf Solid (FX=0)</td></tr><tr><td>P1=1&amp;P2=3&amp;PL=~</td><td>{&quot;ps&quot;:&quot;1~3~&quot;}</td><td>Zwischen Presets mit IDs 1 bis 3 iterieren: Beim aufrufen wird nächstes Preset aufgerufen und so zyklisch weiter: 1-&gt;2-&gt;3-&gt;1-&gt;2-&gt;3-&gt;1-&gt;…..</td></tr><tr><td>FX=0&amp;R=r&amp;G=r&amp;B=r</td><td></td><td>Eine zufällige Farbe einstellen (konstant, FX=0)</td></tr></tbody></table></div></div>
+</li>
+<li><a href="Was_ist_ein_Playlist_in_WLED_SW.html"><span>Was ist ein Playlist in WLED SW?</span></a>
+</li>
+</ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <hr>
+        <div class="container">
+        <h5 id="L15">Nützliche Informationen:</h5>
+        <ul>
+          <li><span id="L12">Offizielle WLED Wiki (in Englisch): <a href="https://kno.wled.ge">https://kno.wled.ge</a></span></li>
+          <li><span id="L14">DIY WLED boards: </span><a href="https://github.com/wladwnt/wled">Github</a></li>
+          <li><span id="L13">Professionelle WLED Boards: <a href="https://shop.myhome-control.de">MyHome-Control Shop</a></span></li>
+          <li><span id="L16">WLED power calculator: <a href="https://wled-calculator.github.io">https://wled-calculator.github.io</a></span></li>
+		  <li><span id="L16">WLED WEB-basierter Installer: <a href="https://wled-install.github.io">https://wled-install.github.io</a></span></li>
+        </ul>
+      </div>
+<div class="container">
+   <div class="accordion accordion-flush bottompart" id="accordionBottom">
+		<div class="accordion-item">
+			<h4 class="accordion-header" id="headingImprint">
+			  <button class="accordion-button collapsed bottompart" style="padding-left:0;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseImprint" aria-expanded="true" aria-controls="collapseOne">
+				<span id="L18" style="color:blue;text-decoration: underline;">Impressum</span>
+			  </button>
+			</h4>
+			<div id="collapseImprint" class="accordion-collapse collapse bottompart" aria-labelledby="headingImprint" data-bs-parent="#accordionBottom">
+			  <div class="accordion-body bottompart">
+				<small><br><h3>Impressum</h3>Angaben:<br>Verantwortlicher: Wladislaw Waag<br>Adresse: Wasserburger Landstr. 29, 81825 München, Deutschland<br>Kontakt: +49 (0) 176 47 11 5206, info@myhome-control.de<br><br>Verbraucherstreitbeilegung/Universalschlichtungsstelle: Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</small>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="accordion-item bottompart">
+			<h4 class="accordion-header bottompart" id="headingPrivacy">
+			  <button class="accordion-button collapsed bottompart" style="padding-left:0;" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrivacy" aria-expanded="true" aria-controls="collapseOne">
+				<span id="L19" style="color:blue;text-decoration: underline;">Datenschutzerklärung</span>
+			  </button>
+			</h4>
+			<div id="collapsePrivacy" class="accordion-collapse collapse bottompart" aria-labelledby="headingPrivacy" data-bs-parent="#accordionBottom">
+			  <div class="accordion-body bottompart">
+				<small><br><h3>Datenschutzerklärung</h3>Der Betreiber dieser Webseite (https://wled-faq.github.io) sammelt und verarbeitet keinerlei personenbezogenen Daten der Nutzer dierser Webseite. Diese Seite wird jedoch im Rahmen von 'Github Pages' gehostet und betrieben. Es ist möglich und wahrscheinlich, dass Github die personenbezogenen Daten sammelt und verarbeitet. Das betrifft dann auch die Besucher der Webseite wled-installer.github.io. Ich habe aber keinerlei Einfluss darauf. Bitte lesen Sie dazu die Datenschutzerklärung von Github: <a href='https://docs.github.com/en/github/site-policy/github-privacy-statement' target='_blank'>https://docs.github.com/en/github/site-policy/github-privacy-statement</a><br><br>Unsere Webseite enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte können wir keine Gewähr und keine Haftung übernehmen. Für die Inhalte der verlinkten Seiten ist immer der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren dabei nicht erkennbar. Sollten uns Rechtsverletzungen bekannt werden, werden wir die entsprechende Verlinkung umgehend entfernen.</small>
+			  </div>
+			</div>
+		</div>
+	  </div>
+</div>
+</body>
+</html>

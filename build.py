@@ -1,5 +1,5 @@
 # (c) Wladislaw Waag, 2022-2025
-import os, shutil, string
+import os, shutil, string, re
 
 output_dir="_build"
         
@@ -35,6 +35,8 @@ def proceed_language(language, language_short):
                 dictfrage["url"]=line[6:].split("##")[1]
             else:
                 dictfrage["url"]="tab"+str(dictfrage["section"])+"faq"+str(index)
+            dictfrage["url"] = re.sub('[^0-9a-zA-Z_]+', '', dictfrage["url"])
+                
             dictfrage["answer"]=""
             questions.append(dictfrage);
         else:

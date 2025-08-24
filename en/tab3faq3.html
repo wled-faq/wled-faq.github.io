@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/FAQPage">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="copyright" content="&copy; 2023 Wladislaw Waag" />
+  <title>WLED FAQ</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+	
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8">
+		<h3><b><span style="color:red">W</span><span style="color:orange">L</span><span style="color:darkblue">E</span><span style="color:lightpink">D</span><span style="color:blue"> F</span><span style="color:violett">A</span><span style="color:orchid">Q</span></b></h3>
+			( Unofficial documentation/FAQ)
+		</div>
+		<div class="col-lg-4 text-end">
+			<a href="../de/index.html">Deutsch/German>></a>
+			&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../ua/index.html">Ukrainian>></a>
+			&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../ru/index.html">Russian>></a>
+		</div>
+		
+	</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="nav nav-pills faq-pills" id="faq-tabs" role="tablist" aria-orientation="vertical">
+                <a href="index.html" class="nav-link" aria-selected="false" aria-controls="tab1">First steps</a>
+<a href="tab2.html" class="nav-link" aria-selected="false" aria-controls="tab2">Controller</a>
+<a href="tab3.html" class="nav-link active" aria-selected="true" aria-controls="tab3">LED strips</a>
+<a href="tab4.html" class="nav-link" aria-selected="false" aria-controls="tab4">Wiring</a>
+<a href="tab5.html" class="nav-link" aria-selected="false" aria-controls="tab5">WLED SW in general</a>
+<a href="tab6.html" class="nav-link" aria-selected="false" aria-controls="tab6">Preferences, 2D etc.</a>
+<a href="tab7.html" class="nav-link" aria-selected="false" aria-controls="tab7">Presets and Playlists</a>
+<a href="tab8.html" class="nav-link" aria-selected="false" aria-controls="tab8">Sync, virtual LEDs etc.</a>
+<a href="tab9.html" class="nav-link" aria-selected="false" aria-controls="tab9">Sound / Audio Reactive WLED</a>
+<a href="tab10.html" class="nav-link" aria-selected="false" aria-controls="tab10">Known bugs/issues</a>
+
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="tab-content" id="faq-tab-content">
+                <li><a href="tab3faq1.html"><span>Which LED strip types are supported by WLED software?</span></a>
+</li>
+<li><a href="tab3faq2.html"><span>Which addressable LED types are the brightest?</span></a>
+</li>
+<li itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><a href="tab3faq3.html"><span itemprop="text">Which addressable LED strips offer the best color quality?</span></a>
+<div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><div itemprop="text"><p>The answer is clear: LED strips with a separate white LED (so-called RGBW LEDs) offer much better color quality than pure RGB LED strips. Although you can also produce white light with pure RGB LEDs (so-called RGB white), the color quality is very low. This means that objects in this light appear very distorted in color compared to how they would appear under normal daylight. This is because RGB white is basically not really white light, but is a mixture of red-green-blue, where many other spectral components are missing in this light, as the following image shows:<br><img src="../pictures/pic57.jpg" class="img-fluid"><br>Color quality is often measured in CRI (Ra), although more suitable methods such as TM-30 have now become established in the professional sector. CRI has a maximum value of 100. RGB white achieves Ra values of approx. 20-30. With a separate white LED, values well over 80 or even over 90 are possible.<br>Compared to RGB white, a separate white LED produces a significantly more natural white light, although its spectrum is far away from natural daylight. However, this is sufficient to achieve good color reproduction. But be careful: if you mix the separate white LED together with RGB white (e.g. to achieve higher illuminance), the color quality will deteriorate again. This is shown below as an example for two LED types. <br><img src="../pictures/pic58.jpg" class="img-fluid"><br><img src="../pictures/pic59.jpg" class="img-fluid"></div></div>
+</li>
+<li><a href="tab3faq4.html"><span>Which addressable LED types have the highest efficiency (highest illuminance per watt)?</span></a>
+</li>
+<li><a href="tab3faq5.html"><span>How do you control analog LED strips?</span></a>
+</li>
+<li><a href="tab3faq6.html"><span>What should I consider when using LED type WS2814 (12V or 24V)?</span></a>
+</li>
+<li><a href="tab3faq7.html"><span>What is a clock signal?</span></a>
+</li>
+<li><a href="tab3faq8.html"><span>How Backup data line for LED types like WS2813 and WS2815 must be conected?</span></a>
+</li>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+ <hr>
+        <div class="container">
+        <h5 id="L15">Useful web pages:</h5>
+        <ul>
+          <li><span id="L12">Official WLED Wiki: <a href="https://kno.wled.ge">https://kno.wled.ge</a></span></li>
+          <li><span id="L14">DIY WLED boards: </span><a href="https://github.com/wladwnt/wled">Github</a></li>
+          <li><span id="L13">Professional WLED controllers: <a href="https://wled.shop">WLED Shop (worldwide)</a>, <a href="https://www.zedfy.shop">ZEDFY Shop</a>, <a href="https://shop.myhome-control.de">MyHome-Control Shop (Germany, Poland)</a></span></li>
+          <li><span id="L16">WLED power calculator: <a href="https://wled-calculator.github.io">https://wled-calculator.github.io</a></span></li>
+		  <li><span id="L16">WLED WEB-based install: <a href="https://wled-install.github.io">https://wled-install.github.io</a></span></li>
+        </ul>
+      </div>
+<div class="container">
+   <div class="accordion accordion-flush bottompart" id="accordionBottom">
+		<div class="accordion-item">
+			<h4 class="accordion-header" id="headingImprint">
+			  <button class="accordion-button collapsed bottompart" style="padding-left:0;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseImprint" aria-expanded="true" aria-controls="collapseOne">
+				<span id="L18" style="color:blue;text-decoration: underline;">Legal notice</span>
+			  </button>
+			</h4>
+			<div id="collapseImprint" class="accordion-collapse collapse bottompart" aria-labelledby="headingImprint" data-bs-parent="#accordionBottom">
+			  <div class="accordion-body bottompart">
+				<small><br><h3>Legal notice</h3>Information:<br>Responsible: Wladislaw Waag<br>Address: Wasserburger Landstr. 29, 81825 Munich, Germany<br>Contact: +49 176 47 11 5206, info@myhome-control.de<br><br>Consumer dispute settlement / universal arbitration board: We are neither willing nor obliged to participate in dispute settlement proceedings before a consumer arbitration board.</small>
+			  </div>
+			</div>
+		</div>
+		
+		<div class="accordion-item bottompart">
+			<h4 class="accordion-header bottompart" id="headingPrivacy">
+			  <button class="accordion-button collapsed bottompart" style="padding-left:0;" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrivacy" aria-expanded="true" aria-controls="collapseOne">
+				<span id="L19" style="color:blue;text-decoration: underline;">Data privacy</span>
+			  </button>
+			</h4>
+			<div id="collapsePrivacy" class="accordion-collapse collapse bottompart" aria-labelledby="headingPrivacy" data-bs-parent="#accordionBottom">
+			  <div class="accordion-body bottompart">
+				<small><br><h3>Data privacy</h3>The operator of this website (https://wled-faq.github.io) does not collect and process any personal data of the users of this website. However, this page is hosted and operated as part of 'Github Pages'. It is possible and probable that Github collects and processes personal data, which then also affects visitors of the wled-installer.github.io web page. But I have no influence on it. Please read the Github privacy statement: <a href='https://docs.github.com/en/github/site-policy/github-privacy-statement' target='_blank'>https://docs.github.com/en/github/site-policy/github-privacy-statement</a><br><br>Our website contains links to external websites over which we have no control. We cannot accept any liability for this third-party content. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at that time. If we become aware of any legal violations, we will remove the relevant link immediately.</small>
+			  </div>
+			</div>
+		</div>
+	  </div>
+</div>
+</body>
+</html>

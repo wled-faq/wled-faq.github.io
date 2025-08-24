@@ -133,7 +133,7 @@ if not os.path.exists(output_dir):
 shutil.copyfile("index.css", os.path.join(output_dir,"index.css"))
 shutil.copyfile("index.html", os.path.join(output_dir,"index.html"))
 shutil.copyfile("google86f84e541110ff0a.html", os.path.join(output_dir,"google86f84e541110ff0a.html"))
-shutil.copyfile("google86f84e541110ff0a.html", os.path.join(output_dir,"google4fa4b83a1cd06e32.html"))
+shutil.copyfile("google4fa4b83a1cd06e32.html", os.path.join(output_dir,"google4fa4b83a1cd06e32.html"))
 shutil.copyfile("sitemap.xml", os.path.join(output_dir,"sitemap.xml"))
 if os.path.exists(os.path.join(output_dir,'pictures')):
     shutil.rmtree(os.path.join(output_dir,'pictures'))

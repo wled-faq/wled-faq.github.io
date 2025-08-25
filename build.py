@@ -2,8 +2,10 @@
 import os, shutil, string, re
 
 output_dir="_build"
-        
+sitemap_items="";
+
 def proceed_language(language, language_short):
+    global sitemap_items
     if not os.path.exists(os.path.join(output_dir, language_short)):
         os.makedirs(os.path.join(output_dir, language_short));
     f_faqset=open("./faqset_"+language_short+".txt", "r", encoding="utf-8")
@@ -81,7 +83,7 @@ def proceed_language(language, language_short):
         if(sectn==1):
             tab_href='index.html';
         f_index= open(os.path.join(output_dir, language_short, tab_href),"w+", encoding="utf-8")
-        f_index.write(template.substitute(dict))
+        f_index.write(template.substitute(dict).replace(' itemscope itemtype="https://schema.org/FAQPage"',""))
         f_index.close()
         f_template.close()
         
@@ -122,11 +124,12 @@ def proceed_language(language, language_short):
         dict["QUESTIONS"]=html_questions; 
         f_template=open("faq_template_"+language_short+".html", "r", encoding="utf-8")
         template=string.Template(f_template.read())
-        f_index= open(os.path.join(output_dir, language_short, quest["url"].replace(" ","_").replace("?","")+".html"),"w+", encoding="utf-8")
+        f_name=quest["url"].replace(" ","_").replace("?","")+".html";
+        f_index= open(os.path.join(output_dir, language_short, f_name),"w+", encoding="utf-8")
         f_index.write(template.substitute(dict))
         f_index.close()
         f_template.close()
-   
+        sitemap_items=sitemap_items+'\n'+'   <url>\n        <loc>https://wled-faq.github.io/'+language_short+'/'+f_name+'</loc>\n    </url>'
     
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
@@ -140,12 +143,18 @@ if os.path.exists(os.path.join(output_dir,'pictures')):
     shutil.rmtree(os.path.join(output_dir,'pictures'))
 shutil.copytree('pictures',os.path.join(output_dir,'pictures'))
 
+
 proceed_language("deutsch", "de");
 proceed_language("english", "en");
 proceed_language("russian", "ru");
 proceed_language("ukrain", "ua");
                 
-
+f_sitemap=open("./sitemap.xml", "r", encoding="utf-8");
+sitemap_text=f_sitemap.read().replace("\n</urlset>",sitemap_items+'\n</urlset>');
+f_sitemap.close()
+f_sitemap= open(os.path.join(output_dir, "sitemap.xml"),"w+", encoding="utf-8")
+f_sitemap.write(sitemap_text)
+f_sitemap.close()
 
 
 

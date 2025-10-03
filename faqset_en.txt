@@ -272,6 +272,9 @@ Three microphone types are supported:
 3.PDM microphones. An example is SPM1423. In principle, these are also digital microphones with an integrated Sigma-Delta ADC. They are slightly cheaper than I2S microphones, require one PIN less and the quality is quite good. Also, for this type you need an ESP32 based controller.
 The correct microphone type and the GPIOs used must then be set in WLED settings.
 
+##09##What should I consider when buying an INMP441 microphone?##What_should_I_consider_when_buying_an_INMP441_microphone
+Nowadays (as of 2025), these microphones are often sold on online sales platforms, and the pictures in the shop are correct (the "441" imprinted on the component itself). However, upon receipt, you discover that it's a different type (and upon inquiry, the sellers reply that it's 100% compatible) or one that looks correct but doesn't work at all or only works poorly and is probably a cheap replica. Since you only notice this after soldering the pins, you can't return the item. Therefore, we recommend using shops (e.g. <a href="https://shop.myhome-control.de/INMP441-Digitales-Mikrofon/HW10009.1">this</a>) or sellers that also offer a soldered/tested version. Then it's more likely that the unsoldered version sold by that shop is also genuine/good.
+
 ##09##Can a line-out or headphone signal be used as a source for Sound Reactive WLED?##Can_a_line_out_or_headphone_signal_be_used_as_a_source_for_Sound_Reactive_WLED
 Yes. There are two options:
 1. Prepare the analog line-out or headphone signal with a simple circuit and connect it to an ADC input from the ESP8266 or ESP32. In this case, the whole thing works like with an analog microphone. The quality is not the best here either, because the ESP8266/ESP32 ADC is not particularly good at converting audio signals, and the signal conditioning circuitry is very simple, but not very good. In addition, the sensitivity can be quite poor, so that the whole thing only works at a higher volume of the signal.
@@ -288,6 +291,7 @@ There is an issue with WLED versions >0.13.2 in connection with some FritzBoxes 
 
 ##10##LED Flickering with WLED Software 0.15.0 and newer##LED_Flickering_with_WLED_Software_0150_and_newer
 It is often reported that WLED software versions 0.15.x and 0.16.x cause LEDs to flicker occasionally. This problem occurs when more than one LED output is used. According to current knowledge, the flickering is caused by the LED RMT control method, but the exact cause is not yet understood. To resolve this issue, a different control method was introduced in WLED version 0.5.1-beta2: ParallelI2S. This can be enabled in the WLED LED settings for more than two LED outputs. However, this method can only be used if the same LED types are connected to all outputs (more precisely, LEDs with the same timing). Furthermore, the number of LEDs per output is limited to 600. Otherwise, it is recommended to continue using WLED version 0.14.4 if possible.
+
 
 
 

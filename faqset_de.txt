@@ -272,6 +272,9 @@ Es werden drei Mikrofon-Typen unterstützt:
 3. PDM Mikrofone. Ein Beispiel ist SPM1423. Diese sind im Prinzip auch digitale Mikrofone mit einem integrierten Sigma-Delta ADC. Sie sind etwas günstiger als I2S Mikrophone, brauchen einen PIN weniger und die Qualität ist recht gut. Auch für dieses Typ bracht man einen ESP32 basierten Controller.
 In WLED Einstellungen muss dann der richtige Mikrofon-Typ sowie die verwendeten GPIOs eingestellt werden.
 
+##09##Was ist bei einem INMP441 Mikrophon zu beachten?##Was_ist_bei_einem_INMP441_Mikrophon_zu_beachten
+Mittlerweile (Stand 2025) werden bei Online Verkaufsplattformen oft diese Mikrophone verkauft und die Bilder im Shop stimmen (Aufprägung „441“ auf dem Bauteil selbst), beim Erhalt stellt man aber fest, dass es ein anderer Typ (und auf Nachfrage antworten die Verkäufer, dass es 100% kompatibel ist) oder ein, der richtig aussieht, aber gar nicht oder nur schlecht funktioniert und vermutlich eine billige Nachbildung ist. Da man das erst nach dem Löten der Pins feststellt, kann man dann auch die Artikel nicht zurückgeben. Empfohlen sind daher Shops (z.B. <a href="https://shop.myhome-control.de/INMP441-Digitales-Mikrofon/HW10009.1">dieser</a>) bzw. Verkäufer, welche auch eine verlötete/geprüfte Variante anbieten. Dann ist eher wahrscheinlich, dass von diesem Shop verkaufte nicht verlötete Variante auch echt/gut ist.
+
 ##09##Kann man Line-Out bzw. Kopfhörer Signal als Quelle für Sound Reactive WLED verwenden?##Kann_man_Line_Out_bzw_Kopfhoerer_Signal_als_Quelle_fuer_Sound_Reactive_WLED_verwenden
 Ja. Es gibt dabei zwei Optionen:
 1. Analoges Line-Out bzw. Kopfhörer Signal mit einer einfachen Schaltung aufbereiten und mit einem ADC Eingang vom ESP8266 oder ESP32 verbinden. In diesem Fall funktioniert das ganze wie mit einem analogen Mikrofon. Die Qualität ist hier auch nicht die beste, weil der ESP8266/ESP32 ADC für die Umwandlung von Audiosignalen nicht besonders gut geeignet ist und die Schaltung zur Signalaufbereitung sehr einfach, aber nicht besonders gut ist. Außerdem kann die Empfindlichkeit recht schlecht sein, so dass das ganze nur bei einer höheren Lautstärke des Signals funktioniert.
@@ -288,6 +291,7 @@ Aktuell wird ein WLED Software Build basierend auf ESP IDF V4 empfohlen, um das 
 
 ##10##Flackern von LEDs mit WLED Software ab 0.15.0##Flackern_von_LEDs_mit_WLED_Software_ab_0150
 Es wird oft davon berichtet, dass WLED SW 0.15.x und 0.16.x dazu führt, dass LEDs ab und zu flackern. Das Problem tritt dann auf, wenn mehr als ein LED Ausgänge verwendet werden. Nach dem aktuellen Kenntnisstand wird das flackern durch die LED RMT Ansteuerungsmethode verursacht, die genaue Ursache ist jedoch noch nicht verstanden. Um das Problem zu beheben, wurde in WLED Version 0.5.1-beta2 eine andere Ansteuerungsmethode eingeführt: ParallelI2S. Diese kann bei mehr als 2 LED Ausgängen in WLED LED Einstellungen aktiviert werden. Die Methode kann jedoch nur dann verwendet werden, wenn gleiche LED Typen an allen Ausgängen angeschlossen sind (genau genommen LEDs mit dem gleichen Timing).  Außerdem ist die Anzahl der LEDs pro Ausgang auf 600 begrenzt. Ansonsten wird empfohlen nach Möglichkeit weiterhin erstmal 0.14.4 WLED Version zu verwenden.
+
 
 
 

@@ -107,11 +107,23 @@
 			</h4>
 			<div id="collapsePrivacy" class="accordion-collapse collapse bottompart" aria-labelledby="headingPrivacy" data-bs-parent="#accordionBottom">
 			  <div class="accordion-body bottompart">
-				<small><br><h3>Data privacy</h3>The operator of this website (https://wled-faq.github.io) does not collect and process any personal data of the users of this website. However, this page is hosted and operated as part of 'Github Pages'. It is possible and probable that Github collects and processes personal data, which then also affects visitors of the wled-installer.github.io web page. But I have no influence on it. Please read the Github privacy statement: <a href='https://docs.github.com/en/github/site-policy/github-privacy-statement' target='_blank'>https://docs.github.com/en/github/site-policy/github-privacy-statement</a><br><br>Our website contains links to external websites over which we have no control. We cannot accept any liability for this third-party content. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at that time. If we become aware of any legal violations, we will remove the relevant link immediately.</small>
+				<small><br><h3>Data privacy</h3>The operator of this website (https://wled-faq.github.io) does not collect and process any personal data of the users of this website. However, this page is hosted and operated as part of 'Github Pages'. It is possible and probable that Github collects and processes personal data, which then also affects visitors of the wled-installer.github.io web page. But I have no influence on it. Please read the Github privacy statement: <a href='https://docs.github.com/en/github/site-policy/github-privacy-statement' target='_blank'>https://docs.github.com/en/github/site-policy/github-privacy-statement</a><br><br>Our website contains links to external websites over which we have no control. We cannot accept any liability for this third-party content. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at that time. If we become aware of any legal violations, we will remove the relevant link immediately.<br>When you visit our website, a one-time technical request is sent to our server for the purpose of counting page views. No cookies are used in connection with this process. To avoid multiple counts, a record is stored in the browser's local storage.</small>
 			  </div>
 			</div>
 		</div>
 	  </div>
 </div>
+<script>
+(() => {
+    const key = "visit_counted";
+    if (localStorage.getItem(key)) {return;}
+    localStorage.setItem(key, "1");
+    fetch("https://wled-api.myhome-control.de/counter-api/counter.php", {
+        method: "GET",
+        mode: "no-cors",
+        keepalive: true
+    }).catch(() => {});
+})();
+</script>
 </body>
 </html>

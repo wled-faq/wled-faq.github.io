@@ -103,11 +103,23 @@
 			</h4>
 			<div id="collapsePrivacy" class="accordion-collapse collapse bottompart" aria-labelledby="headingPrivacy" data-bs-parent="#accordionBottom">
 			  <div class="accordion-body bottompart">
-				<small><br><h3>Datenschutzerklärung</h3>Der Betreiber dieser Webseite (https://wled-faq.github.io) sammelt und verarbeitet keinerlei personenbezogenen Daten der Nutzer dierser Webseite. Diese Seite wird jedoch im Rahmen von 'Github Pages' gehostet und betrieben. Es ist möglich und wahrscheinlich, dass Github die personenbezogenen Daten sammelt und verarbeitet. Das betrifft dann auch die Besucher der Webseite wled-installer.github.io. Ich habe aber keinerlei Einfluss darauf. Bitte lesen Sie dazu die Datenschutzerklärung von Github: <a href='https://docs.github.com/en/github/site-policy/github-privacy-statement' target='_blank'>https://docs.github.com/en/github/site-policy/github-privacy-statement</a><br><br>Unsere Webseite enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte können wir keine Gewähr und keine Haftung übernehmen. Für die Inhalte der verlinkten Seiten ist immer der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren dabei nicht erkennbar. Sollten uns Rechtsverletzungen bekannt werden, werden wir die entsprechende Verlinkung umgehend entfernen.</small>
+				<small><br><h3>Datenschutzerklärung</h3>Der Betreiber dieser Webseite (https://wled-faq.github.io) sammelt und verarbeitet keinerlei personenbezogenen Daten der Nutzer dierser Webseite. Diese Seite wird jedoch im Rahmen von 'Github Pages' gehostet und betrieben. Es ist möglich und wahrscheinlich, dass Github die personenbezogenen Daten sammelt und verarbeitet. Das betrifft dann auch die Besucher der Webseite wled-installer.github.io. Ich habe aber keinerlei Einfluss darauf. Bitte lesen Sie dazu die Datenschutzerklärung von Github: <a href='https://docs.github.com/en/github/site-policy/github-privacy-statement' target='_blank'>https://docs.github.com/en/github/site-policy/github-privacy-statement</a><br><br>Unsere Webseite enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte können wir keine Gewähr und keine Haftung übernehmen. Für die Inhalte der verlinkten Seiten ist immer der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren dabei nicht erkennbar. Sollten uns Rechtsverletzungen bekannt werden, werden wir die entsprechende Verlinkung umgehend entfernen.<br>Beim Aufruf der Webseite wird einmalig ein technischer Request an unseren Server gesendet, um die Anzahl der Seitenaufrufe zu zählen. Hierfür werden keine Cookies gesetzt. Zur Vermeidung mehrfacher Zählungen wird ein Eintrag im Local Storage des Browsers verwendet.</small>
 			  </div>
 			</div>
 		</div>
 	  </div>
 </div>
+<script>
+(() => {
+    const key = "visit_counted";
+    if (localStorage.getItem(key)) {return;}
+    localStorage.setItem(key, "1");
+    fetch("https://wled-api.myhome-control.de/counter-api/counter.php", {
+        method: "GET",
+        mode: "no-cors",
+        keepalive: true
+    }).catch(() => {});
+})();
+</script>
 </body>
 </html>
